@@ -2,51 +2,274 @@ html
 { height: 100%;
 width: full;}
 
-*
-{ margin: 0;
+*{ margin: 0;
   padding: 0;}
 
 body
-{ font: normal .80em 'trebuchet ms', arial, sans-serif;
+{ font: normal .80em 'Montserrat', arial, sans-serif;
   background: #FFF;
-  color: #555;}
+  color: #555;
+  font-size: 12px;
+}
+  *{
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+    text-decoration: none;
+  }
+
+  .img{
+    width: 700px;
+  }
+  
+  .container{
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    vertical-align:top;
+  }
+
+  .container-mid{
+    border-radius: 3px;
+    margin: 10px 0px 10px 170px;
+    width: 1000px;
+    height: wrap;
+    background-color: #f1f3f6;
+    display: inline-block;
+    text-align: cente
+  }
+
+  .container-right{
+    margin-top: 10px;
+    background-color: transparent;
+    float: right;
+    width: 370px;
+    padding: 0 10px 0 10px ;
+  }  
+  
+  .wrapper{
+    border-radius: 3px;
+    margin: 10px;
+    width: auto;
+    padding:10px;
+    background-color: transparent;
+    display: inline-block;
+  }
+
+  .wrapper-imgtop{
+    border-radius: 3px;
+    margin: 0;
+    padding: 10px;
+    width: auto;
+    background-color: transparent;
+    text-align: center;
+  }
+
+  .wrapper-imgbot{
+    border-radius: 3px;
+    margin: 0;
+    padding: 10px;
+    width: auto;
+    background-color: transparent;
+    text-align: center;
+  }
+
+  .box{
+    border-radius: 3px;
+    padding: 4px 4px 4px 20px;
+    margin: 0px 0px 10px 0px ;
+    width: wrap;
+    height: wrap;
+    background-color: #c4c4c4;;
+  }
+
+  .box-img{
+    border-color: #c4c4c4;
+    border-style: solid;
+    border-width: 2px;
+    border-radius:5px;
+    height: 100px;
+    width: 320px;
+    box-shadow: 2px 4px 5px #c4c4c4;
+    display: inline-block;
+    margin: 0 5px 0 5px;
+  }
+
+  .card{
+    border-color: #c4c4c4;
+    border-style: solid;
+    border-width: 2px;
+    border-radius:5px;
+    height: 150px;
+    width: 250px;
+    box-shadow: 2px 4px 5px #c4c4c4;
+    padding: 9px;
+    display: inline-block;
+    margin: 5px;
+  }
+  .card-text{
+    margin: 5px 0px 5px 0;
+    background-color: transparent;
+
+  }
+
+  .sidebar{
+    position: fixed ;
+    left: 0;
+    width: 150px;
+    height: wrap;
+    background: #f1f3f6;
+    list-style: none;
+    text-decoration: none;
+    border-radius: 0px 7px 7px 0;
+    margin-top: 12px;
+    box-shadow: 2px 4px 5px #a1a1a1;
+  }
+  .sidebar header{
+    font-size: 18px;
+    color: #FFF;
+    text-align: center;
+    line-height: 34px;
+    background: #606060;
+    user-select: none;
+    list-style: none;
+    border-radius: 0px 7px 0px 0;
+    padding: 0px 4px 0px 20px;
+  }
+
+  .sidebar ul a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 30px;
+    margin-top: 4px;
+    font-size: 12px;
+    color: black;
+    padding-left: 10px;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none; 
+  }
+
+
+  .sidebar li:hover{
+    background-color:#D9D5CF;
+    padding-left: 10px;
+  }
+
+  
+  .sidebar-right{ 
+    width: 370px;
+    background: transparent;
+  }
+
+  .sidebar-right header{
+    font-size: 18px;
+    color: black;
+    line-height: 34px;
+    background: #c4c4c4;
+    user-select: none;
+    list-style: none;
+    border-radius: 3px;
+    padding: 0px 0px 0px 15px;
+  }
+
+  .sidebar-right ul a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 30px;
+    margin-top: 10px;
+    font-size: 12px;
+    color: black;
+    list-style: none;
+    text-decoration: none;
+  }
+
+  .sidebar-right li a {
+    list-style: none;
+    background-color: #f1f3f6;
+    border-radius: 3px;
+    padding-left: 15px;
+    box-shadow: 2px 4px 5px #c4c4c4;
+    width: 95%;
+  }
+
+  .sidebar-right li:hover{
+    padding-left: 15px;
+    list-style: none;
+  }
+
+  #menubar
+{ width: 1000px;
+  padding: 0px 30px 30px 50px;
+  height: 0px;} 
+
+ul#menu
+{ float: right;
+  margin: 0;}
+
+ul#menu li
+{ float: right;
+  padding: 0 0 0 9px;
+  list-style: none;
+  margin: 1px 2px 0 0;
+  background: #e39a9a;}
+
+ul#menu li a
+{ font: normal 100% 'trebuchet ms', sans-serif;
+  display: block; 
+  float: left; 
+  height: 20px;
+  padding: 6px 35px 5px 28px;
+  text-align: center;
+  color: #FFF;
+  text-decoration: none;
+  background: transparent;} 
+
+
+ul#menu li a:hover
+{ color: #FFF;
+  background: #e39a9a;
+}
+
+
+  img
+  { border: 0;}
 
 p
-{ padding: 0 0 20px 0;
-  line-height: 1.7em;}
-
-img
-{ border: 0;}
+{ padding: 0 0px 0px 0px;
+  line-height: 1.7em;
+  font-size: 70%;
+}
 
 h1, h2, h3, h4, h5, h6 
-{ color: #E7746F;
-  letter-spacing: 0em;
-  padding: 0 0 5px 0;}
+{ color: black;
+  letter-spacing: 0em;}
 
 h1, h2, h3
-{ font: normal 170% 'century gothic', arial;
-  margin: 0 0 15px 0;
-  padding: 15px 0 5px 0;}
+{ font: normal 100%  'montserrat', arial;}
+
+h1{
+  font-size: 150%;
+}
 
 h2
-{ font-size: 160%;
-  padding: 9px 0 5px 0;}
+{ font-size: 80%;}
 
 h3
-{ font-size: 140%;
-  padding: 5px 0 0 0;}
+{ font-size: 80%;}
 
 h4, h6
 { color: #009FBC;
-  padding: 0 0 5px 0;
-  font: normal 110% arial;
+  font: normal 60% arial;
   text-transform: uppercase;}
 
 h5, h6
 { color: #888;
-  font: normal 95% arial;
-  letter-spacing: normal;
-  padding: 0 0 15px 0;}
+  font: normal 50% 'montserrat', arial;
+  letter-spacing: normal;}
 
 a, a:hover
 { outline: none;
@@ -62,11 +285,8 @@ blockquote
   border: 1px solid #E5E5DB;
   background: #FFF;}
 
-ul
-{ margin: 2px 0 22px 17px;}
-
 ul li
-{ list-style-type: circle;
+{ list-style-type: none;
   margin: 0 0 6px 0; 
   padding: 0 0 4px 5px;
   line-height: 1.5em;}
@@ -98,7 +318,7 @@ ol li
 
 #header
 { background: #1d1d1d url(pattern.png) repeat;
-  border-bottom: 2px solid #E7746F;
+  border-bottom: 2px solid #e39a9a;
   height: 80px;}
   
 #banner
@@ -106,7 +326,7 @@ ol li
   width: 870px;
   height: 180px;
   margin-bottom: 20px;
-  border: 5px solid #E7746F;}
+  border: 5px solid #e39a9a;}
 
 #logo
 { width: 880px;
@@ -132,7 +352,7 @@ ol li
   text-decoration: none;}
 
 #logo_text h1 a .logo_colour
-{ color: #E7746F;}
+{ color: #e39a9a;}
 
 #logo_text a:hover .logo_colour
 { color: #FFF;}
@@ -142,48 +362,6 @@ ol li
   padding: 4px 0 0 0;
   color: #FFF;}
 
-#menubar
-{ width: 1800px;
-  padding: 0px 30px 30px 50px;
-  height: 0px;} 
-
-ul#menu
-{ float: right;
-  margin: 0;}
-
-ul#menu li
-{ float: left;
-  padding: 0 0 0 9px;
-  list-style: none;
-  margin: 1px 2px 0 0;
-  background: transparent;}
-
-ul#menu li a
-{ font: normal 100% 'trebuchet ms', sans-serif;
-  display: block; 
-  float: left; 
-  height: 20px;
-  padding: 6px 35px 5px 28px;
-  text-align: center;
-  color: #FFF;
-  text-decoration: none;
-  background: transparent;} 
-
-ul#menu li.selected a
-{ height: 20px;
-  padding: 6px 35px 5px 28px;}
-
-ul#menu li.selected
-{ margin: 1px 2px 0 0;
-  background: #E7746F;}
-
-ul#menu li.selected a, ul#menu li.selected a:hover
-{ background: #E7746F;
-  color: #FFF;}
-
-ul#menu li a:hover
-{ color: #FFF;
-  background: #E7746F;}
 
 #site_content
 { width: 880px;
@@ -191,36 +369,6 @@ ul#menu li a:hover
   margin: 20px auto 0 auto;
   padding: 0 0 10px 0;} 
 
-#sidebar_container
-{ float: right;
-  width: 224px;}
-
-.sidebar_top
-{ width: 222px;
-  height: 14px;
-  background: transparent url(side_top.png) no-repeat;}
-
-.sidebar_base
-{ width: 222px;
-  height: 14px;
-  background: url(side_base.png) no-repeat;}
-
-.sidebar
-{ float: right;
-  width: 222px;
-  padding: 0;
-  margin: 0 0 16px 0;}
-
-.sidebar_item
-{ background: url(side_back.png) repeat-y;
-  padding: 0 15px;
-  width: 192px;}
-
-.sidebar li a.selected
-{ color: #444;} 
-
-.sidebar ul
-{ margin: 0;} 
 
 #content
 { text-align: left;
@@ -231,12 +379,6 @@ ul#menu li a:hover
 #content ul
 { margin: 2px 0 22px 0px;}
 
-#content ul li, .sidebar ul li
-{ list-style-type: none;
-  background: url(bullet.png) no-repeat;
-  margin: 0 0 0 0; 
-  padding: 0 0 4px 25px;
-  line-height: 1.5em;}
 
 #footer
 { width: 100%;
@@ -246,7 +388,7 @@ ul#menu li a:hover
   padding: 28px 0 5px 0;
   text-align: center; 
   background: transparent url(pattern.png) repeat;
-  border-top: 2px solid #E7746F;
+  border-top: 2px solid #e39a9a;
   color: #FFF;}
 
 #footer p
@@ -254,7 +396,7 @@ ul#menu li a:hover
   padding: 0 0 10px 0;}
 
 #footer a
-{ color: #E7746F;
+{ color: #e39a9a;
   text-decoration: none;}
 
 #footer a:hover
@@ -295,7 +437,7 @@ ul#menu li a:hover
   height: 33px;
   padding: 2px 0 3px 0;
   cursor: pointer; 
-  background: #E7746F; 
+  background: #e39a9a; 
   color: #FFF;}
 
 .form_settings textarea, .form_settings select
@@ -323,7 +465,7 @@ table
 { margin: 10px 0 30px 0;}
 
 table tr th, table tr td
-{ background: #E7746F;
+{ background: #e39a9a;
   color: #FFF;
   padding: 7px 4px;
   text-align: left;}
