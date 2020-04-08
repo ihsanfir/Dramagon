@@ -23,7 +23,7 @@ $hostname="http://localhost/belajarphp";
 
 
 function registrasi($data) {
-    global $conn;
+    global $conect;
 
     $username = strtolower(stripslashes($data["username"]));
     $nama = $data["nama"];
@@ -32,7 +32,7 @@ function registrasi($data) {
     $no_telpon = $data["no_telpon"];
 
     // cek username yg sudah dipakai
-    $result = mysqli_query($conn, "SELECT username FROM user WHERE username = '$username'");
+    $result =mysqli_query($conect, "SELECT * FROM user WHERE username='$username'")or die(mysqli_error());
 
     if( mysqli_fetch_assoc($result) ) {
         echo "<script>
@@ -50,12 +50,12 @@ function registrasi($data) {
     }
 
     // enkripsi password
-    $password = password_hash($password, PASSWORD_DEFAULT);
+    $password = md5($password);
 
     // tambahkan userbaru ke database
-    mysqli_query($conn, "INSERT INTO user VALUES('','$username','$password','$nama','$no_telpon')");
+    mysqli_query($conect, "INSERT INTO user VALUES('','$username','$password','$nama','$no_telpon')");
     
-    return mysqli_affected_rows($conn);
+    return mysqli_affected_rows($conect);
 }
 
 ?>
