@@ -16,6 +16,6 @@ $conect=mysqli_connect($server,$user,$pass,$database) or die('Error Connection N
 
 // **************************end koneksi *********************************//
 
-$hostname="http://localhost/belajarphp";
+$hostname="http://localhost/dramagon";
 
 ?>
