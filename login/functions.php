@@ -9,7 +9,7 @@
 $server="localhost";
 $user="root";
 $pass="";
-$database="belajarphp";
+$database="pengguna";
 
 //koneksikan ke server
 $conect=mysqli_connect($server,$user,$pass,$database) or die('Error Connection Network');
