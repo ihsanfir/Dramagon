@@ -18,8 +18,8 @@ if( isset($_POST["masuk"]) ) {
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="style/style.css" />
-  <link rel="stylesheet" type="text/css" href="style/sidebar nav.css" />
+  <link rel="stylesheet" type="text/css" href="../style/style.css" />
+  <link rel="stylesheet" type="text/css" href="../style/sidebar nav.css" />
 </head>
 
 <body>
@@ -43,7 +43,7 @@ if( isset($_POST["masuk"]) ) {
           <div class="user-info">
             <span class="user-name">
               <strong>
-                <a href="regis.html">
+                <a href="masuk.php">
                   Masuk / Daftar
                 </a>
               </strong>
@@ -73,7 +73,7 @@ if( isset($_POST["masuk"]) ) {
             </li>
 
             <li class="sidebar-list">
-              <a href="index.html">
+              <a href="index.php">
                 <span>Beranda</span>
               </a>
             </li>
@@ -112,14 +112,14 @@ if( isset($_POST["masuk"]) ) {
       <div class="container">
         <div class="container1">
           <header >
-            <h1> Buat Akun Baru</h1>
+            <h1>Masuk ke Dramagon</h1>
           </header>
           <div class="container2 box">
         <div class="container-form">
               <div class="text">
                 <h2><strong>Halo Magons!</strong> Selamat datang di Dramagon.<br>
                     Ayo isi formulir dibawah ini untuk menjadi seorang Magons sejati!</h1>
-                </div>
+              </div>
             <form action ="" method="post">
                 <label for="username">Username Magons</label><br>
                 <input type="text" id="username" name="username">
@@ -128,8 +128,7 @@ if( isset($_POST["masuk"]) ) {
                 <input type="password" id="password" name="password"><br>
                 <div class="text">
                     <h3>
-                        Username Magons adalah nama unik kamu di web magons. Jadi tunggu apa lagi ayo isi!
-                        *Bisa diganti kok
+                       
                     </h3>
                 </div>
                 <hr>

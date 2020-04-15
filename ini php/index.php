@@ -3,8 +3,8 @@
 
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style/style.css" />
-    <link rel="stylesheet" type="text/css" href="style/sidebar nav.css" />
+    <link rel="stylesheet" type="text/css" href="../style/style.css" />
+    <link rel="stylesheet" type="text/css" href="../style/sidebar nav.css" />
   </head>
 
 <body>
@@ -57,7 +57,7 @@
             </li>
 
             <li class="sidebar-list">
-              <a href="index.html">
+              <a href="index.php">
                 <span>Beranda</span>
               </a>
             </li>
@@ -100,13 +100,13 @@
           </header>
           <div class="container2">
             <div class="container-img">
-              <img class="box-img" src="/img/banner1.jpg" alt="banner1">
+              <img class="box-img" src="../img/banner1.jpg" alt="banner1">
             </div>
             <div class="container-img half">
-              <img class="box-img" src="/img/banner2.jpg" alt="banner2">
+              <img class="box-img" src="../img/banner2.jpg" alt="banner2">
             </div>
             <div class="container-img half">
-              <img class="box-img" src="/img/kotak.jpg" alt="kotak">
+              <img class="box-img" src="../img/kotak.jpg" alt="kotak">
             </div>
           </div>
         </div>

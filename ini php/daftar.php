@@ -19,8 +19,8 @@ if( isset($_POST["daftar"])) {
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="style/style.css" />
-  <link rel="stylesheet" type="text/css" href="style/sidebar nav.css" />
+  <link rel="stylesheet" type="text/css" href="../style/style.css" />
+  <link rel="stylesheet" type="text/css" href="../style/sidebar nav.css" />
 </head>
 
 <body>
@@ -44,7 +44,7 @@ if( isset($_POST["daftar"])) {
           <div class="user-info">
             <span class="user-name">
               <strong>
-                <a href="regis.html">
+              <a href="masuk.php">
                   Masuk / Daftar
                 </a>
               </strong>
@@ -74,7 +74,7 @@ if( isset($_POST["daftar"])) {
             </li>
 
             <li class="sidebar-list">
-              <a href="index.html">
+              <a href="index.php">
                 <span>Beranda</span>
               </a>
             </li>
