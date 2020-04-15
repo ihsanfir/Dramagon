@@ -1,0 +1,1030 @@
+/* Login Page Dark (FIX) */
+
+position: relative;
+width: 625px;
+height: 685px;
+
+background: #121212;
+
+
+/* Rectangle 47 */
+
+position: absolute;
+width: 625px;
+height: 43px;
+left: 0px;
+top: -1px;
+
+background: #B81633;
+
+
+/* Rectangle 48 */
+
+position: absolute;
+width: 625px;
+height: 2px;
+left: 0px;
+top: 40px;
+
+background: #FF7979;
+
+
+/* Dramagon */
+
+position: absolute;
+width: 109px;
+height: 22px;
+left: 75px;
+top: 7px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 13px;
+line-height: 15px;
+
+color: #000000;
+
+
+
+/* Rectangle 57 */
+
+position: absolute;
+width: 372px;
+height: 23px;
+left: 127px;
+top: 81px;
+
+background: #C4C4C4;
+border-radius: 3px;
+
+
+/* Rectangle 58 */
+
+position: absolute;
+width: 2px;
+height: 15px;
+left: 131px;
+top: 85px;
+
+background: #828282;
+border-radius: 3px;
+
+
+/* Promosi. Info. Forum */
+
+position: absolute;
+width: 66px;
+height: 8px;
+left: 75px;
+top: 23px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 7px;
+line-height: 8px;
+
+color: #000000;
+
+opacity: 0.6;
+
+
+/* Group 15 */
+
+position: absolute;
+width: 87px;
+height: 36px;
+left: 517px;
+top: 4px;
+
+
+
+/* Rectangle 26 */
+
+position: absolute;
+width: 87px;
+height: 36px;
+left: 517px;
+top: 4px;
+
+
+
+/* Ellipse 1 */
+
+position: absolute;
+width: 30px;
+height: 30px;
+left: 570px;
+top: 7px;
+
+background: #C4C4C4;
+border: 0.5px solid #FFFFFF;
+box-sizing: border-box;
+
+
+/* Magons */
+
+position: absolute;
+width: 22px;
+height: 7px;
+left: 517px;
+top: 7px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 6px;
+line-height: 7px;
+/* identical to box height */
+
+color: #000000;
+
+opacity: 0.6;
+
+
+/* Daftar/Masuk */
+
+position: absolute;
+width: 45px;
+height: 7px;
+left: 517px;
+top: 18px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 7px;
+line-height: 8px;
+text-decoration-line: underline;
+
+color: #000000;
+
+
+
+/* Ellipse 2 */
+
+position: absolute;
+width: 8px;
+height: 8px;
+left: 570px;
+top: 8px;
+
+background: #FF7979;
+border: 0.5px solid #FFFFFF;
+
+
+/* Ellipse 3 */
+
+position: absolute;
+width: 10px;
+height: 10px;
+left: 580px;
+top: 16px;
+
+background: #848484;
+
+
+/* Intersect */
+
+position: absolute;
+width: 14px;
+height: 10px;
+left: 578px;
+top: 27px;
+
+background: #848484;
+
+
+/* Ellipse 4 */
+
+position: absolute;
+width: 30px;
+height: 30px;
+left: 570px;
+top: 7px;
+
+background: #C4C4C4;
+border: 0.5px solid #FFFFFF;
+box-sizing: border-box;
+
+
+/* Rectangle 28 */
+
+position: absolute;
+width: 14px;
+height: 11px;
+left: 578px;
+top: 27px;
+
+background: #848484;
+border-radius: 50px 50px 0px 0px;
+
+
+/* Promosi */
+
+position: absolute;
+width: 42px;
+height: 12px;
+left: 139px;
+top: 86px;
+
+font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 10px;
+line-height: 12px;
+
+color: #000000;
+
+
+
+/* Rectangle 59 */
+
+position: absolute;
+width: 625px;
+height: 61px;
+left: 0px;
+top: 624px;
+
+background: #C4C4C4;
+
+
+/* Dramagon */
+
+position: absolute;
+width: 37px;
+height: 9px;
+left: 77px;
+top: 639px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 8px;
+line-height: 9px;
+
+color: #000000;
+
+
+
+/* Kecamatan Dramaga, Bogor */
+
+position: absolute;
+width: 100px;
+height: 9px;
+left: 77px;
+top: 650px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 8px;
+line-height: 9px;
+
+color: #000000;
+
+
+
+/* Provinsi: Jawa Barat Desa/kelurahan: 10 Luas: 24,37 */
+
+position: absolute;
+width: 85px;
+height: 38px;
+left: 375px;
+top: 637px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 8px;
+line-height: 9px;
+
+color: #000000;
+
+
+
+/* Rectangle 60 */
+
+position: absolute;
+width: 625px;
+height: 2px;
+left: 0px;
+top: 40px;
+
+background: #FF7979;
+
+
+/* Dramagon */
+
+position: absolute;
+width: 109px;
+height: 22px;
+left: 75px;
+top: 7px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 13px;
+line-height: 15px;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 69 */
+
+position: absolute;
+width: 372px;
+height: 23px;
+left: 127px;
+top: 81px;
+
+background: #C4C4C4;
+border-radius: 3px;
+
+
+/* Rectangle 70 */
+
+position: absolute;
+width: 2px;
+height: 15px;
+left: 131px;
+top: 85px;
+
+background: #828282;
+border-radius: 3px;
+
+
+/* Promosi. Info. Forum */
+
+position: absolute;
+width: 66px;
+height: 8px;
+left: 75px;
+top: 23px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 7px;
+line-height: 8px;
+
+color: #FFFFFF;
+
+opacity: 0.6;
+
+
+/* Group 18 */
+
+position: absolute;
+width: 87px;
+height: 36px;
+left: 517px;
+top: 4px;
+
+
+
+/* Rectangle 26 */
+
+position: absolute;
+width: 87px;
+height: 36px;
+left: 517px;
+top: 4px;
+
+
+
+/* Ellipse 1 */
+
+position: absolute;
+width: 30px;
+height: 30px;
+left: 570px;
+top: 7px;
+
+background: #C4C4C4;
+border: 0.5px solid #FFFFFF;
+box-sizing: border-box;
+
+
+/* Magons */
+
+position: absolute;
+width: 22px;
+height: 7px;
+left: 517px;
+top: 7px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 6px;
+line-height: 7px;
+/* identical to box height */
+
+color: #FFFFFF;
+
+opacity: 0.6;
+
+
+/* Daftar/Masuk */
+
+position: absolute;
+width: 45px;
+height: 7px;
+left: 517px;
+top: 18px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 7px;
+line-height: 8px;
+text-decoration-line: underline;
+
+color: #FFFFFF;
+
+
+
+/* Ellipse 2 */
+
+position: absolute;
+width: 8px;
+height: 8px;
+left: 570px;
+top: 8px;
+
+background: #FF7979;
+border: 0.5px solid #FFFFFF;
+
+
+/* Ellipse 3 */
+
+position: absolute;
+width: 10px;
+height: 10px;
+left: 580px;
+top: 16px;
+
+background: #848484;
+
+
+/* Intersect */
+
+position: absolute;
+width: 14px;
+height: 10px;
+left: 578px;
+top: 27px;
+
+background: #848484;
+
+
+/* Ellipse 4 */
+
+position: absolute;
+width: 30px;
+height: 30px;
+left: 570px;
+top: 7px;
+
+background: #C4C4C4;
+border: 0.5px solid #FFFFFF;
+box-sizing: border-box;
+
+
+/* Rectangle 28 */
+
+position: absolute;
+width: 14px;
+height: 11px;
+left: 578px;
+top: 27px;
+
+background: #848484;
+border-radius: 50px 50px 0px 0px;
+
+
+/* Login ke Akunmu */
+
+position: absolute;
+width: 90px;
+height: 12px;
+left: 139px;
+top: 86px;
+
+font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 10px;
+line-height: 12px;
+
+color: #000000;
+
+
+
+/* Rectangle 71 */
+
+position: absolute;
+width: 625px;
+height: 61px;
+left: 0px;
+top: 624px;
+
+background: #B81633;
+
+
+/* Dramagon */
+
+position: absolute;
+width: 37px;
+height: 9px;
+left: 77px;
+top: 639px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 8px;
+line-height: 9px;
+
+color: #FFFFFF;
+
+
+
+/* Kecamatan Dramaga, Bogor */
+
+position: absolute;
+width: 100px;
+height: 9px;
+left: 77px;
+top: 650px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 8px;
+line-height: 9px;
+
+color: #FFFFFF;
+
+
+
+/* Provinsi: Jawa Barat Desa/kelurahan: 10 Luas: 24,37 */
+
+position: absolute;
+width: 85px;
+height: 38px;
+left: 375px;
+top: 637px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 8px;
+line-height: 9px;
+
+color: #FFFFFF;
+
+
+
+/* nama */
+
+position: absolute;
+width: 371px;
+height: 51px;
+left: 128px;
+top: 161px;
+
+
+
+/* Group 19 */
+
+position: absolute;
+width: 371px;
+height: 21px;
+left: 128px;
+top: 161px;
+
+
+
+/* Rectangle 72 */
+
+position: absolute;
+width: 371px;
+height: 21px;
+left: 128px;
+top: 161px;
+
+border: 1px solid rgba(255, 255, 255, 0.4);
+box-sizing: border-box;
+border-radius: 3px;
+
+
+/* Username */
+
+position: absolute;
+width: 53px;
+height: 12px;
+left: 139px;
+top: 165px;
+
+font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 10px;
+line-height: 12px;
+
+color: #FFFFFF;
+
+opacity: 0.4;
+
+
+/* Group 20 */
+
+position: absolute;
+width: 371px;
+height: 21px;
+left: 128px;
+top: 191px;
+
+
+
+/* Rectangle 72 */
+
+position: absolute;
+width: 371px;
+height: 21px;
+left: 128px;
+top: 191px;
+
+border: 1px solid rgba(255, 255, 255, 0.4);
+box-sizing: border-box;
+border-radius: 3px;
+
+
+/* Password */
+
+position: absolute;
+width: 49px;
+height: 12px;
+left: 139px;
+top: 195px;
+
+font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 10px;
+line-height: 12px;
+
+color: #FFFFFF;
+
+opacity: 0.4;
+
+
+/* Isikan Username dan Password sesuai informasi akun yang telah kamu daftarkan ya! */
+
+position: absolute;
+width: 324px;
+height: 30px;
+left: 132px;
+top: 117px;
+
+font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 10px;
+line-height: 12px;
+
+color: #FFFFFF;
+
+
+
+/* Belum Punya akun? yuk Daftar */
+
+position: absolute;
+width: 156px;
+height: 12px;
+left: 133px;
+top: 269px;
+
+font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 10px;
+line-height: 12px;
+
+color: #FFFFFF;
+
+
+
+/* Group 23 */
+
+position: absolute;
+width: 120px;
+height: 34px;
+left: 366px;
+top: 226px;
+
+
+
+/* Rectangle 73 */
+
+position: absolute;
+width: 120px;
+height: 34px;
+left: 366px;
+top: 226px;
+
+background: #FF7979;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 3px;
+
+
+/* Login */
+
+position: absolute;
+width: 29px;
+height: 12px;
+left: 411px;
+top: 236px;
+
+font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 10px;
+line-height: 12px;
+
+color: #000000;
+
+
+
+/* sidebar */
+
+position: absolute;
+width: 61px;
+height: 127px;
+left: 0px;
+top: 49px;
+
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 0px 3px 3px 0px;
+
+
+/* Rectangle 11 */
+
+position: absolute;
+left: 0%;
+right: -4.92%;
+top: -2.36%;
+bottom: -2.36%;
+
+background: rgba(255, 255, 255, 0.05);
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 0px 3px 3px 0px;
+
+
+/* Rectangle 12 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 75.59%;
+
+background: rgba(255, 255, 255, 0.05);
+border-radius: 4px;
+
+
+/* Rectangle 21 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 25.2%;
+bottom: 50.39%;
+
+background: rgba(255, 255, 255, 0.05);
+border-radius: 4px;
+
+
+/* Rectangle 22 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 50.39%;
+bottom: 25.2%;
+
+background: rgba(255, 255, 255, 0.05);
+border-radius: 4px;
+
+
+/* Rectangle 23 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 75.59%;
+bottom: 0%;
+
+background: rgba(255, 255, 255, 0.05);
+border-radius: 4px;
+
+
+/* Beranda */
+
+position: absolute;
+left: 18.03%;
+right: 18.03%;
+top: 7.87%;
+bottom: 83.46%;
+
+font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 9px;
+line-height: 11px;
+/* identical to box height */
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* Forum */
+
+position: absolute;
+left: 24.59%;
+right: 24.59%;
+top: 33.07%;
+bottom: 58.27%;
+
+font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 9px;
+line-height: 11px;
+/* identical to box height */
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* Berita */
+
+position: absolute;
+left: 26.23%;
+right: 27.87%;
+top: 58.27%;
+bottom: 33.07%;
+
+font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 9px;
+line-height: 11px;
+/* identical to box height */
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* Forum */
+
+position: absolute;
+left: 24.59%;
+right: 24.59%;
+top: 83.46%;
+bottom: 7.87%;
+
+font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 9px;
+line-height: 11px;
+/* identical to box height */
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* Rectangle 40 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 75.59%;
+
+border-radius: 4px;
+
+
+/* Rectangle 41 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 25.2%;
+bottom: 50.39%;
+
+border-radius: 4px;
+
+
+/* Rectangle 42 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 50.39%;
+bottom: 25.2%;
+
+border-radius: 4px;
+
+
+/* Rectangle 43 */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 75.59%;
+bottom: 0%;
+
+border-radius: 4px;
+
+
+/* Beranda */
+
+position: absolute;
+left: 18.03%;
+right: 18.03%;
+top: 7.87%;
+bottom: 83.46%;
+
+font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 9px;
+line-height: 11px;
+/* identical to box height */
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* Text */
+
+position: absolute;
+left: 49.18%;
+right: 50.82%;
+top: 33.07%;
+bottom: 58.27%;
+
+
+
+
+/* Berita */
+
+position: absolute;
+visibility: hidden;
+left: 26.23%;
+right: 27.87%;
+top: 58.27%;
+bottom: 33.07%;
+
+font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 9px;
+line-height: 11px;
+/* identical to box height */
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* Forum */
+
+position: absolute;
+left: 24.59%;
+right: 24.59%;
+top: 83.46%;
+bottom: 7.87%;
+
+font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 9px;
+line-height: 11px;
+/* identical to box height */
+text-align: center;
+
+color: #FFFFFF;
+
