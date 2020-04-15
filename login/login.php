@@ -26,7 +26,7 @@ include "functions.php"; //ntar sesuain ya foldernya atau filenya san
     }
     else{
     //cek apakah user terdaftar atau tidak di database
-    $sql_cek=mysqli_query($conect, "SELECT * FROM user where username='$username' and password='$pass_md5'");
+    $sql_cek=mysqli_query($conect, "SELECT * FROM pengguna where username='$username' and password='$pass_md5'");
     $cek_user=mysqli_num_rows($sql_cek);
      //jika username dan password tidak terdaftar di database
     if($cek_user == "0"){
@@ -36,7 +36,7 @@ include "functions.php"; //ntar sesuain ya foldernya atau filenya san
 
         //jika username dan password terdaftar di database maka akan menuju halaman home.php
     //$_SESSION['data_admin']=$username;
-    echo "<script>alert('Welcome Magons! !');document.location='index.php'</script>"; //ntar ganti lokasinya san
+    echo "<script>alert('Welcome Magons! !');document.location='index.php'</script>"; //ntar tulung ganti lokasinya san
 
      }
    }
@@ -164,7 +164,7 @@ include "functions.php"; //ntar sesuain ya foldernya atau filenya san
                 <input type="password" id="password" name="password" value="<?php echo $_POST['password'];?>" maxlength="15">
                 <br>
                         </div><!--/form-password-->
-                   <?php echo $er_pass;?> <!--cek kalo pass kosong-->
+                   <?php echo $er_pass;?> <!--ngecek kalo password kosong-->
                 <br>
                 <span>Belum Punya Akun? Yuk</span>
                 <a href="#">
