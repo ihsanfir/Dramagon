@@ -5,7 +5,7 @@ error_reporting(0);
 session_start();
 
 //panggil koneksi untuk menghubungkan ke database
-include "functions.php"; //ntar sesuain ya foldernya atau filenya san
+include "functions.php"; //ntar tlg sesuain folder dan file koneksinya ini ya san
 
 
 
@@ -34,8 +34,7 @@ include "functions.php"; //ntar sesuain ya foldernya atau filenya san
     }
     else{
 
-        //jika username dan password terdaftar di database maka akan menuju halaman home.php
-    //$_SESSION['data_admin']=$username;
+        //jika username dan password terdaftar di database maka akan menuju halaman home
     echo "<script>alert('Welcome Magons! !');document.location='index.php'</script>"; //ntar tulung ganti lokasinya san
 
      }
