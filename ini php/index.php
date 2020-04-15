@@ -27,7 +27,7 @@
           <div class="user-info">
             <span class="user-name">
               <strong>
-                <a href="regis.html">
+                <a href="masuk.php">
                   Masuk / Daftar
                 </a>
               </strong>
