@@ -222,18 +222,18 @@ h1, h2, h3
 
 h1{
   font-size: 100%;
-  color: #f1f3f6;
 }
 
 h2
 { font-size: 80%;
-  line-height: 160%; 
+  line-height: 160%;
+  opacity: 0.6; 
 }
 
 h3
 { font-size: 80%;
   line-height: 160%;
-  color: rgba(255, 255, 255, 0.5);;
+  opacity: 0.6;
 }
 
 h4, h6
@@ -270,17 +270,28 @@ a, a:hover
 
 
   input[type=text], input[type=password] {
-    width: 445px;
-    padding: 12px;
-    margin: 5px 0 12px 0;
-    display: inline-block;
-    border: none;
-    background: #f1f1f1;
+    width: 100%;
+    padding: 12px 0  12px 8px;
+    margin-bottom: 10px;
+    margin-top: 6px;
+    border-radius: 5px;
+    box-shadow:inset 4px 6px 10px -4px rgba(0,0,0,0.3), 0 1px 1px -1px rgba(255,255,255,0.3);
+    background:rgba(0,0,0,0.2);
+    border:1px solid rgba(0,0,0,1);
+    margin-bottom:10px;
+    color:#6E6E6E;
+    text-shadow:#000 0px 1px 5px;
     font-size: 18px;
   }
   
   input[type=text]:focus {
-    border: 3px solid #555;
+    box-shadow:inset 4px 6px 10px -4px rgba(0,0,0,0.7), 0 1px 1px -1px rgba(255,255,255,0.3);
+    background:rgba(0,0,0,0.3);
+  }
+
+  input[type=password]:focus {
+    box-shadow:inset 4px 6px 10px -4px rgba(0,0,0,0.7), 0 1px 1px -1px rgba(255,255,255,0.3);
+    background:rgba(0,0,0,0.3);
   }
 
   .registerbtn {
