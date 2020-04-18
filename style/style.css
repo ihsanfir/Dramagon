@@ -29,35 +29,44 @@ body
 }    
 
 
-  .wrapper{
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 100px;
-    min-width: 1400px;
-    padding-right: 10px;
-    padding-left: 10px;
-    background-color: #121212;
-    text-align: center;
-    padding: 1px 16px;
-    height: auto;
-  }
-  
-  .container{
+.wrapper{
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 100px;
+  min-width: 1400px;
+  padding-right: 10px;
+  padding-left: 10px;
+  background-color: #121212;
+  text-align: center;
+  padding: 1px 16px;
+  height: auto;
+}
+
+.container{
+  background-color: transparent;
+}
+
+  .giant{
     margin-top: 20px;
     max-width: 800px;
     height: 100%;
-    background-color: transparent;
     display: inline-block;
   }
 
-  .container1{
-    width: 800px;
+  .first{
     margin-bottom: 32px;
+    display: inline-block;
+  }
+
+  .second{
+    width: 800px;
+    height: auto;
+    margin-bottom: 12px;
     background-color: transparent;
     display: inline-block;
   }
 
-  .container1 header{
+  .container header{
     padding: 10px 20px;
 
     width: wrap;
@@ -67,14 +76,20 @@ body
     margin-bottom: 12px;
   }
   
-  .container2{
-    width: 800px;
-    height: auto;
-    margin-bottom: 12px;
+  .fotoAkun{
+    width: 200px;
     background-color: transparent;
+    float: left;
+    padding: 20px;
   }
 
-  .container-img{
+  .foto{
+    height: 200px;
+    width: 200px;
+    border-radius: 10px;
+  }
+
+  .promosi{
     width: auto;
     text-align: center;
     background: rgba(255, 255, 255, 0.05);
@@ -84,18 +99,21 @@ body
     padding: 6px;
   }
 
-  .container-img:hover{
+  .container .promosi:hover{
     background: rgba(255, 255, 255, 0.10);
   }
 
-.container-form{
-  width: 500px;
-  background-color: transparent;
-  text-align: left;
-  box-sizing: border-box;
-  padding: 10px 20px;
-}
+  .form{
+    width: 500px;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 20px 20px;
+    display: inline-block;
+  }
 
+  .left{
+    float: left;
+  }
 
   .half{
     width: 340px;
@@ -111,13 +129,12 @@ body
     display: inline-block;
   }
 
-  .box{
+  .bg{
     background: rgba(255, 255, 255, 0.05);
   }
 
   .text{
     text-align: left;
-   
   }
 
   .card{
@@ -138,7 +155,6 @@ body
   .card-text{
     margin: 5px 0px 5px 0;
     background-color: transparent;
-
   }
 
   .border{
@@ -151,7 +167,7 @@ body
 
   }
 
- 
+  
   
 
 /*---------------sidebar-right----------------------*/
@@ -269,16 +285,15 @@ a, a:hover
   }
 
 
-  input[type=text], input[type=password] {
+  input[type=text], input[type=password], input[type=date] {
     width: 100%;
     padding: 12px 0  12px 8px;
-    margin-bottom: 10px;
-    margin-top: 6px;
+    margin-bottom: 16px;
+    margin-top: 8px;
     border-radius: 5px;
     box-shadow:inset 4px 6px 10px -4px rgba(0,0,0,0.3), 0 1px 1px -1px rgba(255,255,255,0.3);
     background:rgba(0,0,0,0.2);
     border:1px solid rgba(0,0,0,1);
-    margin-bottom:10px;
     color:#6E6E6E;
     text-shadow:#000 0px 1px 5px;
     font-size: 18px;
@@ -292,6 +307,20 @@ a, a:hover
   input[type=password]:focus {
     box-shadow:inset 4px 6px 10px -4px rgba(0,0,0,0.7), 0 1px 1px -1px rgba(255,255,255,0.3);
     background:rgba(0,0,0,0.3);
+  }
+
+  input[type=radio]{
+ 
+    padding: 12px 0  12px 8px;
+    margin-bottom: 16px;
+    margin-top: 8px;
+    border-radius: 5px;
+    box-shadow:inset 4px 6px 10px -4px rgba(0,0,0,0.3), 0 1px 1px -1px rgba(255,255,255,0.3);
+    background:rgba(0,0,0,0.2);
+    border:1px solid rgba(0,0,0,1);
+    color:#6E6E6E;
+    text-shadow:#000 0px 1px 5px;
+    font-size: 18px;
   }
 
   .registerbtn {
