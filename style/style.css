@@ -332,6 +332,7 @@ a, a:hover
     cursor: pointer;
     width: 100%;
     opacity: 0.9;
+    font-size: 100%;
   }
   
   .registerbtn:hover {

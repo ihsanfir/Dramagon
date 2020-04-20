@@ -80,6 +80,7 @@
 }
 
 
+
 .sidebar-wrapper .sidebar-header .user-info .user-role {
   font-size: 12px;
   font-weight: 100;
@@ -94,6 +95,14 @@
 .sidebar-wrapper .sidebar-header .user-info .user-status i {
   font-size: 8px;
   color: rgba(0,255,0);
+}
+
+.sidebar-wrapper .sidebar-header .user-info .logout > a {
+  padding-top: 4px;
+  display: block;
+  color:#f1f3f6;
+  margin-bottom: 4px;
+  font-size: 12px;
 }
 
 /*-----------------------sidebar-search------------------------*/
