@@ -14,6 +14,62 @@ body
   font-size: 18px;
 }
 
+img
+{ border: 0;}
+
+p
+{ padding: 0px 0px 0px 0px;
+line-height: 1.7em;
+font-size: 70%;
+}
+
+h2, h3, h4, h5, h6 
+{ color: #f1f3f6;
+letter-spacing: 0em;
+padding: 0px 0 10px 0;
+}
+
+h1, h2, h3
+{ font: normal 100%  'montserrat', arial;}
+
+h1{
+font-size: 100%;
+}
+
+h2
+{ font-size: 80%;
+line-height: 160%;
+opacity: 0.6; 
+}
+
+h3
+{ font-size: 80%;
+line-height: 160%;
+opacity: 0.6;
+}
+
+h4, h6
+{ color: #009FBC;
+font: normal 60% arial;
+text-transform: uppercase;}
+
+h5, h6
+{ color: #888;
+font: normal 70% 'montserrat', arial;
+letter-spacing: normal;
+
+}
+
+a, a:hover
+{ outline: none;
+text-decoration: underline;
+color: #009FBC;}
+
+/*----misc end----*/
+
+
+
+
 .red-top, .red-bot{
   width: 100%;
         position: fixed;        
@@ -62,18 +118,18 @@ body
     width: 800px;
     height: auto;
     margin-bottom: 12px;
-    background-color: yellow;
+    background-color: transparent;
     display: inline-block;
   }
 
   .container header{
     padding: 10px 20px;
-
     width: wrap;
     height: wrap;
     background: rgba(255, 255, 255, 0.05);
     text-align: left;
     margin-bottom: 12px;
+    text-transform:capitalize;
   }
   
   .fotoAkun{
@@ -220,8 +276,6 @@ body
   width: 260px;
 }
 
-
-
 .sidebar-right header{
   padding: 10px 20px;
   padding-left: 20px;
@@ -231,8 +285,6 @@ body
   text-align: left;
   margin-bottom: 12px;
 }
-
-
 
 .sidebar-right a {
   display: block;
@@ -250,65 +302,11 @@ body
   background: rgba(255, 255, 255, 0.10);
 }
 
+/*----sidebar end----*/
 
 
 
-
-  img
-  { border: 0;}
-
-p
-{ padding: 0px 0px 0px 0px;
-  line-height: 1.7em;
-  font-size: 70%;
-}
-
-h2, h3, h4, h5, h6 
-{ color: #f1f3f6;
-  letter-spacing: 0em;
-  padding: 0px 0 10px 0;
-}
-  
-
-
-
-
-h1, h2, h3
-{ font: normal 100%  'montserrat', arial;}
-
-h1{
-  font-size: 100%;
-}
-
-h2
-{ font-size: 80%;
-  line-height: 160%;
-  opacity: 0.6; 
-}
-
-h3
-{ font-size: 80%;
-  line-height: 160%;
-  opacity: 0.6;
-}
-
-h4, h6
-{ color: #009FBC;
-  font: normal 60% arial;
-  text-transform: uppercase;}
-
-h5, h6
-{ color: #888;
-  font: normal 70% 'montserrat', arial;
-  letter-spacing: normal;
-
-}
-
-a, a:hover
-{ outline: none;
-  text-decoration: underline;
-  color: #009FBC;}
-
+ 
 
   button {
     background-color: rgb(65, 193, 202);
@@ -318,6 +316,8 @@ a, a:hover
     border: none;
     cursor: pointer;
     width: 100%;
+    font-weight: bold;
+    text-transform:uppercase;
   }
 
   button:hover {
@@ -337,6 +337,7 @@ a, a:hover
     color:#6E6E6E;
     text-shadow:#000 0px 1px 5px;
     font-size: 18px;
+    font-family: inherit;
   }
   
   input[type=text]:focus {
@@ -385,3 +386,34 @@ a, a:hover
   }
 
   
+
+  .threadCreate{
+    text-align: left;
+    padding: 20px;
+  }
+
+  textarea#styled {
+    height: 120px;
+    width: 100%;
+    min-height: 120px;
+    min-width: 100%;
+    max-width: 100%;
+    padding: 12px 0  12px 8px;
+    margin-bottom: 16px;
+    margin-top: 8px;
+    border-radius: 5px;
+    box-shadow:inset 4px 6px 10px -4px rgba(0,0,0,0.3), 0 1px 1px -1px rgba(255,255,255,0.3);
+    background:rgba(0,0,0,0.2);
+    border:1px solid rgba(0,0,0,1);
+    color:#6E6E6E;
+    text-shadow:#000 0px 1px 5px;
+    font-size: 18px;
+    overflow: auto;
+    font-family: inherit;
+  }
+
+  .threadCreate button{
+    width: 120px;
+    float: right;
+    margin-bottom: 20px;
+  }
