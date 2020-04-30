@@ -1,3 +1,5 @@
+/* || GENERAL STYLES*/
+
 html
 { height: 100%;
 width: full;}
@@ -8,9 +10,8 @@ width: full;}
 body
 { font: normal .80em 'Montserrat', arial, sans-serif;
   background: #121212;
-
-  ;
-  color: #f1f3f6;
+  font-weight: 300;
+  color: rgb(241,243,246, 0.87);
   font-size: 18px;
 }
 
@@ -69,7 +70,7 @@ color: #009FBC;}
 
 
 
-
+/* RED LINES*/
 .red-top, .red-bot{
   width: 100%;
         position: fixed;        
@@ -85,6 +86,7 @@ color: #009FBC;}
 }    
 
 
+/*WRAPPER & CONTAINER*/
 .wrapper{
   margin-right: auto;
   margin-left: auto;
@@ -416,4 +418,206 @@ color: #009FBC;}
     width: 120px;
     float: right;
     margin-bottom: 20px;
+  }
+
+
+  .thread{
+    margin-bottom: 30px;
+  }
+
+  .forum-stat{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .forum-stat img{
+    width: 100px;
+    border-radius: 10px;
+  }
+
+
+  .img-thread{
+    width: 100px;
+  }
+
+
+  /*-----rate-----*/
+  .rate{
+    width: 100px;
+    height: wrap;
+    background-color:;
+    padding: 20px 0 20px 0;
+  }
+
+  .rate h1{
+    font-size: 200%;
+  }
+
+  .rate-up{
+    width: 35px;
+  }
+
+  .rate-down{
+    width: 35px;
+  }
+ 
+
+
+  .fav{
+    width: 100px;
+    background-color:;
+    padding: 10px 0 10px 0;
+  }
+
+  .fav img{
+    width: 35px;
+  }
+  .fav h2{
+    font-size: 120%;
+    color: orangered;
+  }
+
+
+
+  .komentar{
+    width: 100px;
+    padding: 10px 0 10px 0;
+    font-size: 120%;
+    
+  }
+
+
+
+  .forum-main{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 20px;
+  }
+
+  .forum-main hr{
+    border: 2px solid;
+    opacity: 0.1;
+  }
+
+  .forum-main text > p{
+    text-align: justify;
+    font-size: 80%;
+    line-height: 1.6;
+  }
+
+  .forum-main h1{
+    font-size: 140%
+  }
+
+
+
+  .kategori{
+    display: flex;
+    padding-bottom: 5px;
+  }
+
+  .kat{
+    background-color: #B81633;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 80%;
+    padding: 5px 10px;
+    margin-right: 10px;
+    border-radius:3px;
+  }
+
+
+
+  .bagi-ubah{
+    display: inline-flex;
+    padding: 10px 10px 20px 0;
+
+  }
+
+  .bagi-ubah img{
+    width: 35px;
+    height: 35px;
+  }
+
+  .bagi-ubah h2{
+    padding: 5px 15px 5px 5px;
+   
+  }
+
+
+  .flex{
+    display: flex;
+  }
+
+  .flex-row{
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+  
+
+ .comment-list{
+   padding: 20px;
+   text-align: left;
+   display: flex;
+   margin-bottom: 15px;
+ }
+
+ .comment-list img{
+   width: 70px;
+   height: 70px;
+   border-radius: 5px;
+ }
+
+ .comment-list text{
+   display: flex;
+   flex-direction: column;
+   padding: 0px 20px 0 20px;
+   text-align: justify;
+ }
+
+ .comment-list .img-box{
+  padding: 10px;
+ }
+
+ .kiri{
+  text-align: left;
+ }
+
+ .thread-komentar{
+    height: 120px;
+    width: 100%;
+    min-height: 120px;
+    min-width: 100%;
+    max-width: 100%;
+    padding: 12px 0  12px 8px;
+    margin-bottom: 16px;
+    margin-top: 8px;
+    border-radius: 5px;
+    box-shadow:inset 4px 6px 10px -4px rgba(0,0,0,0.3), 0 1px 1px -1px rgba(255,255,255,0.3);
+    background:rgba(0,0,0,0.2);
+    border:1px solid rgba(0,0,0,1);
+    color:#6E6E6E;
+    text-shadow:#000 0px 1px 5px;
+    font-size: 18px;
+    overflow: auto;
+    font-family: inherit;
+  }
+ 
+  .kolom-komentar{
+    padding: 20px;
+    display: flex;
+  }
+
+  .kotak{
+    width: 75%;
+  }
+
+  .kolom-komentar button{
+    width: 100px;
+    height: 60px;
+    margin: auto;
   }
