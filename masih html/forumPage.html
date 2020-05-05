@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="../style/style.css" />
   <link rel="stylesheet" type="text/css" href="../style/sidebar nav.css" />
+  <link rel="stylesheet" type="text/css" href="../style/animate.css" />
 </head>
 
 <body>
@@ -102,43 +103,58 @@
           </header>
           <div class="container thread flex bg">
 
-            <div class="container forum-stat">
+            <div class="container thread-stat">
               <img src="\img\user.jpg">
 
-              <div class="rate">
-                <input type="image" class="rate-up" src="\img\rateup.png" />
-                <h1>41</h1>
-                <input type="image" class="rate-down" src="\img\ratedown.png" />
-              </div>
-
-              <div class="fav">
-                <img src="\img\fav.png">
+              <div class="like">
+                <img src="\img\like.png">
                 <h2>8</h2>
               </div>
 
-              <div class="komentar">
-                <h2>Komentar</h2>
-                <h2>2</h2>
+              <div class="comment-count">
+                <h>Komentar</h2>
+                <h1>2</h1>
               </div>
-
             </div>
 
-            <div class="container forum-main">
+            <div class="container thread-main">
               <h1>Tempat mandiin kucing yang bagus dimana ya?</h1>
               <h2>oleh <strong>PriaKucing123</strong> 12 Juni 2020</h2>
 
-              <div class="kategori">
-                <box class="kat">Hewan</box>
-                <box class="kat">Hobi</box>
-                <box class="kat">Peliharaan</box>
+              <div class="container kategori">
+                <box class="kategori-box">Hewan</box>
+                <box class="kategori-box">Hobi</box>
+                <box class="kategori-box">Peliharaan</box>
               </div>
 
-              <div class="bagi-ubah">
-                <img src="\img\share.png">
-                <h2>Bagikan</h2>
-
-                <img src="\img\edit.png">
-                <h2>Ubah</h2>
+              <div class="share-edit">
+                <div onclick="myFunction()" class="share">
+                  <img src="\img\share.png">
+                  <h2>Bagikan</h2>
+                </div>
+                <div style="display: none;" class="share-drop" id="share-drop">
+                  <h2>
+                    Link:
+                  </h2>
+                  <a>
+                    http://127.0.0.1:5500/masih%20html/forumPage.html
+                  </a>
+                </div>
+                <script>
+                  function myFunction() {
+                  var x = document.getElementById("share-drop");
+                  if (x.style.display === "none") {
+                    x.style.display = "block";
+                  } else {
+                    x.style.display = "none";
+                  }
+                }
+                </script>
+            
+                <div class="edit">
+                  <img src="\img\edit.png">
+                  <h2>Ubah</h2>
+                </div>
               </div>
 
               <hr>
@@ -151,13 +167,13 @@
             </div>
            
         </div>
-        <!--container2-->
+        <!--container thread end-->
         
         <div class="container second bg kiri">
-          <div class="kolom-komentar">
+          <div class="container comment">
             <div class="kotak">
               <h1>Komentar</h1>
-              <textarea class="thread-komentar" placeholder="Isi komentar kamu disini..."></textarea>
+              <textarea placeholder="Isi komentar kamu disini..."></textarea>
             </div>
             <button>
               <h1>kirim</h1>
@@ -166,13 +182,10 @@
         </div>
 
         <div class="container second flex-row">
-       
-
           <div class="comment-list bg">
             <div class="comment-list img-box">
-              <img src="\img\user.jpg">
-            </div>
-
+            <img src="\img\user.jpg">
+          </div>
             <text>
               <h2>oleh <strong>ManusiaBodoh123</strong>, 14 Juni 2020</h2>
               <p>
@@ -185,7 +198,6 @@
             <div class="comment-list img-box">
               <img src="\img\user.jpg">
             </div>
-           
             <text>
               <h2>oleh <strong>ManusiaBodoh123</strong>, 14 Juni 2020</h2>
               <p>
@@ -214,6 +226,6 @@
     <!--wrapper end-->
        
   <div class="red-bot"></div>
-
+  
 </body>
 </html>

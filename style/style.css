@@ -1,5 +1,19 @@
-/* || GENERAL STYLES*/
+/*----RED-LINES-----*/
+.red-top, .red-bot{
+  width: 100%;
+        position: fixed;        
+        background: #B81633;
+        padding: 3px 0;
+        margin-left: 260px;
+}
+.red-top{
+  top: 0;
+}
+.red-bot{
+  bottom: 0;
+}    
 
+/*----TYPING-STYLES-----*/
 html
 { height: 100%;
 width: full;}
@@ -66,24 +80,6 @@ a, a:hover
 text-decoration: underline;
 color: #009FBC;}
 
-/*----misc end----*/
-
-
-
-/* RED LINES*/
-.red-top, .red-bot{
-  width: 100%;
-        position: fixed;        
-        background: #B81633;
-        padding: 3px 0;
-        margin-left: 260px;
-}
-.red-top{
-  top: 0;
-}
-.red-bot{
-  bottom: 0;
-}    
 
 
 /*WRAPPER & CONTAINER*/
@@ -133,7 +129,8 @@ color: #009FBC;}
     margin-bottom: 12px;
     text-transform:capitalize;
   }
-  
+/*-------------*/
+
   .fotoAkun{
     width: 200px;
     background-color: transparent;
@@ -169,32 +166,13 @@ color: #009FBC;}
     display: inline-block;
   }
 
-  .left{
-    float: left;
-  }
-
-  .half{
-    width: 340px;
-    display: inline-block;
-    padding-left: 28px;
-    padding-right: 28px;
-    background: rgba(255, 255, 255, 0.05);
-  }
-
   .box-img{
     height: 100px;
     width: auto;
     display: inline-block;
   }
 
-  .bg{
-    background: rgba(255, 255, 255, 0.05);
-  }
-
-  .text{
-    text-align: left;
-  }
-
+  /*--------CARD----------*/
   .card{
     height: 150px;
     width: 360px;
@@ -225,6 +203,8 @@ color: #009FBC;}
 
   }
 
+
+  /*-----FORUM LIST------*/
 .list{
   width: auto;
   background-color: transparent;
@@ -245,17 +225,15 @@ color: #009FBC;}
   margin-bottom: 10px;
 }
 
-
 .intro{
   padding: 18px;
   margin-bottom: 20px;
-
   width: 800px;
 }
 
 
 
-/*---------------sidebar-right----------------------*/
+/*---------------SIDEBAR-RIGHT----------------------*/
 .container-right{
   background-color: transparent;
   width: 260px;
@@ -304,12 +282,9 @@ color: #009FBC;}
   background: rgba(255, 255, 255, 0.10);
 }
 
-/*----sidebar end----*/
+/*----SIDEBAR-RIGHT END----*/
 
-
-
- 
-
+/*-------BUTTON--------*/
   button {
     background-color: rgb(65, 193, 202);
     color: #f1f3f6;
@@ -381,14 +356,11 @@ color: #009FBC;}
   .registerbtn:hover {
     opacity: 1;
   }
+/*---------------*/
 
-  hr {
-    border: 1px solid #555;
-    margin-bottom: 25px;
-  }
 
   
-
+/*-------THREAD--------*/
   .threadCreate{
     text-align: left;
     padding: 20px;
@@ -425,100 +397,95 @@ color: #009FBC;}
     margin-bottom: 30px;
   }
 
-  .forum-stat{
+  /*------THREAD-STAT------*/
+  .thread-stat{
     display: flex;
     flex-direction: column;
     padding: 20px;
   }
 
-  .forum-stat img{
+  .thread-stat img{
     width: 100px;
     border-radius: 10px;
+    margin: auto;
+    margin-top: 0px;
   }
-
 
   .img-thread{
     width: 100px;
   }
 
-
-  /*-----rate-----*/
-  .rate{
-    width: 100px;
+/*------like------*/
+  .like{
+    margin: auto;
+    margin-bottom: 0px;
+    width: wrap;
     height: wrap;
-    background-color:;
-    padding: 20px 0 20px 0;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px 10px;
+    border-radius: 10px;
   }
-
-  .rate h1{
-    font-size: 200%;
-  }
-
-  .rate-up{
+  .like img{
     width: 35px;
+    transition: .1s;
+    cursor: pointer;
   }
-
-  .rate-down{
-    width: 35px;
+  .like img:active{
+    transform: scale(1.6) rotate(-4deg);
   }
- 
-
-
-  .fav{
-    width: 100px;
-    background-color:;
-    padding: 10px 0 10px 0;
-  }
-
-  .fav img{
-    width: 35px;
-  }
-  .fav h2{
+  .like h2{
     font-size: 120%;
-    color: orangered;
+    color: red;
+    padding-bottom: 0px;
   }
 
 
-
-  .komentar{
-    width: 100px;
-    padding: 10px 0 10px 0;
-    font-size: 120%;
-    
+  /*------comment-count------*/
+  .comment-count{
+    margin: auto;
+    margin-bottom: 0px;
+    width: wrap;
+    height: wrap;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px 10px;
+    border-radius: 10px;
+  }
+  .comment-count h2{
+    padding: 0px;
   }
 
+  .comment-count h1{
+    padding: 0px;
+  }
+/*-----------THREAD-STAT END------------*/
 
-
-  .forum-main{
+/*------thread-main------*/
+  .thread-main{
     display: flex;
     flex-direction: column;
     text-align: left;
     padding: 20px;
   }
-
-  .forum-main hr{
+  .thread-main hr{
     border: 2px solid;
     opacity: 0.1;
   }
-
-  .forum-main text > p{
-    text-align: justify;
+  .thread-main text > p{
+    text-align: left;
     font-size: 80%;
     line-height: 1.6;
+    padding-right: 20px;
   }
-
-  .forum-main h1{
+  .thread-main h1{
     font-size: 140%
   }
 
-
-
+/*------katergori------*/
   .kategori{
     display: flex;
     padding-bottom: 5px;
   }
-
-  .kat{
+  .kategori-box{
     background-color: #B81633;
     text-transform: uppercase;
     font-weight: bold;
@@ -526,44 +493,50 @@ color: #009FBC;}
     padding: 5px 10px;
     margin-right: 10px;
     border-radius:3px;
+    cursor: pointer;
   }
 
-
-
-  .bagi-ubah{
+/*------share-edit------*/
+  .share-edit{
     display: inline-flex;
-    padding: 10px 10px 20px 0;
-
   }
-
-  .bagi-ubah img{
+  .share-edit img{
     width: 35px;
     height: 35px;
+    cursor: pointer;
+  }
+  .share-edit h2{
+    padding: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  .share{
+    display: inline-flex;
+    padding: 10px 10px 20px 0;
+  }
+  #share-drop{
+    background: rgba(255, 255, 255, 0.05);
+  }
+  .share-drop{
+    width: wrap;
+    height: wrap;
+    font-size: 70%;
+    margin: auto;
+    margin-left: 0px;
+  }
+ 
+  .edit{
+    display: inline-flex;
+    padding: 10px 10px 20px 0;
   }
 
-  .bagi-ubah h2{
-    padding: 5px 15px 5px 5px;
-   
-  }
 
-
-  .flex{
-    display: flex;
-  }
-
-  .flex-row{
-    display: flex;
-    flex-direction: column;
-    
-  }
-
-  
-
+/*------COMMENT-LIST---------*/
  .comment-list{
    padding: 20px;
    text-align: left;
    display: flex;
-   margin-bottom: 15px;
+   margin-bottom: 12px;
  }
 
  .comment-list img{
@@ -583,16 +556,13 @@ color: #009FBC;}
   padding: 10px;
  }
 
- .kiri{
-  text-align: left;
- }
-
- .thread-komentar{
-    height: 120px;
-    width: 100%;
-    min-height: 120px;
+ .comment textarea{
+    min-height: 90px;
+    max-height: 140px;
     min-width: 100%;
     max-width: 100%;
+    width: 100%;
+    height: 120px;
     padding: 12px 0  12px 8px;
     margin-bottom: 16px;
     margin-top: 8px;
@@ -607,17 +577,58 @@ color: #009FBC;}
     font-family: inherit;
   }
  
-  .kolom-komentar{
-    padding: 20px;
+  .comment{
+    padding: 10px 20px 0px 20px;
     display: flex;
+    width: 100%;
   }
 
   .kotak{
     width: 75%;
   }
 
-  .kolom-komentar button{
+  .comment button{
     width: 100px;
     height: 60px;
     margin: auto;
   }
+
+
+  /*----MISC----*/
+.flex{
+  display: flex;
+}
+.flex-row{
+  display: flex;
+  flex-direction: column;
+}
+
+.left{
+  float: left;
+}
+
+.half{
+  width: 340px;
+  display: inline-block;
+  padding-left: 28px;
+  padding-right: 28px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.bg{
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.text{
+  text-align: left;
+}
+
+hr {
+  border: 1px solid #555;
+  margin-bottom: 25px;
+}
+
+.kiri{
+  text-align: left;
+ }
+
