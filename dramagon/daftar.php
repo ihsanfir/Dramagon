@@ -56,10 +56,10 @@ if( isset($_POST["daftar"])) {
                   </a>
                 </strong>
               </span>
-              <span class="user-role">Administrator</span>
+              <span class="user-role">Pengguna</span>
               <span class="user-status">
                 <i class="fa fa-circle"></i>
-                <span>Online</span>
+                <span>Offline</span>
               </span>
             </div>
           </div>

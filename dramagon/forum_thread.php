@@ -7,8 +7,11 @@ if ( !isset($_SESSION["username"]) ) {
   exit;
 }
 
+$uname = $_SESSION["username"];
 $id_forum = $_GET["id_forum"];
 $res = mysqli_query($conn, "SELECT * FROM forum WHERE id_forum = $id_forum") or die(mysqli_error());
+$comment = mysqli_query($conn, "SELECT * FROM pengguna WHERE username = '$uname'") or die(mysqli_error());
+$hasil_comment = mysqli_fetch_array($comment);
 $hasil = mysqli_fetch_array($res);
 
 if ( isset($_POST["kirim"]) ) {
@@ -206,8 +209,8 @@ if ( isset($_POST["kirim"]) ) {
             <div class="kotak">
               <h1>Komentar</h1>
               <input type="hidden" name="id_forum" value="<?= $hasil["id_forum"]; ?>">
-              <input type="hidden" name="id_pengguna" value="<?=  $hasil["id_pengguna"]; ?>">
-              <input type="hidden" name="nama" value="<?=  $hasil["nama"]; ?>">
+              <input type="hidden" name="id_pengguna" value="<?=  $hasil_comment["id_pengguna"]; ?>">
+              <input type="hidden" name="nama" value="<?=  $hasil_comment["nama"]; ?>">
               <textarea class="thread-komentar" placeholder="Isi komentar kamu disini..." name="isi_komentar"></textarea>
             </div>
             <button type="submit" name="kirim">
