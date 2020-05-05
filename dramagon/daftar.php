@@ -51,8 +51,8 @@ if( isset($_POST["daftar"])) {
             <div class="user-info">
               <span class="user-name">
                 <strong>
-                  <a href="daftar.html">
-                    Masuk / Daftar
+                  <a href="masuk.php">
+                    Masuk
                   </a>
                 </strong>
               </span>
@@ -81,7 +81,7 @@ if( isset($_POST["daftar"])) {
               </li>
   
               <li class="sidebar-list">
-                <a href="index.html">
+                <a href="index.php">
                   <span>Beranda</span>
                 </a>
               </li>
@@ -99,7 +99,7 @@ if( isset($_POST["daftar"])) {
               </li>
               
               <li class="sidebar-list">
-                <a href="#">
+                <a href="forum_list.php">
                   <span>Forum</span>
                 </a>
               </li>
@@ -153,7 +153,7 @@ if( isset($_POST["daftar"])) {
             <p>
               Sudah punya akun Magons?
             </p>
-            <a href="masuk.html">
+            <a href="masuk.php">
               Klik disini!
             </a>
             </div>

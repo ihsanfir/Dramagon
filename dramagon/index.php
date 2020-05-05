@@ -50,7 +50,7 @@ if ( !isset($_SESSION["username"]) ) {
               }
               else {
                 echo "<strong>";
-                echo $_SESSION["username"];
+                echo "<a href='akun.php'>" . $_SESSION["username"] . "</a>";
                 echo "</strong>";
               }
               ?>
@@ -88,7 +88,7 @@ if ( !isset($_SESSION["username"]) ) {
             </li>
 
             <li class="sidebar-list">
-              <a href="index.html">
+              <a href="index.php">
                 <span>Beranda</span>
               </a>
             </li>
@@ -106,7 +106,7 @@ if ( !isset($_SESSION["username"]) ) {
             </li>
             
             <li class="sidebar-list">
-              <a href="#">
+              <a href="forum_list.php">
                 <span>Forum</span>
               </a>
             </li>
@@ -137,13 +137,13 @@ if ( !isset($_SESSION["username"]) ) {
           </header>
           <div class="container second">
             <div class="container promosi">
-              <img class="box-img" src="/img/banner1.jpg" alt="banner1">
+              <img class="box-img" src="../img/banner1.jpg" alt="banner1">
             </div>
             <div class="container promosi half">
-              <img class="box-img" src="/img/banner2.jpg" alt="banner2">
+              <img class="box-img" src="../img/banner2.jpg" alt="banner2">
             </div>
             <div class="container promosi half">
-              <img class="box-img" src="/img/kotak.jpg" alt="kotak">
+              <img class="box-img" src="../img/kotak.jpg" alt="kotak">
             </div>
           </div>
         </div>
