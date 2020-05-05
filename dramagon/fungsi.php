@@ -33,7 +33,7 @@ function daftar($data) {
     $password = password_hash($password, PASSWORD_DEFAULT);
 
     // tambahkan userbaru ke database
-    mysqli_query($conn, "INSERT INTO pengguna VALUES('','$username','$password', '','$email','','','')");
+    mysqli_query($conn, "INSERT INTO pengguna VALUES('','$username','$password', '$username','$email','','','')");
     
     return mysqli_affected_rows($conn);
 }
@@ -59,7 +59,7 @@ function masuk($data) {
 function edit($data) {
     global $conn;
 
-    $id = $data["id"];
+    $id_pengguna = $data["id_pengguna"];
     $username = stripslashes($data["username"]);
     $nama = $data["nama"];
     $email = $data["email"];
@@ -92,9 +92,52 @@ function edit($data) {
             telpon = '$telpon',
             jenkel = '$jenkel',
             tanggalLahir = '$tanggalLahir'
-        WHERE id = $id");
+        WHERE id_pengguna = $id_pengguna");
     
     return 1;
+}
+
+function buatForum($data) {
+    global $conn;
+
+    //create and issue the first query
+    $judul_forum = $data["judul_forum"];
+    $isi_forum = $data["isi_forum"];
+    $tanggal_forum = date('Y-m-d H:i:s');
+    $id_pengguna = $data["id_pengguna"];
+    $nama = $data["nama"];
+    $tambah_forum = "INSERT INTO forum VALUES(
+                    '',
+                    '$judul_forum',
+                    '$isi_forum',
+                    '$tanggal_forum',
+                    '$id_pengguna',
+                    '$nama',
+                    '0'
+                    )";
+    mysqli_query($conn, $tambah_forum) or die(mysqli_error());
+
+    return mysqli_affected_rows($conn);
+}
+
+function tambahKomentar($data) {
+    global $conn;
+
+    $id_forum = $data["id_forum"];
+    $id_pengguna = $data["id_pengguna"];
+    $tanggal_komentar = date('Y-m-d H:i:s');
+    $nama = $data["nama"];
+    $isi_komentar = $data["isi_komentar"];
+
+    $tambah_komentar = "INSERT INTO komentar VALUES(
+                        '',
+                        '$id_forum',
+                        '$id_pengguna',
+                        '$isi_komentar',
+                        '$tanggal_komentar',
+                        '$nama')";
+    mysqli_query($conn, $tambah_komentar) or die(mysqli_error());
+    return mysqli_affected_rows($conn);
 }
 
 ?>

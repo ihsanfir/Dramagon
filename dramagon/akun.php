@@ -66,7 +66,7 @@ $pengguna = mysqli_fetch_array($query);
               }
               else {
                 echo "<strong>";
-                echo $_SESSION["username"];
+                echo "<a href='akun.php'>" . $_SESSION["username"] . "</a>";
                 echo "</strong>";
               }
               ?>
@@ -104,7 +104,7 @@ $pengguna = mysqli_fetch_array($query);
             </li>
 
             <li class="sidebar-list">
-              <a href="index.html">
+              <a href="index.php">
                 <span>Beranda</span>
               </a>
             </li>
@@ -122,7 +122,7 @@ $pengguna = mysqli_fetch_array($query);
             </li>
             
             <li class="sidebar-list">
-              <a href="#">
+              <a href="forum_list.php">
                 <span>Forum</span>
               </a>
             </li>
@@ -156,7 +156,7 @@ $pengguna = mysqli_fetch_array($query);
                     Isi data akun Magons kamu dibawah ya!</h1>
               </div>
             <form action ="" method="post">
-                <input type="hidden" name="id" value="<?= $pengguna["id"]; ?>">
+                <input type="hidden" name="id_pengguna" value="<?= $pengguna["id_pengguna"]; ?>">
 
                 <label for="username">Username Magons</label><br>
                 <input type="text" id="username" name="username" value="<?= $pengguna["username"]; ?>">
@@ -171,7 +171,11 @@ $pengguna = mysqli_fetch_array($query);
                 <input type="text" id="notelp" name="notelp" value="<?= $pengguna["telpon"]; ?>">
                 
                 <h1>Jenis Kelamin</h1>
-                <input type="radio" id="laki" name="jk" value="laki" <?php if($pengguna["jenkel"]=='laki') {echo "checked"; }?> >
+                <input type="radio" id="laki" name="jk" value="laki" <?php 
+                if ( !isset($pengguna["jenkel"]) ) {
+                  echo "checked";
+                }
+                else if($pengguna["jenkel"]=='laki') {echo "checked"; }?> >
                 <label for="male">Laki-laki</label>
                 <input type="radio" id="perempuan" name="jk" value="perempuan" <?php if($pengguna["jenkel"]=='perempuan') {echo "checked"; }?> >
                 <label for="perempuan">Perempuan</label><br>
