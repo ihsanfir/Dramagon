@@ -660,3 +660,62 @@ hr {
 }
 
 .pagination a:hover:not(.active) {background-color: rgba(255, 255, 255, 0.1);}
+
+
+ /*-----InformasiDramagon-----*/
+
+  .infoCreate{
+    text-align: left;
+    padding: 20px;
+  }
+
+  textarea#styled {
+    height: 320px;
+    width: 100%;
+    min-height: 120px;
+    min-width: 100%;
+    max-width: 100%;
+    padding: 12px 0  12px 8px;
+    margin-bottom: -20px;
+    margin-top: 8px;
+    border-radius: 5px;
+    box-shadow:inset 4px 6px 10px -4px rgba(0,0,0,0.3), 0 1px 1px -1px rgba(255,255,255,0.3);
+    background:rgba(0,0,0,0.2);
+    border:1px solid rgba(0,0,0,1);
+    color:#6E6E6E;
+    text-shadow:#000 0px 1px 5px;
+    font-size: 18px;
+    overflow: auto;
+    font-family: inherit;
+  }
+
+  .infoCreate button{
+    width: 120px;
+    float: right;
+    margin-bottom: 20px;
+  }
+
+  .infoImage{
+    text-align: left;
+    padding: 20px;
+    margin-top: -20px;
+  }
+
+
+  /*------THREAD-STAT------*/
+  .thread-stat{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .thread-stat img{
+    width: 100px;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 0px;
+  }
+
+  .img-thread{
+    width: 100px;
+  }
