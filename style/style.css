@@ -108,7 +108,7 @@ color: #009FBC;}
   }
 
   .first{
-    margin-bottom: 32px;
+    margin-bottom: 16px;
     display: inline-block;
   }
 
@@ -223,6 +223,11 @@ color: #009FBC;}
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   padding: 18px;
   margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.item:hover{
+  background: rgba(255, 255, 255, 0.10);
 }
 
 .intro{
@@ -632,3 +637,26 @@ hr {
   text-align: left;
  }
 
+
+ /*-----PAGINATION-----*/
+
+.container .pagi{
+  background-color:;
+  height: 100%;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+ .pagination a {
+  color: #f1f3f6;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+}
+
+.pagination a.active {
+  background-color:  rgb(65, 193, 202);
+  color: #f1f3f6;
+}
+
+.pagination a:hover:not(.active) {background-color: rgba(255, 255, 255, 0.1);}
