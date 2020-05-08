@@ -128,7 +128,15 @@ color: #009FBC;}
     text-align: left;
     margin-bottom: 12px;
     text-transform:capitalize;
+    display: flex;
   }
+
+  .container header h1{
+    margin: auto;
+    margin-left: 0;
+    margin-right: 0;;
+  }
+
 /*-------------*/
 
   .fotoAkun{
@@ -216,24 +224,116 @@ color: #009FBC;}
   text-align: left;
   flex-direction: column;
   list-style-type: none;
+  margin-bottom: 10px;
 }
 
+/*----------item--------------*/
 .item{
   background: rgba(255, 255, 255, 0.05);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  padding: 18px;
+  padding: 10px 18px;
   margin-bottom: 10px;
   cursor: pointer;
+}
+.item a{
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
 }
 
 .item:hover{
   background: rgba(255, 255, 255, 0.10);
 }
+.item .title{
+  background-color: ;
+  margin: auto;
+  margin-right: 10px;
+  margin-left: 0;
+  width: 350px;
+}
+.item .title h1{
+  margin: auto;
+  font-size: 100%;
+}
 
-.intro{
-  padding: 18px;
-  margin-bottom: 20px;
-  width: 800px;
+.item-stat{
+  display: flex;
+  flex-direction: row;
+  width: wrap;
+  height: wrap;
+  margin: auto;
+  margin-right: 0px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+.item-stat hr{
+  transform: rotate(90deg);
+  width: fit-content;
+}
+
+.item-stat > .like{
+  margin: auto;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: ;
+}
+.item-stat .like img{
+  width: 30px;
+  transition: .1s;
+  cursor: pointer;
+  margin: auto;
+}
+.item-stat .like img:active{
+  transform: scale(1.6) rotate(-4deg);
+}
+.item-stat .like h1{
+  padding-top: 5px;
+  margin: auto;
+  color: inherit;
+}
+
+.item-stat > .comment-count{
+  margin: auto;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: ;
+}
+.item-stat .comment-count img{
+  width: 30px;
+  transition: .1s;
+  cursor: pointer;
+  margin: auto;
+}
+.item-stat .comment-count h1{
+  padding-top: 5px;
+  margin: auto;
+}
+
+.item-stat .details{
+  margin: auto;
+  height: 100%;
+  display: flex;
+  padding: 0 10px;
+  background-color: ;
+}
+.details img{
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  margin: auto;
+}
+.item-stat .details > div{
+  margin: auto;
+  padding-left: 10px;
+  padding-top: 8px;
+  font-size: 70%;
 }
 
 
@@ -306,6 +406,15 @@ color: #009FBC;}
     opacity: 0.8;
   }
 
+  .bungkus-button{
+    padding: 14px 20px;
+  }
+
+  .kirim{
+    margin: auto;
+    margin-right: 0;
+  }
+
 
   input[type=text], input[type=password], input[type=date] {
     width: 100%;
@@ -361,6 +470,23 @@ color: #009FBC;}
   .registerbtn:hover {
     opacity: 1;
   }
+
+  .add-photo{
+    background-color: #FC573B;
+    display: flex;
+  }
+  .add-photo img{
+    width: 30px;
+    margin: auto;
+    margin-right: 15px;
+  }
+  .add-photo h1{
+    margin: auto;
+    text-decoration: none;
+  }
+
+
+  
 /*---------------*/
 
 
@@ -368,7 +494,7 @@ color: #009FBC;}
 /*-------THREAD--------*/
   .threadCreate{
     text-align: left;
-    padding: 20px;
+    padding: 10px 30px 0px 20px;
   }
 
   textarea#styled {
@@ -407,6 +533,7 @@ color: #009FBC;}
     display: flex;
     flex-direction: column;
     padding: 20px;
+    background-color: ;
   }
 
   .thread-stat img{
@@ -416,19 +543,17 @@ color: #009FBC;}
     margin-top: 0px;
   }
 
-  .img-thread{
-    width: 100px;
-  }
-
 /*------like------*/
-  .like{
+  .thread-stat > .like{
     margin: auto;
     margin-bottom: 0px;
     width: wrap;
     height: wrap;
     background: rgba(255, 255, 255, 0.05);
-    padding: 20px 10px;
     border-radius: 10px;
+    padding: 10px 10px;
+    display: flex;
+    flex-direction: column;
   }
   .like img{
     width: 35px;
@@ -438,16 +563,17 @@ color: #009FBC;}
   .like img:active{
     transform: scale(1.6) rotate(-4deg);
   }
-  .like h2{
+  .like h1{
+    padding-top: 10px;
     font-size: 120%;
-    color: red;
-    padding-bottom: 0px;
   }
 
 
+
   /*------comment-count------*/
-  .comment-count{
+  .thread-stat > .comment-count{
     margin: auto;
+    margin-top: 30px;
     margin-bottom: 0px;
     width: wrap;
     height: wrap;
@@ -455,12 +581,12 @@ color: #009FBC;}
     padding: 10px 10px;
     border-radius: 10px;
   }
-  .comment-count h2{
-    padding: 0px;
+  .comment-count img{
+    width: 35px;
   }
 
   .comment-count h1{
-    padding: 0px;
+    padding-top: 10px;
   }
 /*-----------THREAD-STAT END------------*/
 
@@ -486,24 +612,67 @@ color: #009FBC;}
   }
 
 /*------katergori------*/
+.selector{
+  height: wrap;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.selector header{
+  background: none;
+  padding: 10px 20px;
+  width: wrap;
+  height: wrap;
+  margin: auto;
+  margin-right: 0;
+}
+
+.selector select{
+  background-color: inherit;
+  color: #f1f3f6;
+  padding-left: 12px;
+  width: 250px;
+  border: none;
+  font-size: 20px;
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+  cursor: pointer;
+  padding: 10px;
+}
+.selector select option{
+  background-color: #B81633;
+  color: #f1f3f6;
+}
+
+
   .kategori{
     display: flex;
-    padding-bottom: 5px;
   }
-  .kategori-box{
+  .kategori box{
     background-color: #B81633;
     text-transform: uppercase;
-    font-weight: bold;
-    font-size: 80%;
     padding: 5px 10px;
+    margin: auto;
     margin-right: 10px;
+    margin-left: 0px;
     border-radius:3px;
     cursor: pointer;
   }
+  .kategori box h1{
+    margin: auto;
+    font-weight: bold;
+    font-size: 80%;
+  }
 
+
+
+ 
 /*------share-edit------*/
   .share-edit{
     display: inline-flex;
+    padding: 10px;
+    padding-left: 0px;
+    padding-bottom: 0;
   }
   .share-edit img{
     width: 35px;
@@ -637,6 +806,21 @@ hr {
   text-align: left;
  }
 
+ .redDec{
+   background: #B81633;
+   width: 5px;
+   height: 30px;
+   margin: auto;
+   margin-left: 0;
+   margin-right: 10px;
+ }
+
+ .intro{
+  padding: 18px;
+  margin-bottom: 20px;
+  width: 800px;
+}
+
 
  /*-----PAGINATION-----*/
 
@@ -660,3 +844,18 @@ hr {
 }
 
 .pagination a:hover:not(.active) {background-color: rgba(255, 255, 255, 0.1);}
+
+.flex-container {
+  display: flex;
+  align-items: stretch;
+  background-color: #f1f1f1;
+}
+
+.flex-container > div {
+  background-color: DodgerBlue;
+  color: white;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}

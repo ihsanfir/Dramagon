@@ -77,7 +77,7 @@
             </li>
             
             <li class="sidebar-list">
-              <a href="#">
+              <a href="forumList.html">
                 <span>Forum</span>
               </a>
             </li>
@@ -100,30 +100,53 @@
           <header >
             <h1>Buat Thread</h1>
           </header>
-          <div class="container second bg">
 
+          <div class="container second bg">
             <form class="threadCreate">
                 <input type="text" name="judul" placeholder="Isi judul disini...">
                 <br>
                 <textarea id="styled" placeholder="Isi tulisan kamu disini..."></textarea>
-
-                
             </form>
-            <!-- sementara diluar form-->
-            <a href="forumPage.html">
-              <button>
-                kirim
-              </button>
-            </a>
-            
+
+            <div class="flex">
+              <div class="bungkus-button">
+                  <button class="add-photo">
+                    <img src="\img\add-image.png" >
+                    <h1>Tambah foto</h1>
+                  </button>
+              </div>
+
+              <div class="bungkus-button kirim">
+                <a href="forumPage.html">
+                  <button>
+                    kirim
+                  </button>
+                </a>
+              </div>
+            </div>
+
           </div>
+          <!--container second bg end-->
+
         </div>
-        <!--container1-->
+        <!--container first-->
         
       </div>
       <!--container-->
         <div class="container-right">
-       container nganggur
+
+          <div class="selector bg">
+            <header>
+              Pilih Kategori
+            </header>
+            <select class="category">
+              <option value="semua">Semua</option>
+              <option value="umum">Umum</option>
+              <option value="makanan">Makanan</option>
+              <option value="hobi">Hobi</option>
+            </select>
+          </div>
+
         </div>
           <!--container-right end-->
 
