@@ -414,6 +414,10 @@ color: #009FBC;}
     margin: auto;
     margin-right: 0;
   }
+  .kirim button{
+    margin: auto;
+    margin-top: 10px;
+  }
 
 
   input[type=text], input[type=password], input[type=date] {
@@ -472,17 +476,21 @@ color: #009FBC;}
   }
 
   .add-photo{
+    margin: auto;
+    margin-top: 10px;
     background-color: #FC573B;
     display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    padding: 10px;
   }
   .add-photo img{
     width: 30px;
     margin: auto;
     margin-right: 15px;
   }
-  .add-photo h1{
+  .add-photo input[type=file]{
     margin: auto;
-    text-decoration: none;
   }
 
 
