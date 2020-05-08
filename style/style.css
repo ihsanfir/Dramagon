@@ -247,7 +247,7 @@ color: #009FBC;}
   background: rgba(255, 255, 255, 0.10);
 }
 .item .title{
-  background-color: ;
+
   margin: auto;
   margin-right: 10px;
   margin-left: 0;
@@ -280,7 +280,7 @@ color: #009FBC;}
   padding-right: 20px;
   display: flex;
   flex-direction: column;
-  background-color: ;
+
 }
 .item-stat .like img{
   width: 30px;
@@ -303,7 +303,7 @@ color: #009FBC;}
   display: flex;
   flex-direction: column;
   text-align: center;
-  background-color: ;
+
 }
 .item-stat .comment-count img{
   width: 30px;
@@ -321,7 +321,7 @@ color: #009FBC;}
   height: 100%;
   display: flex;
   padding: 0 10px;
-  background-color: ;
+  
 }
 .details img{
   width: 50px;
@@ -533,7 +533,7 @@ color: #009FBC;}
     display: flex;
     flex-direction: column;
     padding: 20px;
-    background-color: ;
+   
   }
 
   .thread-stat img{
@@ -825,7 +825,7 @@ hr {
  /*-----PAGINATION-----*/
 
 .container .pagi{
-  background-color:;
+
   height: 100%;
   width: 100%;
   margin-bottom: 40px;
@@ -845,6 +845,7 @@ hr {
 
 .pagination a:hover:not(.active) {background-color: rgba(255, 255, 255, 0.1);}
 
+/*HEAD*/
 .flex-container {
   display: flex;
   align-items: stretch;
@@ -859,3 +860,63 @@ hr {
   line-height: 75px;
   font-size: 30px;
 }
+
+
+ /*-----InformasiDramagon-----*/
+
+  .infoCreate{
+    text-align: left;
+    padding: 20px;
+  }
+
+  textarea#styled {
+    height: 320px;
+    width: 100%;
+    min-height: 120px;
+    min-width: 100%;
+    max-width: 100%;
+    padding: 12px 0  12px 8px;
+    margin-bottom: -20px;
+    margin-top: 8px;
+    border-radius: 5px;
+    box-shadow:inset 4px 6px 10px -4px rgba(0,0,0,0.3), 0 1px 1px -1px rgba(255,255,255,0.3);
+    background:rgba(0,0,0,0.2);
+    border:1px solid rgba(0,0,0,1);
+    color:#6E6E6E;
+    text-shadow:#000 0px 1px 5px;
+    font-size: 18px;
+    overflow: auto;
+    font-family: inherit;
+  }
+
+  .infoCreate button{
+    width: 120px;
+    float: right;
+    margin-bottom: 20px;
+  }
+
+  .infoImage{
+    text-align: left;
+    padding: 20px;
+    margin-top: -20px;
+  }
+
+
+  /*------THREAD-STAT------*/
+  .thread-stat{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .thread-stat img{
+    width: 100px;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 0px;
+  }
+
+  .img-thread{
+    width: 100px;
+  }
+/*0ee6e513963f4154fb259009a26819efdf16ce31*/
