@@ -541,20 +541,19 @@ color: #009FBC;}
     display: flex;
     flex-direction: column;
     padding: 20px;
-   
   }
 
   .thread-stat img{
     width: 100px;
     border-radius: 10px;
-    margin: auto;
-    margin-top: 0px;
   }
+
 
 /*------like------*/
   .thread-stat > .like{
     margin: auto;
-    margin-bottom: 0px;
+    margin-bottom: 20px;
+    margin-top: 0px;
     width: wrap;
     height: wrap;
     background: rgba(255, 255, 255, 0.05);
@@ -563,7 +562,7 @@ color: #009FBC;}
     display: flex;
     flex-direction: column;
   }
-  .like img{
+  .thread-stat .like img{
     width: 35px;
     transition: .1s;
     cursor: pointer;
@@ -576,20 +575,17 @@ color: #009FBC;}
     font-size: 120%;
   }
 
-
-
   /*------comment-count------*/
   .thread-stat > .comment-count{
     margin: auto;
-    margin-top: 30px;
-    margin-bottom: 0px;
+    margin-top: 0px;
     width: wrap;
     height: wrap;
     background: rgba(255, 255, 255, 0.05);
     padding: 10px 10px;
     border-radius: 10px;
   }
-  .comment-count img{
+  .thread-stat > .comment-count img{
     width: 35px;
   }
 
@@ -780,7 +776,7 @@ color: #009FBC;}
 .flex{
   display: flex;
 }
-.flex-row{
+.flex-col{
   display: flex;
   flex-direction: column;
 }
@@ -813,6 +809,8 @@ hr {
 .kiri{
   text-align: left;
  }
+
+
 
  .redDec{
    background: #B81633;
@@ -927,4 +925,31 @@ hr {
   .img-thread{
     width: 100px;
   }
+
+
+  /*---THREAD-IMG-----*/
+
+.thread-img{
+  width: fit-content;
+  border-width: 10px;
+  padding-bottom: 10px;
+ 
+}
+.thread-img > img{
+  width: 200px;
+  border-radius: 5px;
+  cursor: pointer;
+} /*--CATATAN: MAU PASANG MODAL TP TERAKHIR AJA FINISHING---*/
+
+.thread-img> img:hover{
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+
+
+
+
 /*0ee6e513963f4154fb259009a26819efdf16ce31*/
