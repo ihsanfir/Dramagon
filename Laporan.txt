@@ -1,0 +1,19 @@
+Laporan ditulis di Github dengan format : 
+* Nama aplikasi
+* Nama kelompok dan anggota
+* Latar belakang
+* Tujuan
+* Ruang lingkup
+* Deskripsi perangkat lunak
+* Analisis user (user profile)
+* User story 
+* Use case diagram
+* Use case description 
+* Activity diagram
+* Gantt chart
+* ERD
+* Hasil implementasi perangkat lunak
+
+
+
+
