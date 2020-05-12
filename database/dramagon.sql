@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 05 Bulan Mei 2020 pada 16.38
+-- Waktu pembuatan: 12 Bulan Mei 2020 pada 20.04
 -- Versi server: 10.4.8-MariaDB
 -- Versi PHP: 7.3.11
 
@@ -32,10 +32,27 @@ CREATE TABLE `forum` (
   `id_forum` int(11) NOT NULL,
   `judul` varchar(50) NOT NULL,
   `isi` varchar(1000) NOT NULL,
-  `tanggal` date DEFAULT current_timestamp(),
+  `kategori` varchar(50) NOT NULL,
+  `gambar` longblob NOT NULL,
+  `tanggal` date DEFAULT NULL,
   `id_pengguna` int(11) NOT NULL,
-  `nama` varchar(50) NOT NULL,
   `suka` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `informasi`
+--
+
+CREATE TABLE `informasi` (
+  `id_informasi` int(11) NOT NULL,
+  `judul_informasi` varchar(50) NOT NULL,
+  `isi_informasi` longtext NOT NULL,
+  `tanggal_informasi` date NOT NULL,
+  `gambar_informasi` longblob NOT NULL,
+  `status` varchar(20) NOT NULL,
+  `id_pengguna` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -49,8 +66,7 @@ CREATE TABLE `komentar` (
   `id_forum` int(11) NOT NULL,
   `id_pengguna` int(11) NOT NULL,
   `isi` varchar(1000) NOT NULL,
-  `tanggal` date NOT NULL DEFAULT current_timestamp(),
-  `nama` varchar(50) NOT NULL
+  `tanggal` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -61,9 +77,10 @@ CREATE TABLE `komentar` (
 
 CREATE TABLE `pengguna` (
   `id_pengguna` int(11) NOT NULL,
-  `username` varchar(20) NOT NULL,
+  `username` varchar(10) NOT NULL,
   `password` varchar(300) NOT NULL,
   `nama` varchar(50) NOT NULL,
+  `gambar` longblob NOT NULL,
   `email` varchar(100) NOT NULL,
   `telpon` varchar(13) NOT NULL,
   `jenkel` varchar(20) NOT NULL,
@@ -79,6 +96,13 @@ CREATE TABLE `pengguna` (
 --
 ALTER TABLE `forum`
   ADD PRIMARY KEY (`id_forum`),
+  ADD KEY `id_pengguna` (`id_pengguna`);
+
+--
+-- Indeks untuk tabel `informasi`
+--
+ALTER TABLE `informasi`
+  ADD PRIMARY KEY (`id_informasi`),
   ADD KEY `id_pengguna` (`id_pengguna`);
 
 --
@@ -103,19 +127,25 @@ ALTER TABLE `pengguna`
 -- AUTO_INCREMENT untuk tabel `forum`
 --
 ALTER TABLE `forum`
-  MODIFY `id_forum` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_forum` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `informasi`
+--
+ALTER TABLE `informasi`
+  MODIFY `id_informasi` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `komentar`
 --
 ALTER TABLE `komentar`
-  MODIFY `id_komentar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_komentar` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `pengguna`
 --
 ALTER TABLE `pengguna`
-  MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
@@ -126,6 +156,12 @@ ALTER TABLE `pengguna`
 --
 ALTER TABLE `forum`
   ADD CONSTRAINT `forum_ibfk_1` FOREIGN KEY (`id_pengguna`) REFERENCES `pengguna` (`id_pengguna`);
+
+--
+-- Ketidakleluasaan untuk tabel `informasi`
+--
+ALTER TABLE `informasi`
+  ADD CONSTRAINT `informasi_ibfk_1` FOREIGN KEY (`id_pengguna`) REFERENCES `pengguna` (`id_pengguna`);
 
 --
 -- Ketidakleluasaan untuk tabel `komentar`
