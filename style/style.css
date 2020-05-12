@@ -1053,4 +1053,43 @@ hr {
 }
 
 
+/*----------listinfo--------------*/
+.listinfo{
+  width: 764px;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.listinfo a{
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.listinfo:hover{
+  background: rgba(255, 255, 255, 0.10);
+}
+
+.listinfo .title{
+
+  margin: auto;
+  margin-right: 10px;
+  margin-left: 0;
+  width: 350px;
+}
+
+.listinfo .title h1{
+  margin: auto;
+  font-size: 100%;
+}
+
 /*0ee6e513963f4154fb259009a26819efdf16ce31*/
