@@ -137,6 +137,7 @@ color: #009FBC;}
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
   }
 
 /*-------------*/
@@ -182,14 +183,13 @@ color: #009FBC;}
     display: inline-block;
   }
 
-  /*--------CARD----------*/
+  /*--------CARD-- width: 356px;--------*/
   .card{
     height: 150px;
     width: 356px;
     background: rgba(255, 255, 255, 0.05);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     text-align: left;
-    display: inline-block;
     padding: 20px;
     margin-bottom: 8px;
   }
@@ -833,7 +833,7 @@ color: #009FBC;}
 
 hr {
   border: 1px solid #555;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .kiri{
@@ -960,13 +960,17 @@ hr {
   /*---THREAD-IMG-----*/
 
 .thread-img{
-  width: fit-content;
-  border-width: 10px;
-  padding-bottom: 10px;
+  width: 100%;
+  height: 200px;
  
+  align-content: center;
+  padding: 0px 0px 20px 0;
+  
 }
 .thread-img > img{
-  width: 200px;
+
+  height: 200px;
+  width: 300px;
   border-radius: 5px;
   cursor: pointer;
 } /*--CATATAN: MAU PASANG MODAL TP TERAKHIR AJA FINISHING---*/
@@ -989,6 +993,49 @@ hr {
 }
 
 
+/*---------MODAL------*/
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #121212;
+  margin: 10% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%; /* Could be more or less, depending on screen size */
+  text-align: center;
+}
+.modal-content > img{
+  width: 500px;
+  margin: auto;
+}
+
+/* The Close Button */
+.close {
+  color: #B81633;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #f1f3f6;
+  text-decoration: none;
+  cursor: pointer;
+}
 
 
 /*0ee6e513963f4154fb259009a26819efdf16ce31*/
