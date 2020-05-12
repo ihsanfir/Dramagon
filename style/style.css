@@ -652,6 +652,9 @@ color: #009FBC;}
     border: 2px solid;
     opacity: 0.1;
   }
+  .thread-main text{
+    width: 100%;
+  }
   .thread-main text > p{
     text-align: left;
     font-size: 80%;
