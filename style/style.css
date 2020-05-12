@@ -115,16 +115,7 @@ color: #009FBC;}
     display: flex;
     flex-direction: column;
   }
-
-  .second{
-    width: 800px;
-    height: auto;
-    margin-bottom: 12px;
-    background-color: transparent;
-    display: inline-block;
-  }
-
-
+  
   .container header{
     padding: 10px 20px;
     width: wrap;
