@@ -100,19 +100,36 @@ function edit($data) {
 function buatForum($data) {
     global $conn;
 
+    $file = $_FILES['image']['tmp_name'];
+    if (!isset($file) ){
+        echo "Pilih file gambar";
+    }
+
+    else {
+        $image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
+        $image_name = addslashes($_FILES['image']['name']);
+        $image_size = getimagesize($_FILES['image']['tmp_name']);
+
+
+        if ($image_size == false) {
+            echo "File yang dipilih bukan gambar";
+        }
+    }
+    
     //create and issue the first query
     $judul_forum = $data["judul_forum"];
     $isi_forum = $data["isi_forum"];
-    $tanggal_forum = date('Y-m-d H:i:s');
+    $tanggal_forum = date('Y-m-d');
     $id_pengguna = $data["id_pengguna"];
-    $nama = $data["nama"];
+    $kategori_forum = $data["kategori"];
     $tambah_forum = "INSERT INTO forum VALUES(
                     '',
                     '$judul_forum',
                     '$isi_forum',
+                    '$kategori_forum',
+                    '$image',
                     '$tanggal_forum',
                     '$id_pengguna',
-                    '$nama',
                     '0'
                     )";
     mysqli_query($conn, $tambah_forum) or die(mysqli_error());
@@ -125,8 +142,7 @@ function tambahKomentar($data) {
 
     $id_forum = $data["id_forum"];
     $id_pengguna = $data["id_pengguna"];
-    $tanggal_komentar = date('Y-m-d H:i:s');
-    $nama = $data["nama"];
+    $tanggal_komentar = date('Y-m-d');
     $isi_komentar = $data["isi_komentar"];
 
     $tambah_komentar = "INSERT INTO komentar VALUES(
@@ -134,10 +150,102 @@ function tambahKomentar($data) {
                         '$id_forum',
                         '$id_pengguna',
                         '$isi_komentar',
-                        '$tanggal_komentar',
-                        '$nama')";
+                        '$tanggal_komentar')";
     mysqli_query($conn, $tambah_komentar) or die(mysqli_error());
     return mysqli_affected_rows($conn);
+}
+
+function buatInformasi($data) {
+    global $conn;
+
+    $file = $_FILES['image']['tmp_name'];
+    if (!isset($file) ){
+        echo "Pilih file gambar";
+    }
+
+    else {
+        $image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
+        $image_name = addslashes($_FILES['image']['name']);
+        $image_size = getimagesize($_FILES['image']['tmp_name']);
+
+
+        if ($image_size == false) {
+            echo "File yang dipilih bukan gambar";
+        }
+    }
+
+    $id_pengguna = $data["id_pengguna"];
+    $judul_info = $data["judul_info"];
+    $isi_info = $data["isi_info"];
+    $tanggal_info = date('Y-m-d');
+    $status = "moderasi";
+
+    $tambah_info = "INSERT INTO informasi VALUES(
+                    '',
+                    '$judul_info',
+                    '$isi_info',
+                    '$tanggal_info',
+                    '$image',
+                    '$status',
+                    '$id_pengguna')";
+    mysqli_query($conn, $tambah_info) or die(mysqli_error());
+    return mysqli_affected_rows($conn);
+}
+
+function gantiPass($data) {
+    global $conn;
+    $id_pengguna = $data["id_pengguna"];
+    $password = $data["passwordLama"];
+    $passBaru = $data["passwordBaru"];
+    $konfrimPass = $data["konfirmPass"];
+
+    $result = mysqli_query($conn, "SELECT * FROM pengguna WHERE id_pengguna = $id_pengguna") or die(mysqli_error());
+
+    // cek username
+    if ( mysqli_num_rows($result) === 1 ) {
+        // cek password
+        $row = mysqli_fetch_assoc($result);
+        if ( password_verify($password, $row["password"]) ) {
+           
+            // cek konfirmasi password
+            if ($passBaru !== $konfrimPass) {
+                return 0;
+            }
+
+            // enkripsi password
+            $passBaru = password_hash($passBaru, PASSWORD_DEFAULT);
+
+            mysqli_query($conn, "UPDATE pengguna SET
+                password = '$passBaru'
+            WHERE id_pengguna = $id_pengguna");
+            return 1;
+        }
+
+        else {
+            return 99;
+        }
+    }
+}
+
+function tanggal_indo($tanggal) {
+    $bulan = array (
+        1 => 'Januari',
+        'Februari',
+        'Maret',
+        'April',
+        'Mei',
+        'Juni',
+        'Juli',
+        'Agustus',
+        'September',
+        'Oktober',
+        'November',
+        'Desember'
+    );
+
+    $tgl_indo = explode('-', $tanggal);
+
+    return $tgl_indo[2] . ' ' . $bulan[(int)$tgl_indo[1]] . ' ' . $tgl_indo[0];
 }
 
 ?>

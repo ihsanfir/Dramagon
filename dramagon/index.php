@@ -1,12 +1,16 @@
 <?php 
 require 'fungsi.php';
-
 session_start();
+$uname = $_SESSION["username"];
+$query = mysqli_query($conn, "SELECT * FROM pengguna WHERE username = '$uname'");
+$pengguna = mysqli_fetch_array($query);
 if ( !isset($_SESSION["username"]) ) {
   header("Location: masuk.php");
   exit;
 }
 
+$res_forum = mysqli_query($conn, "SELECT * FROM forum ORDER BY id_forum DESC LIMIT 0, 3");
+$res_info = mysqli_query($conn, "SELECT * FROM informasi ORDER BY id_informasi DESC LIMIT 0, 4")
 
 ?>
 
@@ -16,173 +20,57 @@ if ( !isset($_SESSION["username"]) ) {
 
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../style/style.css" />
-    <link rel="stylesheet" type="text/css" href="../style/sidebar nav.css" />
+    <link rel="stylesheet" type="text/css" href="../style/style.css?v=<?= time(); ?>" />
+    <link rel="stylesheet" type="text/css" href="../style/sidebar nav.css?v=<?= time(); ?>" />
   </head>
 
 <body>
 
   <div class="red-top"></div>
-
-    <!--sidebar-->
-    <nav id="sidebar" class="sidebar-wrapper">
-      <div class="sidebar-content">
-        <div class="border">
-          <div class="sidebar-brand">
-            <a >Logo Dramagon</a>
-          </div>
-      </div>
-      <div class="border">
-        <div class="sidebar-header">
-          <div class="user-pic">
-            <img class="img-responsive img-rounded" src="../img/user.jpg"
-              alt="User picture">
-          </div>
-          <div class="user-info">
-            <span class="user-name">
-              <?php
-              if ( !isset($_SESSION["username"]) ) {
-              echo "<strong>";
-              echo "<a href='masuk.php'>
-                    Masuk / Daftar
-                    </a>";
-              echo "</strong>";
-              }
-              else {
-                echo "<strong>";
-                echo "<a href='akun.php'>" . $_SESSION["username"] . "</a>";
-                echo "</strong>";
-              }
-              ?>
-            </span>
-            <span class="user-role">
-              <?php
-              if ($_SESSION["username"] == "admin") {
-                echo "Administration";
-              }
-              else 
-                echo "Pengguna";
-              ?>
-            </span>
-            <span class="user-status">
-              <i class="fa fa-circle"></i>
-              <span>Online</span>
-            </span>
-          </div>
-        </div>
-      </div>
-        <!-- sidebar-header  -->
-        <div class="border">
-          <div class="sidebar-search">
-            <div>
-              <input type="search" placeholder="Search...">
-            </div>
-          </div>
-        </div>
-        <!-- sidebar-search  -->
-        <div class="border">
-        <div class="sidebar-menu">
-          <ul>
-            <li class="header-menu">
-              <span>Umum</span>
-            </li>
-
-            <li class="sidebar-list">
-              <a href="index.php">
-                <span>Beranda</span>
-              </a>
-            </li>
-            
-            <li class="sidebar-list">
-              <a href="#">
-                <span>Promosi</span>
-              </a>
-            </li>
-            
-            <li class="sidebar-list">
-              <a href="#">
-                <span>Informasi</span>
-              </a>
-            </li>
-            
-            <li class="sidebar-list">
-              <a href="forum_list.php">
-                <span>Forum</span>
-              </a>
-            </li>
-        
-          </ul>
-
-        </div>
-        <!-- sidebar-menu  -->
-        </div>
-
-      </div>
-      <!-- sidebar-content  -->
-    
-    </nav>
-    <!-- sidebar-wrapper  -->
-  
-  
-    </nav>
-    
-
-
-
+  <?php include 'sidebar.php'; ?>
     <div class="wrapper">
       <div class="container giant">
         <div class="container first">
           <header >
-            <h1>Promosi</h1>
+            <div class="redDec"></div>
+            <h1>Dramagon</h1>
           </header>
-          <div class="container second">
-            <div class="container promosi">
-              <img class="box-img" src="../img/banner1.jpg" alt="banner1">
-            </div>
-            <div class="container promosi half">
-              <img class="box-img" src="../img/banner2.jpg" alt="banner2">
-            </div>
-            <div class="container promosi half">
-              <img class="box-img" src="../img/kotak.jpg" alt="kotak">
-            </div>
+          <div class="container intro bg">
+           Selamat Datang di Dramagon!
           </div>
         </div>
         <!--container1-->
         
         <div class="container first">
           <header>
+            <div class="redDec"></div>
             <h1>Informasi Terkini Seputar Dramaga</h1>
           </header> 
           <div class="container second">
+            <div class="flex-information">
+              <?php while($hasil = mysqli_fetch_array($res_info)): ?>
+              <div class="card">
+                <div class="card-text">
+                  <h2><?= $hasil["judul_informasi"]; ?></h2>
+                  <h5><?= tanggal_indo($hasil["tanggal_informasi"]); ?></h5>
+                  <p>
+                  <?php
+                    $isi = strip_tags($hasil["isi_informasi"]);
+                    if (strlen($isi) > 200) {
+                      // potong isi
+                      $potongisi = substr($isi, 0, 200);
+                      $akhir = strrpos($potongisi, ' ');
 
-            <div class="card">
-              <div class="card-text">
-                <h2>BARA KEBANJIRAN</h2>
-                <h5>12 Juni 2020</h5>
-                <p>Lorem ipsum dolor set amet asidjfkadsj sadadas dsad asdas sd asd sa dsad as das dgikrjagjasdjgo <br /><a href="#">Read more</a></p>
+                      //
+                      $isi = $akhir? substr($potongisi, 0, $akhir) : substr($potongisi, 0);
+                      $isi .= ' ... <a href="info_page.php?id_informasi=' .$hasil["id_informasi"]. '">Read More</a>';
+                    }
+                    echo $isi;
+                  ?>
+                  </p>
+                </div>
               </div>
-            </div>
-     
-            <div class="card">
-              <div class="card-text">
-                <h2>BARA KEBANJIRAN</h2>
-                <h5>12 Juni 2020</h5>
-                <p>Lorem ipsum dolor set amet asidjfkadsj sadadas dsad asdas sd asd sa dsad as das dgikrjagjasdjgo <br /><a href="#">Read more</a></p>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-text">
-                <h2>BARA KEBANJIRAN</h2>
-                <h5>12 Juni 2020</h5>
-                <p>Lorem ipsum dolor set amet asidjfkadsj sadadas dsad asdas sd asd sa dsad as das dgikrjagjasdjgo <br /><a href="#">Read more</a></p>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-text">
-                <h2>BARA KEBANJIRAN</h2>
-                <h5>12 Juni 2020</h5>
-                <p>Lorem ipsum dolor set amet asidjfkadsj sadadas dsad asdas sd asd sa dsad as das dgikrjagjasdjgo <br /><a href="#">Read more</a></p>
-              </div>
+              <?php endwhile; ?>
             </div>
           </div>
         </div>
@@ -193,26 +81,24 @@ if ( !isset($_SESSION["username"]) ) {
 
 
             <div class="container-right">
+              <div class="ads">
+                <h2>SPACE IKLAN</h1>
+              </div>
+
               <div class="sidebar-right">
-                <header><h1>Forum</h1></header>
-                  <a href="#">Lalulintas</a>
-                  <a href="#">Cafe</a>
-                  <a href="#">Bengkel Motor</a>
+                <header>
+                  <div class="redDec"></div>
+                  <h1>Forum</h1>
+                </header>
+                <?php while ($forum = mysqli_fetch_array($res_forum)): ?>
+                  <a href="forum_thread.php?id_forum=<?= $forum["id_forum"] ?>"><?= $forum["judul"] ?></a>
+                <?php endwhile; ?>
               </div>
           </div>
           <!--container-right end-->
 
     </div>
     <!--wrapper end-->
-       
-        </div>
-        <!--main end-->
-     
-      </div>
-      <!--body end-->
-
-  
-  </div>
 
   <div class="red-bot"></div>
 
