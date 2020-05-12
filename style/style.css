@@ -766,7 +766,6 @@ color: #009FBC;}
    padding: 20px;
    text-align: left;
    display: flex;
-   flex-direction: ;
    margin-bottom: 10px;
  }
 
@@ -780,7 +779,6 @@ color: #009FBC;}
    display: flex;
    flex-direction: column;
    padding: 0px 20px 0 20px;
-   text-align: justify;
  }
 
  .comment-item .img-box{

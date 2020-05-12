@@ -43,6 +43,11 @@
   color: #f1f3f6;
 }
 
+.sidebar-wrapper .sidebar-brand > img {
+  width: 200px;
+ 
+}
+
 /*--------------------sidebar-header----------------------*/
 
 .sidebar-wrapper .sidebar-header {
