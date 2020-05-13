@@ -41,8 +41,8 @@ $pengguna = mysqli_fetch_array($query);
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="../style/style.css" />
-  <link rel="stylesheet" type="text/css" href="../style/sidebar nav.css" />
+  <link rel="stylesheet" type="text/css" href="../style/style.css?v=<?= time(); ?>" />
+  <link rel="stylesheet" type="text/css" href="../style/sidebar nav.css?v=<?= time(); ?>" />
 </head>
 
 <body>
@@ -91,7 +91,6 @@ $pengguna = mysqli_fetch_array($query);
       </div>
       <!--container-->
             <div class="container-right">
-            ini ada container nganggur rencananya mau dikasih gambar apa gitu biar menarik
             </div>
           <!--container-right end-->
 

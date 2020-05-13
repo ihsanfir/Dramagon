@@ -44,9 +44,9 @@ if( isset($_POST["kirim"]) ) {
 
             <form class="threadCreate" method="post" action="" enctype="multipart/form-data">
                 <input type="hidden" name="id_pengguna" value="<?= $pengguna["id_pengguna"]; ?>">
-                <input type="text" name="judul_forum" placeholder="Isi judul disini...">
+                <input type="text" name="judul_forum" placeholder="Isi judul disini..." required>
                 <br>
-                <textarea id="styled" name = "isi_forum" placeholder="Isi tulisan kamu disini..."></textarea>
+                <textarea id="styled" name = "isi_forum" placeholder="Isi tulisan kamu disini..." required></textarea>
               
             <div class="flex">
               <div class="bungkus-button">

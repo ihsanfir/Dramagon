@@ -11,13 +11,19 @@ if ( !isset($_SESSION["username"]) ) {
   exit;
 }
 
+if (isset($_GET["kategori"])) {
+  $kategori = $_GET["kategori"];
+} else {
+  $kategori = "semua";
+}
+
 $jumlahDataPerHalaman = 3;
-$res = mysqli_query($conn, "SELECT * FROM forum");
+$res = mysqli_query($conn, "SELECT * FROM forum WHERE kategori='$kategori'");
 $jumlahData = mysqli_num_rows($res);
 $jumlahHalaman = ceil($jumlahData / $jumlahDataPerHalaman);
 $halamanAktif = ( isset($_GET["page"])) ? $_GET["page"] : 1;
 $mulai = ($jumlahDataPerHalaman * $halamanAktif) - $jumlahDataPerHalaman;
-$forum_list = mysqli_query($conn, "SELECT pengguna.id_pengguna, pengguna.username, pengguna.gambar, forum.id_pengguna, forum.id_forum, forum.tanggal, forum.judul, forum.suka FROM pengguna INNER JOIN forum ON pengguna.id_pengguna=forum.id_pengguna ORDER BY id_forum DESC LIMIT $mulai, $jumlahDataPerHalaman");
+$forum_list = mysqli_query($conn, "SELECT pengguna.id_pengguna, pengguna.username, pengguna.gambar, forum.id_pengguna, forum.id_forum, forum.kategori, forum.tanggal, forum.judul, forum.suka FROM pengguna INNER JOIN forum ON pengguna.id_pengguna=forum.id_pengguna WHERE kategori = '$kategori' ORDER BY id_forum DESC LIMIT $mulai, $jumlahDataPerHalaman");
 
 ?>
 
@@ -53,16 +59,18 @@ $forum_list = mysqli_query($conn, "SELECT pengguna.id_pengguna, pengguna.usernam
 
           <!--container second bg end--->
             
-          <div class="container kategori filter bg ">
+          <div class="container filter bg ">
               <header>
-                Urutkan:
+                <h1>
+                  Urutkan:
+                </h1>
               </header>
 
-              <select class="category">
-                <option value="semua">Semua</option>
-                <option value="umum">Umum</option>
-                <option value="makanan">Makanan</option>
-                <option value="hobi">Hobi</option>
+              <select class="category" onchange="location = this.value;">
+                <option value="forum_list.php?kategori=semua" <?php if($kategori == 'semua') {echo 'selected="true"';} ?>>Semua</option>
+                <option value="forum_list.php?kategori=umum" <?php if($kategori == 'umum') {echo 'selected="true"';} ?>>Umum</option>
+                <option value="forum_list.php?kategori=makanan" <?php if($kategori == 'makanan') {echo 'selected="true"';} ?>>Makanan</option>
+                <option value="forum_list.php?kategori=hobi" <?php if($kategori == 'hobi') {echo 'selected="true"';} ?>>Hobi</option>
               </select>
            </div>
 
@@ -70,7 +78,7 @@ $forum_list = mysqli_query($conn, "SELECT pengguna.id_pengguna, pengguna.usernam
             <ul class="listView">
               <header class="kategori">
                 <box>
-                  <h1>Semua</h1>
+                  <h1><?= $kategori; ?></h1>
                 </box>
               </header>
                   
@@ -100,8 +108,14 @@ $forum_list = mysqli_query($conn, "SELECT pengguna.id_pengguna, pengguna.usernam
                     </div>
                 
                     <div class="details">
-                      <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $hasil['gambar'] ).'"/>'; ?>
-                      <div>
+                      <?php 
+                        if ($hasil["gambar"] != NULL) {
+                         echo '<img src="data:image/jpeg;base64,'.base64_encode( $hasil['gambar'] ).'"/>'; 
+                        } else {
+                          echo '<img src="..\img\user.jpg">';
+                        }
+                      ?>
+                      <div class="name-date">
                         <h1><?= $hasil["username"]; ?></h1>
                         <br>
                         <h2><?= tanggal_indo($hasil["tanggal"]); ?></h2>

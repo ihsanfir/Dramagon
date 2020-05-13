@@ -45,7 +45,13 @@ $res = mysqli_fetch_array($query);
                 <br>
                 <h3>By <?= $res["nama"]; ?></h3>
                 <h3>Published On : <?= tanggal_indo($res["tanggal_informasi"]); ?></h3>
-                <center><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $res['gambar_informasi'] ).'" width="750px" height="auto"/>'; ?></center>
+                <center>
+                <?php 
+                  if($res["gambar_informasi"] != NULL) {
+                    echo '<img src="data:image/jpeg;base64,'.base64_encode( $res['gambar_informasi'] ).'" width="750px" height="auto"/>'; 
+                  }
+                ?>
+                </center>
                 <br>
                 <p align="justify"><?= $res["isi_informasi"]; ?></p>
               </div>

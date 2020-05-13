@@ -3,13 +3,19 @@
       <div class="sidebar-content">
         <div class="border">
           <div class="sidebar-brand">
-            <a >Logo Dramagon</a>
+            <img src="..\img\logo.png">
           </div>
       </div>
       <div class="border">
         <div class="sidebar-header">
           <div class="user-pic">
-          <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $pengguna['gambar'] ).'"/>'; ?>
+          <?php 
+            if($pengguna["gambar"] != NULL) {
+              echo '<img src="data:image/jpeg;base64,'.base64_encode( $pengguna['gambar'] ).'"/>'; 
+            } else {
+              echo '<img src="..\img\user.jpg"/>';
+            }
+          ?>
           </div>
           <div class="user-info">
             <span class="user-name">

@@ -9,8 +9,14 @@ function daftar($data) {
     $username = stripslashes($data["uname"]);
     $password = $data["password"];
     $k_password = $data["k_password"];
-    $email = $data["email"];
+    $email = stripslashes($data["email"]);
 
+    if ( strlen($username) > 10 ) {
+        echo "<script>
+            alert('Maksimal 10 karakter!')
+        </script>";
+        return false;
+    }
     // cek username yg sudah dipakai
     $result = mysqli_query($conn, "SELECT username FROM pengguna WHERE username = '$username'");
 
@@ -33,7 +39,9 @@ function daftar($data) {
     $password = password_hash($password, PASSWORD_DEFAULT);
 
     // tambahkan userbaru ke database
-    mysqli_query($conn, "INSERT INTO pengguna VALUES('','$username','$password', '$username','$email','','','')");
+    mysqli_query($conn, "INSERT INTO pengguna VALUES(
+        '','$username','$password', '$username','',
+        '$email','','','')");
     
     return mysqli_affected_rows($conn);
 }
@@ -41,7 +49,7 @@ function daftar($data) {
 function masuk($data) {
     global $conn;
 
-    $username = $_POST["username"];
+    $username = stripslashes($_POST["username"]);
     $password = $_POST["password"];
 
     $result = mysqli_query($conn, "SELECT * FROM pengguna WHERE username = '$username'");
@@ -52,7 +60,17 @@ function masuk($data) {
         $row = mysqli_fetch_assoc($result);
         if ( password_verify($password, $row["password"]) ) {
             return 1;
+        } else {
+            echo "<script>
+                 alert('password salah!');
+                </script>";
+            return false;
         }
+    } else {
+        echo "<script>
+                 alert('Username tidak ada!');
+                </script>";
+            return false;
     }
 }
 
@@ -61,10 +79,10 @@ function edit($data) {
 
     $id_pengguna = $data["id_pengguna"];
     $username = stripslashes($data["username"]);
-    $nama = $data["nama"];
-    $email = $data["email"];
-    $telpon = $data["notelp"];
-    $jenkel = $data["jk"];
+    $nama = stripslashes($data["nama"]);
+    $email = stripslashes($data["email"]);
+    $telpon = stripslashes($data["notelp"]);
+    $jenkel = stripslashes($data["jk"]);
     $tanggalLahir = $data["tl"]; 
 
     // cek username yg sudah dipakai
@@ -116,11 +134,10 @@ function buatForum($data) {
         }
     }
     
-    //create and issue the first query
-    $judul_forum = $data["judul_forum"];
-    $isi_forum = $data["isi_forum"];
+    $judul_forum = stripslashes($data["judul_forum"]);
+    $isi_forum = stripslashes($data["isi_forum"]);
     $tanggal_forum = date('Y-m-d');
-    $id_pengguna = $data["id_pengguna"];
+    $id_pengguna = stripslashes($data["id_pengguna"]);
     $kategori_forum = $data["kategori"];
     $tambah_forum = "INSERT INTO forum VALUES(
                     '',
@@ -143,7 +160,7 @@ function tambahKomentar($data) {
     $id_forum = $data["id_forum"];
     $id_pengguna = $data["id_pengguna"];
     $tanggal_komentar = date('Y-m-d');
-    $isi_komentar = $data["isi_komentar"];
+    $isi_komentar = stripslashes($data["isi_komentar"]);
 
     $tambah_komentar = "INSERT INTO komentar VALUES(
                         '',
@@ -151,7 +168,7 @@ function tambahKomentar($data) {
                         '$id_pengguna',
                         '$isi_komentar',
                         '$tanggal_komentar')";
-    mysqli_query($conn, $tambah_komentar) or die(mysqli_error());
+    mysqli_query($conn, $tambah_komentar);
     return mysqli_affected_rows($conn);
 }
 
@@ -175,8 +192,8 @@ function buatInformasi($data) {
     }
 
     $id_pengguna = $data["id_pengguna"];
-    $judul_info = $data["judul_info"];
-    $isi_info = $data["isi_info"];
+    $judul_info = stripslashes($data["judul_info"]);
+    $isi_info = stripslashes($data["isi_info"]);
     $tanggal_info = date('Y-m-d');
     $status = "moderasi";
 
@@ -246,6 +263,13 @@ function tanggal_indo($tanggal) {
     $tgl_indo = explode('-', $tanggal);
 
     return $tgl_indo[2] . ' ' . $bulan[(int)$tgl_indo[1]] . ' ' . $tgl_indo[0];
+}
+function hapusFoto($data) {
+    global $conn;
+
+    $id_pengguna = $data["id_pengguna"];
+    mysqli_query($conn, "UPDATE pengguna SET gambar=NULL WHERE id_pengguna = $id_pengguna");
+    return mysqli_affected_rows($conn);
 }
 
 ?>

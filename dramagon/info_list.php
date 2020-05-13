@@ -50,6 +50,7 @@ $info_list = mysqli_query($conn, "SELECT * FROM informasi WHERE status = 'disetu
             <?php while($hasil = mysqli_fetch_array($info_list)): ?>
             <div class="card-info">
               <div class="listinfo">
+              <a href="info_page.php?id_informasi=<?= $hasil["id_informasi"]; ?>">
                   <div class="card-text">
                     <h2><?= $hasil["judul_informasi"]; ?></h2>
                     <h5><?= tanggal_indo($hasil["tanggal_informasi"]); ?></h5>

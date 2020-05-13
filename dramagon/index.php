@@ -46,7 +46,7 @@ $res_info = mysqli_query($conn, "SELECT * FROM informasi ORDER BY id_informasi D
             <div class="redDec"></div>
             <h1>Informasi Terkini Seputar Dramaga</h1>
           </header> 
-          <div class="container second">
+
             <div class="flex-information">
               <?php while($hasil = mysqli_fetch_array($res_info)): ?>
               <div class="card">
@@ -70,8 +70,8 @@ $res_info = mysqli_query($conn, "SELECT * FROM informasi ORDER BY id_informasi D
                   </p>
                 </div>
               </div>
+              </a>
               <?php endwhile; ?>
-            </div>
           </div>
         </div>
         <!--container1-->

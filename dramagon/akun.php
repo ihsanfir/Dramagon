@@ -24,11 +24,17 @@ if( isset($_POST["simpan"])) {
     }
 }
 
+if (isset($_POST["Hapus"])) {
+  if(hapusFoto($_POST) > 0) {
+    header("Location: akun.php");
+  }
+}
+
 if ( isset($_POST["Upload"]) ) {
 
   $file = $_FILES['image']['tmp_name'];
   if (!isset($file) ){
-      echo "Pilih file gambar";
+    $notif =  "Pilih file gambar";
   }
 
   else {
@@ -38,15 +44,15 @@ if ( isset($_POST["Upload"]) ) {
       $id_pengguna = $pengguna["id_pengguna"];
 
       if ($image_size == false) {
-          echo "File yang dipilih bukan gambar";
+        $notif =  "File yang dipilih bukan gambar";
       } else {
           if (!$insert = mysqli_query($conn, "UPDATE pengguna SET
-                  nama_gambar = '$image_name',
                   gambar = '$image'
                   WHERE id_pengguna = $id_pengguna")) {
-                      echo "Gagal upload gambar";
+                    $notif =  "Gagal upload gambar";
                   } else {
-                      echo "gambar berhasil di upload";
+                    header("Location: akun.php");
+                    $notif =  "gambar berhasil di upload";
                   }
       }
   }
@@ -58,8 +64,8 @@ if ( isset($_POST["Upload"]) ) {
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="../style/style.css" />
-  <link rel="stylesheet" type="text/css" href="../style/sidebar nav.css" />
+  <link rel="stylesheet" type="text/css" href="../style/style.css?v=<?= time(); ?>" />
+  <link rel="stylesheet" type="text/css" href="../style/sidebar nav.css?v=<?= time(); ?>" />
 </head>
 
 <body>
@@ -77,13 +83,32 @@ if ( isset($_POST["Upload"]) ) {
           <div class="container second bg">
             <div class="container fotoAkun">
                 <form action="" method="post" enctype="multipart/form-data">
-                  <?php echo '<img class="foto" src="data:image/jpeg;base64,'.base64_encode( $pengguna['gambar'] ).'"/>'; ?>
+                  <?php 
+                    if ($pengguna["gambar"] != NULL) {
+                      echo '<img class="foto" src="data:image/jpeg;base64,'.base64_encode( $pengguna['gambar'] ).'"/>'; 
+                    } else {
+                      echo '<img class="foto" src="..\img\user.jpg"/>';
+                    }
+                  ?>
                   <input type="hidden" name="id_pengguna" value="<?= $pengguna["id_pengguna"]; ?>">
                   <input type="file" name="image">
                   <button type="submit" name="Upload">
                     Ubah Foto Akun
                   </button>
+                  <br><br>
+                  <button type="submit" name="Hapus">
+                    Hapus Foto Akun
+                  </button>
                 </form>
+                <br>
+                <h1><strong>
+                <?php
+                  if( isset($notif)) {
+                    echo $notif;
+                    $notif = "";
+                  }
+                ?>
+                </strong></h1>
             </div>
         <div class="container form">
               <div class="text">
@@ -136,7 +161,6 @@ if ( isset($_POST["Upload"]) ) {
       </div>
       <!--container-->
             <div class="container-right">
-            ini ada container nganggur rencananya mau dikasih gambar apa gitu biar menarik
             </div>
           <!--container-right end-->
 

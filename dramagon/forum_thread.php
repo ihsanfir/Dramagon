@@ -16,15 +16,18 @@ $hasil_comment = mysqli_fetch_array($res_komen);
 $id_forum = $_GET["id_forum"];
 $res = mysqli_query($conn, "SELECT pengguna.id_pengguna, pengguna.username, pengguna.gambar, forum.id_pengguna, forum.gambar as gambar_forum, forum.id_forum, forum.isi, forum.judul, forum.kategori, forum.tanggal, forum.suka FROM pengguna INNER JOIN forum ON pengguna.id_pengguna = forum.id_pengguna WHERE id_forum = $id_forum") or die(mysqli_error());
 $hasil = mysqli_fetch_array($res);
-$komen = mysqli_query($conn, "SELECT pengguna.id_pengguna, pengguna.username, pengguna.gambar, komentar.id_pengguna, komentar.tanggal, komentar.isi, komentar.id_forum FROM pengguna INNER JOIN komentar ON pengguna.id_pengguna=komentar.id_pengguna WHERE id_forum = $id_forum ORDER BY tanggal DESC") or die(mysqli_error());
+$komen = mysqli_query($conn, "SELECT pengguna.id_pengguna, pengguna.username, pengguna.gambar, komentar.id_pengguna, komentar.tanggal, komentar.isi, komentar.id_forum FROM pengguna INNER JOIN komentar ON pengguna.id_pengguna=komentar.id_pengguna WHERE id_forum = $id_forum ORDER BY id_komentar DESC") or die(mysqli_error());
 $total = mysqli_query($conn, "SELECT * FROM komentar WHERE id_forum = $id_forum") or die(mysqli_error());
 $jml_komen = mysqli_num_rows($total);
 
 if ( isset($_POST["kirim"]) ) {
   if ( tambahKomentar($_POST) > 0) {
-    echo "<script>alert('komentar berhasil ditambahkan');</script>";
     $id_forum = $_POST["id_forum"];
     header("Location: forum_thread.php?id_forum=$id_forum");
+  }
+
+  else {
+    echo "<script>alert('Komentar gagal ditambahkan!');</script>";
   }
 }
 
@@ -134,7 +137,7 @@ if ( isset($_POST["kirim"]) ) {
               <h1>Komentar</h1>
               <input type="hidden" name="id_forum" value="<?= $hasil["id_forum"]; ?>">
               <input type="hidden" name="id_pengguna" value="<?=  $hasil_comment["id_pengguna"]; ?>">
-              <textarea class="thread-komentar" placeholder="Isi komentar kamu disini..." name="isi_komentar"></textarea>
+              <textarea class="thread-komentar" placeholder="Isi komentar kamu disini..." name="isi_komentar" required></textarea>
             </div>
             <button type="submit" name="kirim">
               <h1>kirim</h1>

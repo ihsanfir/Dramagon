@@ -26,8 +26,8 @@ if( isset($_POST["daftar"])) {
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="../style/style.css" />
-  <link rel="stylesheet" type="text/css" href="../style/sidebar nav.css" />
+  <link rel="stylesheet" type="text/css" href="../style/style.css?v=<?= time(); ?>" />
+  <link rel="stylesheet" type="text/css" href="../style/sidebar nav.css?v=<?= time(); ?>" />
 </head>
 
 <body>
@@ -39,7 +39,7 @@ if( isset($_POST["daftar"])) {
         <div class="sidebar-content">
           <div class="border">
             <div class="sidebar-brand">
-              <a >Logo Dramagon</a>
+              <img src="..\img\logo.png">
             </div>
         </div>
         <div class="border">
@@ -87,13 +87,7 @@ if( isset($_POST["daftar"])) {
               </li>
               
               <li class="sidebar-list">
-                <a href="#">
-                  <span>Promosi</span>
-                </a>
-              </li>
-              
-              <li class="sidebar-list">
-                <a href="#">
+                <a href="info_list.php">
                   <span>Informasi</span>
                 </a>
               </li>
@@ -130,16 +124,16 @@ if( isset($_POST["daftar"])) {
               </div>
             <form action="" method="post">
                 <label for="email">Alamat Email</label><br>
-                <input type="text" id="email" name="email"><br>
+                <input type="text" id="email" name="email" required><br>
 
                 <label for="password">Password</label><br>
-                <input type="password" id="password" name="password"><br>
+                <input type="password" id="password" name="password" required><br>
                 
                 <label for="k_password">Konfirmasi Password</label><br>
-                <input type="password" id="k_password" name="k_password"><br>
+                <input type="password" id="k_password" name="k_password" required><br>
                 <br>
                 <label for="uname">Username Magons</label><br>
-                <input type="text" id="uname" name="uname">
+                <input type="text" id="uname" name="uname" placeholder="maksimal 10 karakter" required>
                 <div class="text">
                     <h3>
                         Username Magons adalah nama unik kamu di web magons. Jadi tunggu apa lagi ayo isi!
@@ -167,7 +161,6 @@ if( isset($_POST["daftar"])) {
       </div>
       <!--container-->
             <div class="container-right">
-            ini ada container nganggur rencananya mau dikasih gambar apa gitu biar menarik
             </div>
           <!--container-right end-->
 
