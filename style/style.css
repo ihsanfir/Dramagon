@@ -981,7 +981,7 @@ hr {
 .thread-img > img{
 
   height: 200px;
-  width: 300px;
+  width: auto;
   border-radius: 5px;
   cursor: pointer;
 } /*--CATATAN: MAU PASANG MODAL TP TERAKHIR AJA FINISHING---*/
