@@ -115,7 +115,7 @@ color: #009FBC;}
     display: flex;
     flex-direction: column;
   }
-  
+
   .container header{
     padding: 10px 20px;
     width: wrap;
@@ -965,10 +965,6 @@ hr {
     border-radius: 10px;
     margin: auto;
     margin-top: 0px;
-  }
-
-  .img-thread{
-    width: 100px;
   }
 
 

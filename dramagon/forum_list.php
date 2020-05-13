@@ -57,7 +57,7 @@ $forum_list = mysqli_query($conn, "SELECT pengguna.id_pengguna, pengguna.usernam
               </div>
            </div>
 
-          <!--container second bg end--->
+          <!--container intro bg end--->
             
           <div class="container filter bg ">
               <header>

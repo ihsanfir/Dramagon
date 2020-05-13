@@ -125,7 +125,6 @@ input[type=search] {
       }
   
   input[type=search]:focus {
-    background-color: ;
     outline: none;
   }
 

@@ -116,7 +116,7 @@ if( isset($_POST["daftar"])) {
             <header >
               <h1>Silahkan Masuk Magons!</h1>
             </header>
-            <div class="container second bg">
+            <div class="container bg">
         <div class="container form left">
               <div class="text">
                 <h2><strong>Halo Magons!</strong> Selamat datang di Dramagon.<br>

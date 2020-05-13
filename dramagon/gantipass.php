@@ -57,7 +57,7 @@ $pengguna = mysqli_fetch_array($query);
           <header >
             <h1>Akun: Ubah Password</h1>
           </header>
-          <div class="container second bg">
+          <div class="container bg">
         
         <div class="container form left">
               <div class="text">

@@ -131,7 +131,7 @@ if ( isset($_POST["kirim"]) ) {
         </div>
         <!--container thread end-->
         <form method="post" action="">
-        <div class="container second bg kiri">
+        <div class="container first bg kiri">
           <div class="container comment">
             <div class="kotak">
               <h1>Komentar</h1>
@@ -146,7 +146,7 @@ if ( isset($_POST["kirim"]) ) {
         </div>
         </form>
 
-        <div class="container second flex-col">
+        <div class="container flex-col">
           <?php while ($komentar = mysqli_fetch_array($komen)) : ?>
             <div class="comment-item bg">
                 <div class="comment-item img-box">

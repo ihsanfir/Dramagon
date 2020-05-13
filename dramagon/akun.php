@@ -80,7 +80,7 @@ if ( isset($_POST["Upload"]) ) {
           <header >
             <h1>Akun Magons</h1>
           </header>
-          <div class="container second bg">
+          <div class="container bg">
             <div class="container fotoAkun">
                 <form action="" method="post" enctype="multipart/form-data">
                   <?php 

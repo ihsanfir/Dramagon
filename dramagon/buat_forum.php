@@ -40,7 +40,7 @@ if( isset($_POST["kirim"]) ) {
           <header >
             <h1>Buat Thread</h1>
           </header>
-          <div class="container second bg">
+          <div class="container bg">
 
             <form class="threadCreate" method="post" action="" enctype="multipart/form-data">
                 <input type="hidden" name="id_pengguna" value="<?= $pengguna["id_pengguna"]; ?>">
@@ -64,7 +64,7 @@ if( isset($_POST["kirim"]) ) {
             </div>
             
           </div>
-          <!--container second bg end-->
+          <!--container bg end-->
         </div>
         <!--container first-->      
       </div>

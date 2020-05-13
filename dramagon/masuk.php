@@ -112,14 +112,20 @@ if( isset($_POST["masuk"]) ) {
       <div class="container giant">
         <div class="container first">
           <header >
+            <div class="redDec"></div>
             <h1>Silahkan Masuk Magons!</h1>
           </header>
-          <div class="container second bg">
-        <div class="container form left">
-              <div class="text">
+       
+          <div class="container intro bg">
+          <div class="text">
                 <h2><strong>Halo Magons!</strong> Selamat datang di Dramagon.<br>
                     Isi data akun Magons kamu dibawah ya!</h1>
               </div>
+           </div>
+
+            <div class="container bg">
+        <div class="container form left">
+          
             <form action ="" method="post">
                 <label for="username">Username Magons</label><br>
                 <input type="text" id="username" name="username" required>
