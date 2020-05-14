@@ -55,7 +55,10 @@
         <div class="border">
           <div class="sidebar-search">
             <div>
-              <input type="search" placeholder="Search...">
+              <input type="search" placeholder="Cari...">
+              <button>
+                <img src="..\img\search.png">
+              </button>
             </div>
           </div>
         </div>

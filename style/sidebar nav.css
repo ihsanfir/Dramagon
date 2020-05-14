@@ -114,19 +114,40 @@
 .sidebar-wrapper .sidebar-search > div {
   padding: 10px 20px;
   background-color: transparent;
+  display: flex;
 }
 
 input[type=search] {
-        width: 200px;
+        width: 160px;
         padding: 6px;
-        border: none;
-        background: #f1f3f6;
         font-size: 16px;
+   
+        border-radius: 5px;
+        box-shadow:inset 4px 6px 10px -4px rgba(0,0,0,0.3), 0 1px 1px -1px rgba(255,255,255,0.3);
+        background:rgba(0,0,0,0.2);
+        border:1px solid rgba(0,0,0,1);
+        color:#6E6E6E;
+        text-shadow:#000 0px 1px 5px;
+        font-family: inherit;
       }
-  
   input[type=search]:focus {
     outline: none;
+    box-shadow:inset 4px 6px 10px -4px rgba(0,0,0,0.7), 0 1px 1px -1px rgba(255,255,255,0.3);
+    background:rgba(0,0,0,0.3);
   }
+
+  .sidebar-search button{
+    width: 40px;
+    padding: 0;
+    background-color: #B81633;
+  }
+  .sidebar-search button img{
+    margin: auto;
+    width: 20px;
+    filter: invert(100%);
+    -webkit-filter: invert(80%);
+  }
+
 
 /*----------------------sidebar-menu-------------------------*/
 .sidebar-wrapper .sidebar-menu {
