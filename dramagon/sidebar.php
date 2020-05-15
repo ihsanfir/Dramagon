@@ -52,16 +52,18 @@
         </div>
       </div>
         <!-- sidebar-header  -->
+        <form action="search_page.php" method="post">
         <div class="border">
           <div class="sidebar-search">
             <div>
-              <input type="search" placeholder="Cari...">
-              <button>
-                <img src="..\img\search.png">
-              </button>
+                <input type="search" placeholder="Cari..." name="keyword">
+                <button type="submit" name="cari">
+                  <img src="..\img\search.png">
+                </button>
             </div>
           </div>
         </div>
+        </form>
         <!-- sidebar-search  -->
         <div class="border">
         <div class="sidebar-menu">

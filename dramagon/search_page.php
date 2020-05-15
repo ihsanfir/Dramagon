@@ -1,3 +1,29 @@
+<?php
+require 'fungsi.php';
+
+session_start();
+$uname = $_SESSION["username"];
+$query = mysqli_query($conn, "SELECT * FROM pengguna WHERE username = '$uname'");
+$pengguna = mysqli_fetch_array($query);
+
+if ( !isset($_SESSION["username"]) ) {
+  header("Location: masuk.php");
+  exit;
+}
+
+if (isset($_POST["cari"])) {
+  $cari = $_POST["keyword"];
+  if ($cari == NULL) {
+    $forum_list = mysqli_query($conn, "SELECT pengguna.id_pengguna, pengguna.username, pengguna.gambar, forum.id_pengguna, forum.id_forum, forum.isi, forum.kategori, forum.tanggal, forum.judul, forum.suka FROM pengguna INNER JOIN forum ON pengguna.id_pengguna=forum.id_pengguna WHERE 1 != 1");
+  } else {
+    $forum_list = mysqli_query($conn, "SELECT pengguna.id_pengguna, pengguna.username, pengguna.gambar, forum.id_pengguna, forum.id_forum, forum.isi, forum.kategori, forum.tanggal, forum.judul, forum.suka FROM pengguna INNER JOIN forum ON pengguna.id_pengguna=forum.id_pengguna WHERE isi LIKE '%" .$cari. "%'");
+  }
+} else {
+  $forum_list = mysqli_query($conn, "SELECT pengguna.id_pengguna, pengguna.username, pengguna.gambar, forum.id_pengguna, forum.id_forum, forum.isi, forum.kategori, forum.tanggal, forum.judul, forum.suka FROM pengguna INNER JOIN forum ON pengguna.id_pengguna=forum.id_pengguna WHERE 1 != 1");
+}
+
+?>
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -29,34 +55,13 @@
            </div>
 
           <!--container intro bg end--->
-            
-          <div class="container filter bg ">
-              <header>
-                <h1>
-                  Urutkan:
-                </h1>
-              </header>
 
-              <select class="category" onchange="location = this.value;">
-              <option value="forum_list.php?kategori=semua" <?php if($kategori == 'semua') {echo 'selected="true"';} ?>>Semua</option>
-                <option value="forum_list.php?kategori=forum" <?php if($kategori == 'semua') {echo 'selected="true"';} ?>>Forum</option>
-                <option value="forum_list.php?kategori=info" <?php if($kategori == 'umum') {echo 'selected="true"';} ?>>Informasi</option>
-  
-              </select>
-           </div>
-
+          <?php if(mysqli_num_rows($forum_list)) : ?>
           <div class="container list">
             <ul class="listView">
-              <header class="kategori">
-                <box>
-                  <h1><?= $kategori; ?></h1>
-                </box>
-              </header>
-                  
               <?php while($hasil = mysqli_fetch_array($forum_list)) : ?>
               <li class="item" >
                 <a href="forum_thread.php?id_forum=<?= $hasil["id_forum"]; ?>">
-                  
                   <div class="title">
                     <h1><?= $hasil["judul"]; ?></h1>
                   </div>
@@ -99,31 +104,14 @@
               <?php endwhile; ?>      
             </ul>
           </div>
+
+          <?php else:?>
+          <br>
+          <h1><strong>Pencarian tidak ada!</strong></h1>
+          <?php endif; ?>
         <!--container list end-->
       </div>
       <!--container1 end-->
-
-        <!---pagination-->
-        <div class="container pagi">
-          <div class="pagination">
-            <?php if( $halamanAktif > 1 ): ?>
-              <a href="?page=<?= $halamanAktif - 1; ?>">&laquo;</a>
-            <?php endif; ?>
-
-            <?php for($i=1; $i<=$jumlahHalaman; $i++) : ?>
-              <?php if ($i == $halamanAktif) : ?>
-                <a class="active" href="?page=<?= $i; ?>"><?= $i; ?></a>
-              <?php else : ?>
-               <a href="?page=<?= $i; ?>"><?= $i; ?></a>
-              <?php endif; ?>
-            <?php endfor; ?>
-            
-            <?php if( $halamanAktif < $jumlahHalaman ): ?>
-              <a href="?page=<?= $halamanAktif + 1; ?>">&raquo;</a>
-            <?php endif; ?>
-          </div>
-        </div>
-        
 
       </div>
       <!--container giant-->

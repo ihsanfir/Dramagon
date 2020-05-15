@@ -13,17 +13,27 @@ if ( !isset($_SESSION["username"]) ) {
 
 if (isset($_GET["kategori"])) {
   $kategori = $_GET["kategori"];
+  if ($kategori == "semua") {
+    $res = mysqli_query($conn, "SELECT * FROM forum");
+  } else {
+    $res = mysqli_query($conn, "SELECT * FROM forum WHERE kategori='$kategori'");
+  }
 } else {
   $kategori = "semua";
+  $res = mysqli_query($conn, "SELECT * FROM forum");
 }
 
 $jumlahDataPerHalaman = 3;
-$res = mysqli_query($conn, "SELECT * FROM forum WHERE kategori='$kategori'");
 $jumlahData = mysqli_num_rows($res);
 $jumlahHalaman = ceil($jumlahData / $jumlahDataPerHalaman);
 $halamanAktif = ( isset($_GET["page"])) ? $_GET["page"] : 1;
 $mulai = ($jumlahDataPerHalaman * $halamanAktif) - $jumlahDataPerHalaman;
-$forum_list = mysqli_query($conn, "SELECT pengguna.id_pengguna, pengguna.username, pengguna.gambar, forum.id_pengguna, forum.id_forum, forum.kategori, forum.tanggal, forum.judul, forum.suka FROM pengguna INNER JOIN forum ON pengguna.id_pengguna=forum.id_pengguna WHERE kategori = '$kategori' ORDER BY id_forum DESC LIMIT $mulai, $jumlahDataPerHalaman");
+
+if (isset($kategori) || $kategori != "semua") {
+  $forum_list = mysqli_query($conn, "SELECT pengguna.id_pengguna, pengguna.username, pengguna.gambar, forum.id_pengguna, forum.id_forum, forum.kategori, forum.tanggal, forum.judul, forum.suka FROM pengguna INNER JOIN forum ON pengguna.id_pengguna=forum.id_pengguna WHERE kategori = '$kategori' ORDER BY id_forum DESC LIMIT $mulai, $jumlahDataPerHalaman");
+} else {
+  $forum_list = mysqli_query($conn, "SELECT pengguna.id_pengguna, pengguna.username, pengguna.gambar, forum.id_pengguna, forum.id_forum, forum.kategori, forum.tanggal, forum.judul, forum.suka FROM pengguna INNER JOIN forum ON pengguna.id_pengguna=forum.id_pengguna ORDER BY id_forum DESC LIMIT $mulai, $jumlahDataPerHalaman");
+}
 
 ?>
 
@@ -67,7 +77,7 @@ $forum_list = mysqli_query($conn, "SELECT pengguna.id_pengguna, pengguna.usernam
               </header>
 
               <select class="category" onchange="location = this.value;">
-                <option value="forum_list.php?kategori=semua" <?php if($kategori == 'semua') {echo 'selected="true"';} ?>>Semua</option>
+                <option value="forum_list.php?kategori=semua" <?php if(!isset($kategori) || $kategori == 'semua') {echo 'selected="true"';} ?>>Semua</option>
                 <option value="forum_list.php?kategori=umum" <?php if($kategori == 'umum') {echo 'selected="true"';} ?>>Umum</option>
                 <option value="forum_list.php?kategori=makanan" <?php if($kategori == 'makanan') {echo 'selected="true"';} ?>>Makanan</option>
                 <option value="forum_list.php?kategori=hobi" <?php if($kategori == 'hobi') {echo 'selected="true"';} ?>>Hobi</option>
@@ -78,7 +88,14 @@ $forum_list = mysqli_query($conn, "SELECT pengguna.id_pengguna, pengguna.usernam
             <ul class="listView">
               <header class="kategori">
                 <box>
-                  <h1><?= $kategori; ?></h1>
+                  <h1><?php 
+                  if ( !isset($kategori) || $kategori == 'semua') {
+                    echo "Semua";
+                  }
+                  else {
+                    echo $kategori;
+                  }
+                  ?></h1>
                 </box>
               </header>
                   

@@ -57,7 +57,12 @@ if ( isset($_POST["kirim"]) ) {
 
           <div class="container thread">
             <div class="container thread-stat">
-              <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $hasil['gambar'] ).'"/>'; ?>
+            <?php 
+              if ($hasil["gambar"] != NULL) {
+                echo '<img src="data:image/jpeg;base64,'.base64_encode( $hasil['gambar'] ).'"/>';
+              } else {
+                echo '<img src="..\img\user.jpg">';
+            } ?>
                 <div class="like">
                     <img src="..\img\like.png">
                     <h1><?= $hasil["suka"]; ?></h1>

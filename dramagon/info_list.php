@@ -18,7 +18,7 @@ $jumlahHalaman = ceil($jumlahData / $jumlahDataPerHalaman);
 $halamanAktif = ( isset($_GET["page"])) ? $_GET["page"] : 1;
 $mulai = ($jumlahDataPerHalaman * $halamanAktif) - $jumlahDataPerHalaman;
 
-$info_list = mysqli_query($conn, "SELECT * FROM informasi WHERE status = 'disetujui' ORDER BY tanggal_informasi DESC LIMIT $mulai, $jumlahDataPerHalaman");
+$info_list = mysqli_query($conn, "SELECT * FROM informasi WHERE status = 'disetujui' ORDER BY id_informasi DESC LIMIT $mulai, $jumlahDataPerHalaman");
 
 ?>
 

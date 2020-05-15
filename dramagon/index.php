@@ -10,7 +10,7 @@ if ( !isset($_SESSION["username"]) ) {
 }
 
 $res_forum = mysqli_query($conn, "SELECT * FROM forum ORDER BY id_forum DESC LIMIT 0, 3");
-$res_info = mysqli_query($conn, "SELECT * FROM informasi ORDER BY id_informasi DESC LIMIT 0, 4")
+$res_info = mysqli_query($conn, "SELECT * FROM informasi WHERE status='disetujui' ORDER BY id_informasi DESC LIMIT 0, 4")
 
 ?>
 
