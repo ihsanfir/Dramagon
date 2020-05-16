@@ -60,7 +60,7 @@
                         </div>
                        <div class="approving">
                            <button class="ok">
-                            OK
+                            Ok
                            </button>
                            <button class="erase">
                             Hapus
@@ -69,73 +69,7 @@
                       </a>
                     </li>
 
-                    <li class="item" >
-                      <a href="forumPage.html">
-                        <div class="title">
-                          <h1>
-                            Warung yang enak dan murah di Balio
-                        </div>
-                       <div class="approving">
-                           <button class="ok">
-                            OK
-                           </button>
-                           <button class="erase">
-                            Hapus
-                           </button>
-                       </div>
-                      </a>
-                    </li>
-
-                    <li class="item" >
-                      <a href="forumPage.html">
-                        <div class="title">
-                          <h1>
-                            Warung yang enak dan murah di Balio
-                        </div>
-                       <div class="approving">
-                           <button class="ok">
-                            OK
-                           </button>
-                           <button class="erase">
-                            Hapus
-                           </button>
-                       </div>
-                      </a>
-                    </li>
-
-                    <li class="item" >
-                      <a href="forumPage.html">
-                        <div class="title">
-                          <h1>
-                            Warung yang enak dan murah di Balio
-                        </div>
-                       <div class="approving">
-                           <button class="ok">
-                            OK
-                           </button>
-                           <button class="erase">
-                            Hapus
-                           </button>
-                       </div>
-                      </a>
-                    </li>
-
-                    <li class="item" >
-                      <a href="forumPage.html">
-                        <div class="title">
-                          <h1>
-                            Warung yang enak dan murah di Balio
-                        </div>
-                       <div class="approving">
-                           <button class="ok">
-                            OK
-                           </button>
-                           <button class="erase">
-                            Hapus
-                           </button>
-                       </div>
-                      </a>
-                    </li>
+                    
                   
                 </ul>
             </div>
