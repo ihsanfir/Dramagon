@@ -5,7 +5,7 @@ session_start();
 $uname = $_SESSION["username"];
 $query = mysqli_query($conn, "SELECT * FROM pengguna WHERE username = '$uname'");
 $pengguna = mysqli_fetch_array($query);
-
+$id_pengguna = (int)$pengguna["id_pengguna"];
 if ( !isset($_SESSION["username"]) ) {
   header("Location: masuk.php");
   exit;
@@ -14,8 +14,9 @@ if ( !isset($_SESSION["username"]) ) {
 $res_komen = mysqli_query($conn, "SELECT * FROM pengguna WHERE username = '$uname'");
 $hasil_comment = mysqli_fetch_array($res_komen);
 $id_forum = $_GET["id_forum"];
-$res = mysqli_query($conn, "SELECT pengguna.id_pengguna, pengguna.username, pengguna.gambar, forum.id_pengguna, forum.gambar as gambar_forum, forum.id_forum, forum.isi, forum.judul, forum.kategori, forum.tanggal, forum.suka FROM pengguna INNER JOIN forum ON pengguna.id_pengguna = forum.id_pengguna WHERE id_forum = $id_forum") or die(mysqli_error());
+$res = mysqli_query($conn, "SELECT pengguna.id_pengguna, pengguna.username, pengguna.gambar, forum.id_pengguna, forum.gambar as gambar_forum, forum.id_forum, forum.isi, forum.judul, forum.kategori, forum.tanggal FROM pengguna INNER JOIN forum ON pengguna.id_pengguna = forum.id_pengguna WHERE id_forum = $id_forum") or die(mysqli_error());
 $hasil = mysqli_fetch_array($res);
+
 $komen = mysqli_query($conn, "SELECT pengguna.id_pengguna, pengguna.username, pengguna.gambar, komentar.id_pengguna, komentar.tanggal, komentar.isi, komentar.id_forum FROM pengguna INNER JOIN komentar ON pengguna.id_pengguna=komentar.id_pengguna WHERE id_forum = $id_forum ORDER BY id_komentar DESC") or die(mysqli_error());
 $total = mysqli_query($conn, "SELECT * FROM komentar WHERE id_forum = $id_forum") or die(mysqli_error());
 $jml_komen = mysqli_num_rows($total);
@@ -28,6 +29,26 @@ if ( isset($_POST["kirim"]) ) {
 
   else {
     echo "<script>alert('Komentar gagal ditambahkan!');</script>";
+  }
+}
+
+$res_suka = mysqli_query($conn, "SELECT id_suka FROM suka WHERE forums = $id_forum");
+$hasil_suka = mysqli_num_rows($res_suka);
+if (isset($_GET["tipe"], $_GET["id_forum"])) {
+  $tipe = $_GET["tipe"];
+  $id = (int)$_GET["id_forum"];
+  if ($tipe == "forum") {
+    $query_suka = "
+    INSERT INTO suka (users, forums)
+    SELECT {$id_pengguna}, {$id_forum} FROM forum
+    WHERE EXISTS(
+      SELECT id_forum FROM forum WHERE id_forum = {$id_forum}) AND
+      NOT EXISTS(SELECT id_suka FROM suka
+        WHERE users = {$id_pengguna} AND forums = {$id_forum})
+        LIMIT 1";
+    mysqli_query($conn, $query_suka) or die(mysqli_error());
+    header("Location: forum_thread.php?id_forum=$id_forum");
+    exit;
   }
 }
 
@@ -69,8 +90,10 @@ if ( isset($_POST["kirim"]) ) {
                 echo '<img src="..\img\user.jpg">';
             } ?>
                 <div class="like">
-                    <img src="..\img\like.png">
-                    <h1><?= $hasil["suka"]; ?></h1>
+                    <a href="forum_thread.php?tipe=forum&id_forum=<?=  $id_forum;?>">
+                      <img src="..\img\like.png">
+                    </a>
+                    <h1><?= $hasil_suka; ?></h1>
                 </div>
 
                 <div class="comment-count">
@@ -113,12 +136,9 @@ if ( isset($_POST["kirim"]) ) {
                 </div>
 
                 <hr>
+                <?php if($hasil["gambar_forum"] != NULL): ?>
                 <div class="thread-img">
-                <?php 
-                  if ($hasil["gambar_forum"] != NULL) {
-                    echo '<img id="myBtn" src="data:image/jpeg;base64,'.base64_encode( $hasil['gambar_forum'] ).'"/>';
-                  }
-                ?>
+                  <?php echo '<img id="myBtn" src="data:image/jpeg;base64,'.base64_encode( $hasil['gambar_forum'] ).'"/>'; ?>
                 </div>
 
                 <!-- The Modal -->
@@ -126,14 +146,11 @@ if ( isset($_POST["kirim"]) ) {
 
                 <!-- Modal content -->
                 <div class="modal-content">
-                <?php 
-                  if ($hasil["gambar_forum"] != NULL) {
-                    echo '<img id="myBtn" src="data:image/jpeg;base64,'.base64_encode( $hasil['gambar_forum'] ).'"/>';
-                  }
-                ?>
+                <?php echo '<img id="myBtn" src="data:image/jpeg;base64,'.base64_encode( $hasil['gambar_forum'] ).'"/>';                ?>
                 <span class="close">&times;</span>  
                 </div>
-              </div>
+                </div>
+                <?php endif; ?>
                 <text>
                   <p><?= $hasil["isi"]; ?></p>
                 </text>

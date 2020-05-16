@@ -13,10 +13,15 @@ if ( !isset($_SESSION["username"]) ) {
 
 if( isset($_POST["kirim"]) ) {
     if( buatForum($_POST) > 0) {
-        echo "<script>alert('Forum berhasil ditambahkan !');</script>";
+        $last_id = buatForum($_POST);
+        header("Location: forum_thread.php?id_forum=$last_id");
+        exit;
     }
 
-    $error = true;
+    else {
+      echo "<script>alert('Forum gagal ditambahkan !');</script>";
+    }
+
 }
 
 ?>
@@ -57,7 +62,7 @@ if( isset($_POST["kirim"]) ) {
               <div class="bungkus-button">
                   <div class="add-photo">
                      <img src="..\img\add-image.png"/>
-                      <input type="file" name="image"/>
+                    <input type="file" name="image"required>
                   </div>
               </div>
               
@@ -80,7 +85,6 @@ if( isset($_POST["kirim"]) ) {
               Pilih Kategori
             </header>
               <select class="category" name="kategori">
-                <option value="semua">Semua</option>
                 <option value="umum">Umum</option>
                 <option value="makanan">Makanan</option>
                 <option value="hobi">Hobi</option>

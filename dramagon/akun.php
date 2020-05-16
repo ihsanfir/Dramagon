@@ -17,10 +17,8 @@ if( isset($_POST["simpan"])) {
         echo"<script>
                 alert('Perubahan berhasil disimpan');
             </script>";
-
-    }
-    else {
-        echo mysqli_error($conn);
+        header("Location: akun.php");
+        exit;
     }
 }
 
@@ -96,13 +94,16 @@ if ( isset($_POST["Upload"]) ) {
                     }
                   ?>
                   <input type="hidden" name="id_pengguna" value="<?= $pengguna["id_pengguna"]; ?>">
-                  <input type="file" name="image">
+                  <input type="file" name="image" required>
                   <button type="submit" name="Upload">
                     Ubah Foto Akun
                   </button>
                   <br><br>
+                </form>
+                <form action="" method="post">
+                  <input type="hidden" name="id_pengguna" value="<?= $pengguna["id_pengguna"]; ?>">
                   <button type="submit" name="Hapus">
-                    Hapus Foto Akun
+                      Hapus Foto Akun
                   </button>
                 </form>
                 <br>
