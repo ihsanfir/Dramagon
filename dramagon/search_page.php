@@ -14,12 +14,12 @@ if ( !isset($_SESSION["username"]) ) {
 if (isset($_POST["cari"])) {
   $cari = $_POST["keyword"];
   if ($cari == NULL) {
-    $forum_list = mysqli_query($conn, "SELECT pengguna.id_pengguna, pengguna.username, pengguna.gambar, forum.id_pengguna, forum.id_forum, forum.isi, forum.kategori, forum.tanggal, forum.judul, forum.suka FROM pengguna INNER JOIN forum ON pengguna.id_pengguna=forum.id_pengguna WHERE 1 != 1");
+    $forum_list = mysqli_query($conn, "SELECT pengguna.id_pengguna, pengguna.username, pengguna.gambar, forum.id_pengguna, forum.id_forum, forum.isi, forum.kategori, forum.tanggal, forum.judul FROM pengguna INNER JOIN forum ON pengguna.id_pengguna=forum.id_pengguna WHERE 1 != 1");
   } else {
-    $forum_list = mysqli_query($conn, "SELECT pengguna.id_pengguna, pengguna.username, pengguna.gambar, forum.id_pengguna, forum.id_forum, forum.isi, forum.kategori, forum.tanggal, forum.judul, forum.suka FROM pengguna INNER JOIN forum ON pengguna.id_pengguna=forum.id_pengguna WHERE isi LIKE '%" .$cari. "%'");
+    $forum_list = mysqli_query($conn, "SELECT pengguna.id_pengguna, pengguna.username, pengguna.gambar, forum.id_pengguna, forum.id_forum, forum.isi, forum.kategori, forum.tanggal, forum.judul FROM pengguna INNER JOIN forum ON pengguna.id_pengguna=forum.id_pengguna WHERE isi LIKE '%" .$cari. "%'");
   }
 } else {
-  $forum_list = mysqli_query($conn, "SELECT pengguna.id_pengguna, pengguna.username, pengguna.gambar, forum.id_pengguna, forum.id_forum, forum.isi, forum.kategori, forum.tanggal, forum.judul, forum.suka FROM pengguna INNER JOIN forum ON pengguna.id_pengguna=forum.id_pengguna WHERE 1 != 1");
+  $forum_list = mysqli_query($conn, "SELECT pengguna.id_pengguna, pengguna.username, pengguna.gambar, forum.id_pengguna, forum.id_forum, forum.isi, forum.kategori, forum.tanggal, forum.judul FROM pengguna INNER JOIN forum ON pengguna.id_pengguna=forum.id_pengguna WHERE 1 != 1");
 }
 
 ?>
@@ -70,7 +70,12 @@ if (isset($_POST["cari"])) {
                     
                     <div class="like">
                       <img src="..\img\like.png">
-                      <h1><?= $hasil["suka"]; ?></h1>
+                      <?php
+                      $forums = $hasil["id_forum"];
+                      $res_suka = mysqli_query($conn, "SELECT id_suka FROM suka WHERE forums = $forums") or die(mysqli_error());
+                      $hasil_suka = mysqli_num_rows($res_suka);
+                      ?>
+                      <h1><?= $hasil_suka; ?></h1>
                     </div>
       
                     <div class="comment-count">

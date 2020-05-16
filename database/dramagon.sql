@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 12 Bulan Mei 2020 pada 20.04
+-- Waktu pembuatan: 16 Bulan Mei 2020 pada 19.20
 -- Versi server: 10.4.8-MariaDB
 -- Versi PHP: 7.3.11
 
@@ -35,8 +35,7 @@ CREATE TABLE `forum` (
   `kategori` varchar(50) NOT NULL,
   `gambar` longblob NOT NULL,
   `tanggal` date DEFAULT NULL,
-  `id_pengguna` int(11) NOT NULL,
-  `suka` int(11) NOT NULL
+  `id_pengguna` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -87,6 +86,18 @@ CREATE TABLE `pengguna` (
   `tanggalLahir` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `suka`
+--
+
+CREATE TABLE `suka` (
+  `id_suka` int(11) NOT NULL,
+  `users` int(11) NOT NULL,
+  `forums` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
 --
 -- Indexes for dumped tables
 --
@@ -120,6 +131,12 @@ ALTER TABLE `pengguna`
   ADD PRIMARY KEY (`id_pengguna`);
 
 --
+-- Indeks untuk tabel `suka`
+--
+ALTER TABLE `suka`
+  ADD PRIMARY KEY (`id_suka`);
+
+--
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
@@ -146,6 +163,12 @@ ALTER TABLE `komentar`
 --
 ALTER TABLE `pengguna`
   MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `suka`
+--
+ALTER TABLE `suka`
+  MODIFY `id_suka` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

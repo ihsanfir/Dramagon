@@ -56,7 +56,7 @@
         <div class="border">
           <div class="sidebar-search">
             <div>
-                <input type="search" placeholder="Cari..." name="keyword">
+                <input type="search" placeholder="Cari..." name="keyword" required/>
                 <button type="submit" name="cari">
                   <img src="..\img\search.png">
                 </button>

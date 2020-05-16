@@ -29,10 +29,10 @@ $jumlahHalaman = ceil($jumlahData / $jumlahDataPerHalaman);
 $halamanAktif = ( isset($_GET["page"])) ? $_GET["page"] : 1;
 $mulai = ($jumlahDataPerHalaman * $halamanAktif) - $jumlahDataPerHalaman;
 
-if (isset($kategori) || $kategori != "semua") {
-  $forum_list = mysqli_query($conn, "SELECT pengguna.id_pengguna, pengguna.username, pengguna.gambar, forum.id_pengguna, forum.id_forum, forum.kategori, forum.tanggal, forum.judul, forum.suka FROM pengguna INNER JOIN forum ON pengguna.id_pengguna=forum.id_pengguna WHERE kategori = '$kategori' ORDER BY id_forum DESC LIMIT $mulai, $jumlahDataPerHalaman");
+if (isset($kategori) && $kategori != "semua") {
+  $forum_list = mysqli_query($conn, "SELECT pengguna.id_pengguna, pengguna.username, pengguna.gambar, forum.id_pengguna, forum.id_forum, forum.kategori, forum.tanggal, forum.judul FROM pengguna INNER JOIN forum ON pengguna.id_pengguna=forum.id_pengguna WHERE kategori = '$kategori' ORDER BY id_forum DESC LIMIT $mulai, $jumlahDataPerHalaman");
 } else {
-  $forum_list = mysqli_query($conn, "SELECT pengguna.id_pengguna, pengguna.username, pengguna.gambar, forum.id_pengguna, forum.id_forum, forum.kategori, forum.tanggal, forum.judul, forum.suka FROM pengguna INNER JOIN forum ON pengguna.id_pengguna=forum.id_pengguna ORDER BY id_forum DESC LIMIT $mulai, $jumlahDataPerHalaman");
+  $forum_list = mysqli_query($conn, "SELECT pengguna.id_pengguna, pengguna.username, pengguna.gambar, forum.id_pengguna, forum.id_forum, forum.kategori, forum.tanggal, forum.judul FROM pengguna INNER JOIN forum ON pengguna.id_pengguna=forum.id_pengguna ORDER BY id_forum DESC LIMIT $mulai, $jumlahDataPerHalaman");
 }
 
 ?>
@@ -111,7 +111,12 @@ if (isset($kategori) || $kategori != "semua") {
                     
                     <div class="like">
                       <img src="..\img\like.png">
-                      <h1><?= $hasil["suka"]; ?></h1>
+                      <?php
+                      $forums = $hasil["id_forum"];
+                      $res_suka = mysqli_query($conn, "SELECT id_suka FROM suka WHERE forums = $forums") or die(mysqli_error());
+                      $hasil_suka = mysqli_num_rows($res_suka);
+                      ?>
+                      <h1><?= $hasil_suka; ?></h1>
                     </div>
       
                     <div class="comment-count">
@@ -153,19 +158,19 @@ if (isset($kategori) || $kategori != "semua") {
         <div class="container pagi">
           <div class="pagination">
             <?php if( $halamanAktif > 1 ): ?>
-              <a href="?page=<?= $halamanAktif - 1; ?>">&laquo;</a>
+              <a href="?kategori=<?= $kategori; ?>&page=<?= $halamanAktif - 1; ?>">&laquo;</a>
             <?php endif; ?>
 
             <?php for($i=1; $i<=$jumlahHalaman; $i++) : ?>
               <?php if ($i == $halamanAktif) : ?>
-                <a class="active" href="?page=<?= $i; ?>"><?= $i; ?></a>
+                <a class="active" href="?kategori=<?= $kategori; ?>&page=<?= $i; ?>"><?= $i; ?></a>
               <?php else : ?>
-               <a href="?page=<?= $i; ?>"><?= $i; ?></a>
+               <a href="?kategori=<?= $kategori; ?>&page=<?= $i; ?>"><?= $i; ?></a>
               <?php endif; ?>
             <?php endfor; ?>
             
             <?php if( $halamanAktif < $jumlahHalaman ): ?>
-              <a href="?page=<?= $halamanAktif + 1; ?>">&raquo;</a>
+              <a href="?kategori=<?= $kategori; ?>&page=<?= $halamanAktif + 1; ?>">&raquo;</a>
             <?php endif; ?>
           </div>
         </div>

@@ -120,7 +120,8 @@ function buatForum($data) {
 
     $file = $_FILES['image']['tmp_name'];
     if (!isset($file) ){
-        echo "Pilih file gambar";
+        echo "<script>alert('Pilih file gambar');</script>";
+        return false;
     }
 
     else {
@@ -130,7 +131,8 @@ function buatForum($data) {
 
 
         if ($image_size == false) {
-            echo "File yang dipilih bukan gambar";
+            echo "<script>alert('File yang dipilih bukan gambar');</script>";
+            return false;
         }
     }
     
@@ -146,12 +148,11 @@ function buatForum($data) {
                     '$kategori_forum',
                     '$image',
                     '$tanggal_forum',
-                    '$id_pengguna',
-                    '0'
+                    '$id_pengguna'
                     )";
-    mysqli_query($conn, $tambah_forum) or die(mysqli_error());
-
-    return mysqli_affected_rows($conn);
+    mysqli_query($conn, $tambah_forum) or die("Connection failed: " .mysqli_connect_error());
+    $last_id = mysqli_insert_id($conn);
+    return $last_id;
 }
 
 function tambahKomentar($data) {
