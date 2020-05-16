@@ -1105,5 +1105,22 @@ hr {
     background-color: transparent;
   }
 
+/*------approving------*/
+.approving{
+  display: flex;
+  justify-content: space-evenly;
+
+  width: 300px;
+  margin: auto;
+  margin-right: 0px;
+}
+.approving > button{
+  width: 100px;
+}
+.approving > .erase{
+  width: 100px;
+  background-color: #B81633;
+}
+
 
 /*0ee6e513963f4154fb259009a26819efdf16ce31*/
