@@ -579,10 +579,12 @@ color: #009FBC;}
     display: flex;
     flex-direction: column;
     padding: 20px;
+    justify-content: space-evenly;
   }
 
   .thread-stat img{
-    width: 100px;
+    width: auto;
+    height: 100px;
     border-radius: 10px;
     margin-bottom: 10px;
   }
@@ -591,25 +593,28 @@ color: #009FBC;}
 /*------like------*/
   .thread-stat > .like{
     margin: auto;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    width: wrap;
-    height: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 40px;
+    height: 80px;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
     padding: 10px 10px;
     display: flex;
     flex-direction: column;
   }
-  .thread-stat .like img{
-    width: 35px;
+  .thread-stat > .like img{
+    height: 35px;
+    width: auto;
     transition: .1s;
     cursor: pointer;
   }
-  .thread-stat .like img:active{
+  .thread-stat > .like img:active{
     transform: scale(1.6) rotate(-4deg);
   }
-  .thread-stat .like h1{
+  .thread-stat > .like h1{
     padding-top: 10px;
     font-size: 120%;
   }
@@ -617,19 +622,25 @@ color: #009FBC;}
   /*------comment-count------*/
   .thread-stat > .comment-count{
     margin: auto;
-    margin-top: 0px;
-    width: wrap;
-    height: wrap;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40px;
+    height: 80px;
     background: rgba(255, 255, 255, 0.05);
     padding: 10px 10px;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
   }
   .thread-stat > .comment-count img{
-    width: 35px;
+    height: 35px;
+    width: auto;
   }
 
   .comment-count h1{
     padding-top: 10px;
+    font-size: 120%;
   }
 /*-----------THREAD-STAT END------------*/
 
@@ -1023,14 +1034,14 @@ hr {
 /* Modal Content/Box */
 .modal-content {
   background-color: #121212;
-  margin: 10% auto; /* 15% from the top and centered */
+  margin: 5% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
   width: 60%; /* Could be more or less, depending on screen size */
   text-align: center;
 }
 .modal-content > img{
-  width: 500px;
+  height: 500px;
   margin: auto;
 }
 
