@@ -89,7 +89,16 @@
                 <span>Forum</span>
               </a>
             </li>
-        
+
+            <?php
+            if ($uname == "admin") {
+              echo '<li class="sidebar-list">
+                <a href="admin.php">
+                  <span>Halaman Admin</span>
+                </a>
+              </li>';
+            }
+            ?>
           </ul>
 
         </div>

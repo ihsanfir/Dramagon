@@ -14,12 +14,14 @@ if ( !isset($_SESSION["username"]) ) {
 if( isset($_POST["kirim"]) ) {
     if( buatForum($_POST) > 0) {
         $last_id = buatForum($_POST);
-        header("Location: forum_thread.php?id_forum=$last_id");
-        exit;
+        echo "<script>
+          alert('Forum kamu telah berhasil dibuat!')
+          window.location.replace('forum_thread.php?id_forum=".$last_id."');
+          </script>";
+          exit;
     }
-
     else {
-      echo "<script>alert('Forum gagal ditambahkan !');</script>";
+      echo "<script>alert('Forum kamu gagal dibuat!');</script>";
     }
 
 }
@@ -33,11 +35,6 @@ if( isset($_POST["kirim"]) ) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="../style/style.css" />
   <link rel="stylesheet" type="text/css" href="../style/sidebar nav.css" />
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/favicon/site.webmanifest">
 </head>
 
 <body>
@@ -62,7 +59,7 @@ if( isset($_POST["kirim"]) ) {
               <div class="bungkus-button">
                   <div class="add-photo">
                      <img src="..\img\add-image.png"/>
-                    <input type="file" name="image"required>
+                    <input type="file" name="image">
                   </div>
               </div>
               

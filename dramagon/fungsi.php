@@ -118,22 +118,26 @@ function edit($data) {
 function buatForum($data) {
     global $conn;
 
-    $file = $_FILES['image']['tmp_name'];
-    if (!isset($file) ){
-        echo "<script>alert('Pilih file gambar');</script>";
-        return false;
-    }
-
-    else {
-        $image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
-        $image_name = addslashes($_FILES['image']['name']);
-        $image_size = getimagesize($_FILES['image']['tmp_name']);
-
-
-        if ($image_size == false) {
-            echo "<script>alert('File yang dipilih bukan gambar');</script>";
+    if (!empty($_FILES['image']['tmp_name'])) {
+        $file = $_FILES['image']['tmp_name'];
+        if (!isset($file) ){
+            echo "<script>alert('Pilih file gambar');</script>";
             return false;
         }
+
+        else {
+            $image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
+            $image_name = addslashes($_FILES['image']['name']);
+            $image_size = getimagesize($_FILES['image']['tmp_name']);
+
+
+            if ($image_size == false) {
+                echo "<script>alert('File yang dipilih bukan gambar');</script>";
+                return false;
+            }
+        }
+    } else {
+        $image = NULL;
     }
     
     $judul_forum = stripslashes($data["judul_forum"]);
@@ -176,20 +180,24 @@ function tambahKomentar($data) {
 function buatInformasi($data) {
     global $conn;
 
-    $file = $_FILES['image']['tmp_name'];
-    if (!isset($file) ){
-        echo "Pilih file gambar";
-    }
-
-    else {
-        $image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
-        $image_name = addslashes($_FILES['image']['name']);
-        $image_size = getimagesize($_FILES['image']['tmp_name']);
-
-
-        if ($image_size == false) {
-            echo "File yang dipilih bukan gambar";
+    if (!empty($_FILES['image']['tmp_name'])) {
+        $file = $_FILES['image']['tmp_name'];
+        if (!isset($file) ){
+            echo "<script>alert('Pilih file gambar');</script>";
+            return false;
         }
+
+        else {
+            $image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
+            $image_name = addslashes($_FILES['image']['name']);
+            $image_size = getimagesize($_FILES['image']['tmp_name']);
+            if ($image_size == false) {
+                echo "<script>alert('File yang dipilih bukan gambar');</script>";
+                return false;
+            }
+        }
+    } else {
+        $image = NULL;
     }
 
     $id_pengguna = $data["id_pengguna"];
@@ -270,6 +278,32 @@ function hapusFoto($data) {
 
     $id_pengguna = $data["id_pengguna"];
     mysqli_query($conn, "UPDATE pengguna SET gambar=NULL WHERE id_pengguna = $id_pengguna");
+    return mysqli_affected_rows($conn);
+}
+
+function setujuInfo($data) {
+    global $conn;
+    $id_informasi = $data["id"];
+    mysqli_query($conn, "UPDATE informasi SET status = 'disetujui' WHERE id_informasi = $id_informasi") or die(mysqli_error());
+    return mysqli_affected_rows($conn);
+}
+
+function tolakInfo($data) {
+    global $conn;
+    $id_informasi = $data["id"];
+    mysqli_query($conn, "DELETE FROM informasi WHERE id_informasi = $id_informasi") or die(mysqli_error());
+    return mysqli_affected_rows($conn);
+}
+
+function hapusForum($data) {
+    global $conn;
+    $id_forum = $data["id"];
+    mysqli_query($conn, "DELETE FROM komentar
+                WHERE id_forum = $id_forum") 
+                or die(mysqli_error());
+    mysqli_query($conn, "DELETE FROM forum
+                WHERE id_forum = $id_forum")
+                or die(mysqli_error());
     return mysqli_affected_rows($conn);
 }
 
