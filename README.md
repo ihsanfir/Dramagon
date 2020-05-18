@@ -69,8 +69,7 @@ Dramaga, seperti event kampus, tempat nongkrong yang baru buka, atau jasa & serv
 Dramaga untuk bersosialisasi, bertransaksi, dan bertukar informasi satu sama lain.
 
 # User Profile
-
-
+Aplikasi ini ditujukan untuk warga dramaga yang ingin mengetahui beraneka ragam informasi seputar dramaga. Yang didasari dari minimnya informasi seperti kemacetan dan juga lapak-lapak baru yang bingung ingin mempromosikan lapaknya.  
 
 
 # User Story
