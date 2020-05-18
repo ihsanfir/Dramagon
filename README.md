@@ -86,8 +86,8 @@ Aplikasi ini ditujukan untuk warga dramaga yang ingin mengetahui beraneka ragam 
 # Activity Diagram
 Activity Diagram: Memasukan Akun
 
-# Gantt Cart
-
+# Gantt Chart
+![gantt](laporan/ganttchartDramagon.png)
 # ERD
 
 # Hasil Implementasi Perangkat Lunak
