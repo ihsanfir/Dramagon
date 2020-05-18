@@ -12,8 +12,8 @@ if ( !isset($_SESSION["username"]) ) {
 }
 
 if( isset($_POST["kirim"]) ) {
-    if( buatForum($_POST) > 0) {
-        $last_id = buatForum($_POST);
+    $last_id = buatForum($_POST);    
+    if( $last_id > 0) {
         echo "<script>
           alert('Forum kamu telah berhasil dibuat!')
           window.location.replace('forum_thread.php?id_forum=".$last_id."');
@@ -33,13 +33,8 @@ if( isset($_POST["kirim"]) ) {
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="../style/style.css" />
-  <link rel="stylesheet" type="text/css" href="../style/sidebar nav.css" />
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/favicon/site.webmanifest">
+  <link rel="stylesheet" type="text/css" href="../style/style.css?v=<?= time(); ?>" />
+  <link rel="stylesheet" type="text/css" href="../style/sidebar nav.css?v=<?= time(); ?>" />
 </head>
 
 <body>
@@ -90,6 +85,10 @@ if( isset($_POST["kirim"]) ) {
                 <option value="umum">Umum</option>
                 <option value="makanan">Makanan</option>
                 <option value="hobi">Hobi</option>
+                <option value="teknologi">Teknologi</option>
+                <option value="olahraga">Olahraga</option>
+                <option value="lifestyle">Lifestyle</option>
+                <option value="otomotif">Otomotif</option>
               </select>
             </form>
           </div>
