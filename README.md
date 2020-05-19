@@ -100,6 +100,9 @@ Activity Diagram: User Melihat dan/atau Mengajukan Informasi
 Activity Diagram: User Berdiskusi Melalui Komentar di Forum
 ![actd](laporan/discuss.png)
 
+Activity Diagram: Admin Mengelola Forum dan/atau Memoderasi Informasi
+![actd](laporan/admin.png)
+
 
 # Gantt Chart
 ![gantt](laporan/ganttchartDramagon.png)
