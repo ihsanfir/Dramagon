@@ -498,18 +498,17 @@ color: #009FBC;}
   }
 
   input[type="date"]::-webkit-calendar-picker-indicator {
-      background-image: url("/img/calendar.png");
-      filter: invert(100%);
-      -webkit-filter: invert(87%);
+    filter: invert(100%);
+    -webkit-filter: invert(87%);
       opacity: 1;
       margin-right: 8px;
   }
 
   input[type="date"]::-webkit-calendar-picker-indicator:hover {
-    background-image: url("/img/calendar.png");
     filter: invert(100%);
     -webkit-filter: invert(87%);
-      opacity: 0.8;
+      opacity: 0.5;
+      margin-right: 8px;
   }
  
 
