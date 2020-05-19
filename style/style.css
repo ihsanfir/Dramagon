@@ -453,9 +453,10 @@ color: #009FBC;}
     margin-top: 10px;
   }
 
+  /*---------INPUT--------*/
   input[type=text], input[type=password], input[type=date] {
     width: 100%;
-    padding: 10px 0  10px 8px;
+    padding: 10px 0px  10px 8px;
     margin-bottom: 16px;
     margin-top: 8px;
     border-radius: 5px;
@@ -491,6 +492,27 @@ color: #009FBC;}
     text-shadow:#000 0px 1px 5px;
     font-size: 18px;
   }
+
+  input[type="date"]::-webkit-inner-spin-button {
+      opacity: 0;
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+      background-image: url("/img/calendar.png");
+      filter: invert(100%);
+      -webkit-filter: invert(87%);
+      opacity: 1;
+      margin-right: 8px;
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    background-image: url("/img/calendar.png");
+    filter: invert(100%);
+    -webkit-filter: invert(87%);
+      opacity: 0.8;
+  }
+ 
+
 
   .registerbtn {
     background-color: rgb(65, 193, 202);
