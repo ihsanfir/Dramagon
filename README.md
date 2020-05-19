@@ -98,7 +98,7 @@ Activity Diagram: User Melihat dan/atau Mengajukan Informasi
 ![actd](laporan/see_make_info.png)
 
 Activity Diagram: User Berdiskusi Melalui Komentar di Forum
-![actd](laporan/disucuss.png)
+![actd](laporan/discuss.png)
 
 
 # Gantt Chart
