@@ -41,13 +41,13 @@ if (isset($kategori) && $kategori != "semua") {
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="../style/style.css?v=<?= time(); ?>" />
-  <link rel="stylesheet" type="text/css" href="../style/sidebar nav.css?v=<?= time(); ?>" />
+  <link rel="stylesheet" type="text/css" href="assets/style/style.css?v=<?= time(); ?>" />
+  <link rel="stylesheet" type="text/css" href="assets/style/sidebar nav.css?v=<?= time(); ?>" />
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/favicon/site.webmanifest">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="assets/favicon/site.webmanifest">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -122,7 +122,7 @@ if (isset($kategori) && $kategori != "semua") {
                   <div class="item-stat">
                     
                     <div class="like">
-                      <img src="..\img\like.png">
+                      <img src="assets/img/like.png">
                       <?php
                       $forums = $hasil["id_forum"];
                       $res_suka = mysqli_query($conn, "SELECT id_suka FROM suka WHERE forums = $forums") or die(mysqli_error());
@@ -132,7 +132,7 @@ if (isset($kategori) && $kategori != "semua") {
                     </div>
       
                     <div class="comment-count">
-                      <img src="..\img\reply.png">
+                      <img src="assets/img/reply.png">
                       <?php
                         $id_forum = $hasil["id_forum"]; 
                         $query_komentar = mysqli_query($conn, "SELECT * FROM komentar WHERE id_forum = $id_forum");
@@ -146,7 +146,7 @@ if (isset($kategori) && $kategori != "semua") {
                         if ($hasil["gambar"] != NULL) {
                          echo '<img src="data:image/jpeg;base64,'.base64_encode( $hasil['gambar'] ).'"/>'; 
                         } else {
-                          echo '<img src="..\img\user.jpg">';
+                          echo '<img src="assets/img/user.jpg">';
                         }
                       ?>
                       <div class="name-date">

@@ -83,13 +83,13 @@ if (isset($_POST["hapus"])) {
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="../style/style.css?v=<?= time(); ?>" />
-  <link rel="stylesheet" type="text/css" href="../style/sidebar nav.css?v=<?= time(); ?>" />
+  <link rel="stylesheet" type="text/css" href="assets/style/style.css?v=<?= time(); ?>" />
+  <link rel="stylesheet" type="text/css" href="assets/style/sidebar nav.css?v=<?= time(); ?>" />
 
-  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-  <link rel="manifest" href="favicon/site.webmanifest">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="assets/favicon/site.webmanifest">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -111,7 +111,7 @@ if (isset($_POST["hapus"])) {
               <div class="text">
                 <h2><strong>Halo ADMIN!</strong>
                   <br>
-                    <br>Ini tempat APPROVE Informasi</h2>
+                    <br>Ini tempat kerja Admin Dramagon</h2>
                 </div>
               </div>
           <!--container intro bg end--->

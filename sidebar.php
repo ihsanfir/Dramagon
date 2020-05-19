@@ -3,7 +3,7 @@
       <div class="sidebar-content">
         <div class="border">
           <div class="sidebar-brand">
-            <img src="..\img\logo.png">
+            <img src="assets/img/logo.png">
           </div>
       </div>
       <div class="border">
@@ -13,7 +13,7 @@
             if($pengguna["gambar"] != NULL) {
               echo '<img src="data:image/jpeg;base64,'.base64_encode( $pengguna['gambar'] ).'"/>'; 
             } else {
-              echo '<img src="..\img\user.jpg"/>';
+              echo '<img src="assets/img/user.jpg"/>';
             }
           ?>
           </div>
@@ -58,7 +58,7 @@
             <div>
                 <input type="search" placeholder="Cari..." name="keyword" required/>
                 <button type="submit" name="cari">
-                  <img src="..\img\search.png">
+                  <img src="assets/img/search.png">
                 </button>
             </div>
           </div>
