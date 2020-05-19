@@ -73,10 +73,10 @@ Aplikasi ini ditujukan untuk warga dramaga yang ingin mengetahui beraneka ragam 
 
 
 # User Story
--Sebagai warga dramaga, saya ingin mencari tahu berita-berita penting seputar dramaga yang langsung dari sumber aslinya yaitu warga atau user.
--Sebagai warga dramaga, saya ingin bertanya-tanya banyak hal seputar lingkungan dramaga.
--Sebagai warga dramaga, saya ingin ...
--Sebagai warga dramaga, saya ingin ...
+- Sebagai warga dramaga, saya ingin mencari tahu berita-berita penting seputar dramaga yang langsung dari sumber aslinya yaitu warga atau user.
+- Sebagai warga dramaga, saya ingin bertanya-tanya banyak hal seputar lingkungan dramaga.
+- Sebagai warga dramaga, saya ingin ...
+- Sebagai warga dramaga, saya ingin ...
 
 # Use Case Diagram
 ![ucd](laporan/ucd.png)
