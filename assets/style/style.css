@@ -21,7 +21,7 @@ width: full;}
 *{ margin: 0;
   padding: 0;}
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
 
 body
 { font: normal .80em 'Montserrat', Arial, sans-serif;
@@ -126,6 +126,7 @@ color: #009FBC;}
     margin-bottom: 10px;
     text-transform:capitalize;
     display: flex;
+    font-weight: 600;
   }
 
   .container header h1{
@@ -433,7 +434,7 @@ color: #009FBC;}
     border: none;
     cursor: pointer;
     width: 100%;
-    font-weight: bold;
+    font-weight: 600;
     text-transform:capitalize;
     opacity: 0.9;
   }
@@ -763,9 +764,8 @@ color: #009FBC;}
     margin-right: 10px;
   }
   .category box h1{
-
     margin: auto;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 80%;
   }
 
@@ -1092,7 +1092,7 @@ hr {
   color: #B81633;
   float: right;
   font-size: 28px;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .close:hover,
