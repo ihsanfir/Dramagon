@@ -11,8 +11,8 @@ if ( !isset($_SESSION["username"]) ) {
   exit;
 }
 
-if (isset($_POST["cari"])) {
-  $cari = $_POST["keyword"];
+if (isset($_GET["cari"])) {
+  $cari = $_GET["keyword"];
   $info_list = mysqli_query($conn, "SELECT pengguna.id_pengguna, pengguna.username, informasi.id_informasi, informasi.id_pengguna, informasi.judul_informasi, informasi.tanggal_informasi, informasi.isi_informasi FROM informasi INNER JOIN pengguna ON pengguna.id_pengguna = informasi.id_pengguna WHERE judul_informasi LIKE '%" .$cari. "' OR isi_informasi LIKE '%" .$cari. "%'");
   $forum_list = mysqli_query($conn, "SELECT pengguna.id_pengguna, pengguna.username, pengguna.gambar, forum.id_forum, forum.id_pengguna, forum.judul, forum.isi, forum.kategori, forum.tanggal FROM forum INNER JOIN pengguna ON pengguna.id_pengguna = forum.id_pengguna WHERE judul LIKE '%" .$cari. "%' OR isi LIKE '%" .$cari. "%'");
 } else {
