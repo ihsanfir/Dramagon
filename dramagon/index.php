@@ -30,7 +30,6 @@ $res_info = mysqli_query($conn, "SELECT * FROM informasi WHERE status='disetujui
   </head>
 
 <body>
-
   <div class="red-top"></div>
   <?php include 'sidebar.php'; ?>
     <div class="wrapper">
