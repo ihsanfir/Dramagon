@@ -79,6 +79,7 @@ function edit($data) {
 
     $id_pengguna = $data["id_pengguna"];
     $username = stripslashes($data["username"]);
+    $username_lama = $data["username_lama"];
     $nama = stripslashes($data["nama"]);
     $email = stripslashes($data["email"]);
     $telpon = stripslashes($data["notelp"]);
@@ -87,32 +88,40 @@ function edit($data) {
 
     // cek username yg sudah dipakai
     $result = mysqli_query($conn, "SELECT username FROM pengguna WHERE username = '$username'");
-    $query = mysqli_query($conn, "SELECT * FROM pengguna WHERE username = '$username'");
-    $pengguna = mysqli_fetch_array($query);
-
-    if ( $username == $pengguna["username"] ) {
+    if ($username == $username_lama) {
         $cek = 1;
+    } else {
+        $cek = 0;
     }
-
-    if( !mysqli_fetch_assoc($result) && $cek!=1) {
-        echo "<script>
-                alert('username sudah dipakai!')
-            </script>";
-        return false;
-    }
-
-
-    // update pengguna ke database
-    mysqli_query($conn, "UPDATE pengguna SET
-            username = '$username',
+    if ($cek == 1) {
+        // update pengguna ke database
+         mysqli_query($conn, "UPDATE pengguna SET
             nama = '$nama',
             email = '$email',
             telpon = '$telpon',
             jenkel = '$jenkel',
             tanggalLahir = '$tanggalLahir'
         WHERE id_pengguna = $id_pengguna");
-    
-    return 1;
+        return mysqli_affected_rows($conn);
+    } else if ($cek == 0) {
+        if(mysqli_num_rows($result)) {
+            echo "<script>
+                alert('username sudah dipakai!')
+                </script>";
+            return false;
+        } else {
+            // update pengguna ke database
+             mysqli_query($conn, "UPDATE pengguna SET
+                username = '$username',
+                nama = '$nama',
+                email = '$email',
+                telpon = '$telpon',
+                jenkel = '$jenkel',
+                tanggalLahir = '$tanggalLahir'
+            WHERE id_pengguna = $id_pengguna");
+            return mysqli_affected_rows($conn);
+        }
+    }
 }
 
 function buatForum($data) {

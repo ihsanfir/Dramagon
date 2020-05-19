@@ -83,8 +83,8 @@ if (isset($_POST["hapus"])) {
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="../style/style.css" />
-  <link rel="stylesheet" type="text/css" href="../style/sidebar nav.css" />
+  <link rel="stylesheet" type="text/css" href="../style/style.css?v=<?= time(); ?>" />
+  <link rel="stylesheet" type="text/css" href="../style/sidebar nav.css?v=<?= time(); ?>" />
 
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">

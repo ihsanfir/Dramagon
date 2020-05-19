@@ -15,10 +15,15 @@ if( isset($_POST["simpan"])) {
     if(edit($_POST) > 0 ) {
         $_SESSION["username"] = $_POST["username"];
         echo"<script>
-                alert('Perubahan berhasil disimpan');
+                alert('Perubahan berhasil disimpan')
+                window.location.replace('akun.php');
             </script>";
-        header("Location: akun.php");
         exit;
+    } else {
+      echo"<script>
+                alert('Tidak ada perubahan')
+                window.location.replace('akun.php');
+            </script>";
     }
 }
 
@@ -64,11 +69,6 @@ if ( isset($_POST["Upload"]) ) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="../style/style.css?v=<?= time(); ?>" />
   <link rel="stylesheet" type="text/css" href="../style/sidebar nav.css?v=<?= time(); ?>" />
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/favicon/site.webmanifest">
 </head>
 
 <body>
@@ -123,6 +123,7 @@ if ( isset($_POST["Upload"]) ) {
               </div>
             <form action ="" method="post">
                 <input type="hidden" name="id_pengguna" value="<?= $pengguna["id_pengguna"]; ?>">
+                <input type="hidden" name="username_lama" value="<?= $pengguna["username"]; ?>">
 
                 <label for="username">Username Magons</label><br>
                 <input type="text" id="username" name="username" value="<?= $pengguna["username"]; ?>">

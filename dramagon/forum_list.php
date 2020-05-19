@@ -23,7 +23,7 @@ if (isset($_GET["kategori"])) {
   $res = mysqli_query($conn, "SELECT * FROM forum");
 }
 
-$jumlahDataPerHalaman = 3;
+$jumlahDataPerHalaman = 6;
 $jumlahData = mysqli_num_rows($res);
 $jumlahHalaman = ceil($jumlahData / $jumlahDataPerHalaman);
 $halamanAktif = ( isset($_GET["page"])) ? $_GET["page"] : 1;
@@ -41,8 +41,8 @@ if (isset($kategori) && $kategori != "semua") {
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="../style/style.css?v=<?php echo time(); ?>" />
-  <link rel="stylesheet" type="text/css" href="../style/sidebar nav.css?v=<?php echo time(); ?>" />
+  <link rel="stylesheet" type="text/css" href="../style/style.css?v=<?= time(); ?>" />
+  <link rel="stylesheet" type="text/css" href="../style/sidebar nav.css?v=<?= time(); ?>" />
 
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
@@ -86,6 +86,10 @@ if (isset($kategori) && $kategori != "semua") {
                 <option value="forum_list.php?kategori=umum" <?php if($kategori == 'umum') {echo 'selected="true"';} ?>>Umum</option>
                 <option value="forum_list.php?kategori=makanan" <?php if($kategori == 'makanan') {echo 'selected="true"';} ?>>Makanan</option>
                 <option value="forum_list.php?kategori=hobi" <?php if($kategori == 'hobi') {echo 'selected="true"';} ?>>Hobi</option>
+                <option value="forum_list.php?kategori=teknologi" <?php if($kategori == 'teknologi') {echo 'selected="true"';} ?>>Teknologi</option>
+                <option value="forum_list.php?kategori=olahraga" <?php if($kategori == 'olahraga') {echo 'selected="true"';} ?>>Olahraga</option>
+                <option value="forum_list.php?kategori=lifestyle" <?php if($kategori == 'lifestyle') {echo 'selected="true"';} ?>>Lifestyle</option>
+                <option value="forum_list.php?kategori=otomotif" <?php if($kategori == 'otomotif') {echo 'selected="true"';} ?>>Otomotif</option>
               </select>
            </div>
 

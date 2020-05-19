@@ -52,7 +52,7 @@
         </div>
       </div>
         <!-- sidebar-header  -->
-        <form action="search_page.php" method="post">
+        <form action="search_page.php" method="get">
         <div class="border">
           <div class="sidebar-search">
             <div>

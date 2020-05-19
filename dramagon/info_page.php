@@ -12,7 +12,7 @@ if ( !isset($_SESSION["username"]) ) {
   exit;
 }
 $id_informasi = $_GET["id_informasi"];
-$query = mysqli_query($conn, "SELECT * FROM informasi INNER JOIN pengguna WHERE id_informasi = $id_informasi");
+$query = mysqli_query($conn, "SELECT informasi.id_informasi, informasi.id_pengguna, informasi.judul_informasi, informasi.isi_informasi, informasi.tanggal_informasi, informasi.gambar_informasi, pengguna.id_pengguna, pengguna.nama FROM informasi INNER JOIN pengguna ON pengguna.id_pengguna = informasi.id_pengguna WHERE id_informasi = $id_informasi");
 $res = mysqli_fetch_array($query);
 
 ?>
@@ -23,11 +23,6 @@ $res = mysqli_fetch_array($query);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="../style/style.css?v=<?= time();?>" />
   <link rel="stylesheet" type="text/css" href="../style/sidebar nav.css?v=<?= time();?>" />
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/favicon/site.webmanifest">
 </head>
 
 <body>
