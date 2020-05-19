@@ -140,7 +140,7 @@ if ( isset($_POST["Upload"]) ) {
                 <input type="text" id="email" name="email" value="<?= $pengguna["email"]; ?>">
 
                 <label for="notelp">Nomor Telpon</label><br>
-                <input type="text" id="notelp" name="notelp" value="<?= $pengguna["telpon"]; ?>">
+                <input type="number" id="notelp" name="notelp" value="<?= $pengguna["telpon"]; ?>">
                 
                 <h1>Jenis Kelamin</h1>
                 <input type="radio" id="laki" name="jk" value="laki" <?php 

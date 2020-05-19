@@ -454,7 +454,7 @@ color: #009FBC;}
   }
 
   /*---------INPUT--------*/
-  input[type=text], input[type=password], input[type=date] {
+  input[type=text], input[type=password], input[type=date], input[type=number] {
     width: 100%;
     padding: 10px 0px  10px 8px;
     margin-bottom: 16px;
@@ -510,7 +510,27 @@ color: #009FBC;}
       opacity: 0.5;
       margin-right: 8px;
   }
- 
+  
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+  border: 1px solid black;
+  -webkit-text-fill-color: #6E6E6E;
+  -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+  transition: background-color 5000s ease-in-out 0s;
+  
+  box-shadow:inset 4px 6px 10px -4px rgba(0,0,0,0.7), 0 1px 1px -1px rgba(255,255,255,0.3);
+  background-color:rgba(0,0,0,0.3);
+
+  font-size: 18px;
+  font-family: inherit;
+}
 
 
   .registerbtn {
