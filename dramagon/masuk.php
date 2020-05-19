@@ -34,6 +34,9 @@ if( isset($_POST["masuk"]) ) {
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
   <link rel="manifest" href="/favicon/site.webmanifest">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
 <body>
@@ -63,7 +66,7 @@ if( isset($_POST["masuk"]) ) {
               </strong>
             </span>
             <span class="user-role">Pengguna</span>
-            <span class="user-status">
+            <span class="user-status-offline">
               <i class="fa fa-circle"></i>
               <span>Offline</span>
             </span>
