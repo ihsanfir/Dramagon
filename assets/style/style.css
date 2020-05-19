@@ -21,12 +21,16 @@ width: full;}
 *{ margin: 0;
   padding: 0;}
 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
 body
-{ font: normal .80em 'Montserrat', arial, sans-serif;
+{ font: normal .80em 'Open Sans', Arial, sans-serif;
   background: #121212;
   font-weight: 300;
-  color: rgb(241,243,246, 0.87);
+  color: #e3e3e3;
   font-size: 18px;
+  letter-spacing: 0.02em;
+  word-spacing: 0.05em;
 }
 
 img
@@ -39,13 +43,13 @@ font-size: 70%;
 }
 
 h2, h3, h4, h5, h6 
-{ color: #f1f3f6;
+{ 
 letter-spacing: 0em;
 padding: 0px 0 10px 0;
 }
 
 h1, h2, h3
-{ font: normal 100%  'montserrat', arial;}
+{ font: normal 100%;}
 
 h1{
 font-size: 100%;
@@ -65,14 +69,13 @@ opacity: 0.6;
 
 h4, h6
 { color: #009FBC;
-font: normal 60% arial;
+font: normal 60%;
 text-transform: uppercase;}
 
 h5, h6
 { color: #888;
-font: normal 70% 'montserrat', arial;
+font: normal 70%;
 letter-spacing: normal;
-
 }
 
 a, a:hover
@@ -407,7 +410,7 @@ color: #009FBC;}
 .sidebar-right > a {
   display: flex;
   font-size: 16px;
-  color: #f1f3f6;
+  color: #e3e3e3;
   text-decoration: none;
   padding: 20px;
   margin-bottom: 6px;
@@ -425,7 +428,7 @@ color: #009FBC;}
 /*-------BUTTON--------*/
   button {
     background-color: rgb(65, 193, 202);
-    color: #f1f3f6;
+    color: #e3e3e3;
     padding: 14px 20px;
     border: none;
     cursor: pointer;
@@ -634,7 +637,7 @@ color: #009FBC;}
     margin: auto;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20px;
+    margin-top: 0px;
     margin-bottom: 0px;
     width: 40px;
     height: 80px;
@@ -726,7 +729,7 @@ color: #009FBC;}
 
 .filter select{
   background-color: inherit;
-  color: #f1f3f6;
+  color: #e3e3e3;
   padding-left: 10px;
   width: 250px;
   border: none;
@@ -739,14 +742,14 @@ color: #009FBC;}
 }
 .filter select option{
   background-color: #B81633;
-  color: #f1f3f6;
+  color: #e3e3e3;
 }
 .filter > .category{
-  color: #f1f3f6;
+  color: #e3e3e3;
 }
 
   .category{
-    color: #f1f3f6;
+    color: #e3e3e3;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -934,7 +937,7 @@ hr {
 }
 
  .pagination a {
-  color: #f1f3f6;
+  color: #e3e3e3;
   padding: 8px 16px;
   text-decoration: none;
   transition: background-color .3s;
@@ -942,7 +945,7 @@ hr {
 
 .pagination a.active {
   background-color:  rgb(65, 193, 202);
-  color: #f1f3f6;
+  color: #e3e3e3;
 }
 
 .pagination a:hover:not(.active) {background-color: rgba(255, 255, 255, 0.1);}
@@ -1094,7 +1097,7 @@ hr {
 
 .close:hover,
 .close:focus {
-  color: #f1f3f6;
+  color: #e3e3e3;
   text-decoration: none;
   cursor: pointer;
 }
