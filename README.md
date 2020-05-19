@@ -74,9 +74,9 @@ Aplikasi ini ditujukan untuk warga dramaga yang ingin mengetahui beraneka ragam 
 
 # User Story
 - Sebagai warga dramaga, saya ingin mencari tahu berita-berita penting seputar dramaga yang langsung dari sumber aslinya yaitu warga atau user.
-- Sebagai warga dramaga, saya ingin bertanya-tanya banyak hal seputar lingkungan dramaga.
-- Sebagai warga dramaga, saya ingin ...
-- Sebagai warga dramaga, saya ingin ...
+- Sebagai warga dramaga, saya ingin bertanya-tanya banyak hal seputar lingkungan dramaga agar bisa mengetahui lebih banyak seputar apa saja yang ada di Dramaga.
+- Sebagai warga dramaga, saya ingin berkomunikasi dan berdiskusi langsung dengan sesama warga yang juga tinggal di Dramaga, agar dapat membahas hal-hal yang saya tidak ketahui dari mereka, sehingga wawasan saya bertambah dan lebih mengenal wilayah Dramaga.
+- Sebagai mahasiswa IPB dramag yang tergolong baru, saya terkadang bingung mengenai tempat apa saja yang ada di Dramaga. Semisal saya ingin menambal sepeda saat bengkel kampus tutup, saya harus mencari sampai ke Balebak, padahal ternyata di Bara ada hanya saja saya tidka melihatnya.
 
 # Use Case Diagram
 ![ucd](laporan/new_ucd.png)
@@ -88,12 +88,24 @@ Aplikasi ini ditujukan untuk warga dramaga yang ingin mengetahui beraneka ragam 
 ![ucdes](laporan/kelolaForum.png)
 
 # Activity Diagram
-Activity Diagram: Memasukan Akun
+Activity Diagram: User Login
+![actd](laporan/masuk.png)
+
+Activity Diagram: User Melihat dan/atau Membuat Forum
+![actd](laporan/see_make_forum.png)
+
+Activity Diagram: User Melihat dan/atau Mengajukan Informasi
+![actd](laporan/see_make_info.png)
+
+Activity Diagram: User Berdiskusi Melalui Komentar di Forum
+![actd](laporan/disucuss.png)
+
 
 # Gantt Chart
 ![gantt](laporan/ganttchartDramagon.png)
 
-# ERD
+# ER-Diagram
+![erd](laporan/erd.jpeg)
 
 # Hasil Implementasi Perangkat Lunak
 ## Penjelasan Singkat
