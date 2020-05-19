@@ -82,12 +82,17 @@ Aplikasi ini ditujukan untuk warga dramaga yang ingin mengetahui beraneka ragam 
 ![ucd](laporan/ucd.png)
 
 # Use Case Description
+![ucdes](laporan/ajuInfo.png)
+![ucdes](laporan/kelolaInfo.png)
+![ucdes](laporan/buatForum.png)
+![ucdes](laporan/kelolaForum.png)
 
 # Activity Diagram
 Activity Diagram: Memasukan Akun
 
 # Gantt Chart
 ![gantt](laporan/ganttchartDramagon.png)
+
 # ERD
 
 # Hasil Implementasi Perangkat Lunak
