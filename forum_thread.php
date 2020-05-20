@@ -92,6 +92,7 @@ if (isset($_GET["tipe"], $_GET["id_forum"])) {
               } else {
                 echo '<img src="assets/img/user.jpg">';
             } ?>
+            <br>
                 <div class="like">
                     <a href="forum_thread.php?tipe=forum&id_forum=<?=  $id_forum;?>">
                       <img src="assets/img/like.png">
