@@ -701,11 +701,16 @@ color: #009FBC;}
   .thread-main text{
     width: 100%;
   }
-  .thread-main text > p{
+  .thread-main text > pre{
     text-align: left;
     font-size: 80%;
-    line-height: 1.6;
     padding-right: 20px;
+    font-family: inherit;
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;
   }
   .thread-main h1{
     font-size: 140%
@@ -974,7 +979,7 @@ hr {
     padding: 20px;
   }
 
-  textarea#styled {
+  .infoCreate textarea#styled {
     height: 320px;
     width: 100%;
     min-height: 120px;
@@ -1157,6 +1162,18 @@ hr {
   .laman-text{
     margin: 5px 0px 5px 0;
     background-color: transparent;
+  }
+
+  .laman-text pre{
+      text-align: left;
+      font-size: 80%;
+      padding-right: 20px;
+      font-family: inherit;
+      white-space: pre-wrap;       /* Since CSS 2.1 */
+      white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+      white-space: -pre-wrap;      /* Opera 4-6 */
+      white-space: -o-pre-wrap;    /* Opera 7 */
+      word-wrap: break-word;
   }
 
 /*------approving------*/

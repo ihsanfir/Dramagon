@@ -61,9 +61,9 @@ $res = mysqli_fetch_array($query);
                 ?>
                 </center>
                 <br>
-                <p align="justify"><?= $res["isi_informasi"]; ?></p>
+                <pre align="justify"><?= $res["isi_informasi"]; ?></pre>
               </div>
-            </form>
+         
             </div>
           </div>
         </div>

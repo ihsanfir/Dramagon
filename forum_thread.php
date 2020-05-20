@@ -155,7 +155,7 @@ if (isset($_GET["tipe"], $_GET["id_forum"])) {
                 </div>
                 <?php endif; ?>
                 <text>
-                  <p><?= $hasil["isi"]; ?></p>
+                  <pre><?= $hasil["isi"]; ?></pre>
                 </text>
             </div>
         </div>
