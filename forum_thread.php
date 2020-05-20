@@ -123,7 +123,7 @@ if (isset($_GET["tipe"], $_GET["id_forum"])) {
                     Link:
                   </h2>
                   <a>
-                    forum_thread?id_forum=<?= $hasil["id_forum"]; ?>
+                    forum_thread.php?id_forum=<?= $hasil["id_forum"]; ?>
                   </a>
                 </div>
                 <script>
