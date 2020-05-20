@@ -191,7 +191,7 @@ if (isset($_GET["tipe"], $_GET["id_forum"])) {
                 </div>
                   <text>
                     <h2>oleh <strong><?= $komentar["username"] ?></strong>, <?= tanggal_indo($komentar["tanggal"]); ?></h2>
-                      <p><?= $komentar["isi"]; ?></p>
+                      <pre><?= $komentar["isi"]; ?></pre>
                   </text>    
             </div>
           <?php endwhile; ?>
