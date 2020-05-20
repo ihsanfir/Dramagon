@@ -112,8 +112,25 @@ Activity Diagram: Admin Mengelola Forum dan/atau Memoderasi Informasi
 ![erd](laporan/erd.jpeg)
 
 # Hasil Implementasi Perangkat Lunak
-## Penjelasan Singkat
-Kami telah membuat video berupa tampilan dari implementasi perangkat lunak yang telah kami buat. video ini menjadi bukti bahwa aplikasi kita sudah bisa dijalankan walau tidak maksimal. Kami berharap aplikasi kami bisa berguna kelak.
+## Tampilan Perangkat Lunak
 
-**Link Video**
+# Halaman Login
+![test](laporan/login.png)
+
+#Halaman Daftar
+![test](laporan/daftar.png)
+
+#Halaman Beranda/Home
+![test](laporan/beranda.png)
+
+#Halaman List Informasi
+![test](laporan/list_info.png)
+
+#Halaman List Thread
+![test](laporan/list_thread.png)
+
+#Halaman Forum
+![test](laporan/thread.png)
+
+
 
