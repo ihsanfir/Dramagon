@@ -117,19 +117,19 @@ Activity Diagram: Admin Mengelola Forum dan/atau Memoderasi Informasi
 # Halaman Login
 ![test](laporan/login.png)
 
-#Halaman Daftar
+# Halaman Daftar
 ![test](laporan/daftar.png)
 
-#Halaman Beranda/Home
+# Halaman Beranda/Home
 ![test](laporan/beranda.png)
 
-#Halaman List Informasi
+# Halaman List Informasi
 ![test](laporan/list_info.png)
 
-#Halaman List Thread
+# Halaman List Thread
 ![test](laporan/list_thread.png)
 
-#Halaman Forum
+# Halaman Forum
 ![test](laporan/thread.png)
 
 
