@@ -75,7 +75,7 @@ Aplikasi ini ditujukan untuk warga dramaga yang ingin mengetahui beraneka ragam 
 # User Story
 Kami melakukan wawancara langsung kepada beberapa warga dan mahasiswa IPB, berikut hasilnya:
 
-- Sebagai pendatang baru di Dramaga, saya ingin mencari tahu berita-berita penting seputar dramaga yang langsung dari sumber aslinya yaitu warga yang sudah lama menempati wilayah itu. (Bapak Joko, seorang warga pemilik warung di Babakan Raya, Dramaga)
+- Sebagai pendatang baru di Dramaga, saya ingin mencari tahu berita-berita penting seputar dramaga yang langsung dari sumber aslinya yaitu warga yang sudah lama menempati wilayah itu. (Bapak Joko, seorang pedagang di Babakan Raya, Dramaga)
 - Sebagai warga Dramaga, saya ingin bertanya-tanya banyak hal seputar lingkungan dramaga agar bisa mengetahui lebih banyak seputar apa saja yang ada di Dramaga. (Ibu Aas, seorang pemilik kos putra di Babakan Raya, Dramaga)
 - Sudah lama saya di Dramaga dan saya ingin berkomunikasi dan berdiskusi langsung dengan sesama warga yang juga tinggal di Dramaga, agar dapat membahas hal-hal yang saya tidak ketahui dari mereka, sehingga wawasan saya bertambah dan lebih mengenal wilayah Dramaga lainnya. (Bapak Urip, seorang pemilik toko di Babakan Raya, Dramaga).
 - Sebagai mahasiswa IPB kampus Dramaga yang tergolong baru, saya terkadang bingung mengenai tempat apa saja yang ada di Dramaga. Semisal saya ingin menambal sepeda saat bengkel kampus tutup, saya harus mencari sampai ke Balebak, padahal ternyata di Bara ada hanya saja saya tidak melihatnya. (Arya, seorang mahasiswa Faperta IPB).
